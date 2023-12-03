@@ -4,7 +4,7 @@ permalink: /teaching/
 title: cursos
 description: Material para cursos
 nav: true
-nav_order: 5
+nav_order: 3
 # toc:
 #   sidebar: true
 ---
