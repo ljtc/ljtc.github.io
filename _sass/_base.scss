@@ -1058,3 +1058,17 @@ nav[data-toggle="toc"] {
     padding-top: 0.5rem;
   }
 }
+
+
+/**
+ * Source: https://maruan.alshedivat.com/assets/css/main.css
+ */
+
+  /* Modified --global-bg-color (used in Maruan's site) to --global-card-bg-color. */
+  /* If you use --global-bg-color, you'll need to change some other CSS. */
+  .list-group-item {
+    background-color: var(--global-card-bg-color); border-color: var(--global-divider-color);
+  }
+  .badge {
+    background-color: var(--global-theme-color); padding-left: 1rem; padding-right: 1rem;
+  }

@@ -1,8 +1,8 @@
 ---
 layout: about
-title: about
+title: acerca
 permalink: /
-subtitle: <a href='#'>Affiliations</a>. Address. Contacts. Moto. Etc.
+subtitle: 
 
 profile:
   align: right
