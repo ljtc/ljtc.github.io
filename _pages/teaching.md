@@ -12,12 +12,20 @@ giscus_comments: true
 
 <style>
     .col-sm-9 {
-        background-color: teal;
+        background-color: #494949;
+        color: white;
+    }
+    .col-sm-3 {
+        background-color: #494949;
+        color: white;
+    }
+    .col-sm-10 {
+        background-color: #494949;
         color: white;
     }
 </style>
 
-<h3 style="color: #4b9cd3;" id="unc"><a href="https://unc.edu">UNC</a></h3>
+<!--<h3 style="color: #4b9cd3;" id="unc"><a href="https://unc.edu">UNC</a></h3>-->
 <!-- COMP 541 (Digital Logic and Computer Design) -->
 <div class="card mt-3">
   <div class="p-3">
@@ -38,7 +46,7 @@ giscus_comments: true
           <div class="col-sm-9">
             I, along with a classmate, ported COMP 541's final project simulator (was Windows-only) to Java (cross-platform), roughly <strong>doubling</strong> the tool's potential audience (~60 students per semester). It is in-use in COMP 541 and maintained by me.
           </div>
-          <div class="col-sm-3">
+          <div>
             <a href="/projects/mips-emulator">MIPS Emulator</a>&nbsp;(<a href="https://github.com/madiali/mips-emulator">GitHub</a>)
           </div>
         </div>
