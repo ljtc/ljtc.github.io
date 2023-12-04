@@ -9,17 +9,17 @@ nav_order: 3
 #   sidebar: true
 ---
 
-<!-- COMP 541 (Digital Logic and Computer Design) -->
+<!-- Topos Elementales -->
 <div class="card mt-3">
   <div class="p-3">
     <div class="row">
       <div class="col-sm-10">
-        <h5 id="comp311" class="card-title">Digital Logic and Computer Design</h5>
-        <h6 class="card-subtitle font-italic">Volunteer (F23, W22)</h6>
+        <h5 id="comp311" class="card-title">Topos Elementales</h5>
+        <h6 class="card-subtitle font-italic">Seminario de Álgebra B</h6>
       </div>
       <div class="col-sm-2 text-sm-right">
         <span class="badge">
-          541
+          4253
         </span>
       </div>
     </div>
@@ -27,10 +27,10 @@ nav_order: 3
       <li class="list-group-item">
         <div class="row">
           <div class="col-sm-9">
-            I roughly <strong>doubled</strong> the potential audience of COMP 541's final project simulator by porting, along with a classmate, the original version (C#, Windows-only) to Java (cross-platform). It is in-use in COMP 541 and maintained by me.
+            Este curso tiene la intensión de estudiar a los topos de una forma elemental, es decir, se dan axiomas escritos en primer orden con dos tipos y se desarrolla una teoría a partir de ellos. Cubrimos el capítulo 4 de *Sheaves in Geometry and Logic* de Mac Lane y Moerdijk. Además, vimos algunas partes del capítulo 5 y 6.
           </div>
           <div class="col-sm-3">
-            <a href="/projects/mips-emulator">MIPS Emulator</a>&nbsp;(<a href="https://github.com/madiali/mips-emulator">GitHub</a>)
+            <a href="https://ljtc.github.io/topos/">Página del curso</a>
           </div>
         </div>
       </li>
@@ -38,87 +38,8 @@ nav_order: 3
   </div>
 </div>
 
-<!-- COMP 311 (Computer Organization) -->
-<div class="card mt-3">
-  <div class="p-3">
-    <div class="row">
-      <div class="col-sm-10">
-        <h5 id="comp311" class="card-title">Computer Organization</h5>
-        <h6 class="card-subtitle font-italic">Graduate TA (F23), Head UTA (S23, F22)</h6>
-      </div>
-      <div class="col-sm-2 text-sm-right">
-        <span class="badge">
-          311
-        </span>
-      </div>
-    </div>
-    <ul class="card-text font-weight-light list-group list-group-flush">
-      <li class="list-group-item">
-        <div class="row">
-          <div class="col-sm-9">
-            I developed and maintain a SAP (Simple-As-Possible computer) program simulator, which allowed me to create a SAP programming assignment.
-          </div>
-          <div class="col-sm-3">
-            <a href="/projects/sapsim">SAPsim</a>&nbsp;(<a href="https://github.com/jesse-wei/SAPsim">GitHub</a>)
-          </div>
-        </div>
-      </li>
-      <li class="list-group-item">
-        <div class="row">
-          <div class="col-sm-9">
-            <p>I create and refine programming assignments and their autograders.</p>
-            <p>I created Lab 4 (SAP programming) and the majority of the final project (BST implementation in MIPS assembly).</p>
-            <p>I revamped Lab 3 (ALU implementation). The ALU now has a 5-bit control table and computes flags, whereas it previously had a 2-bit control table.</p>
-            <p>I incorporated several improvements to the assignments, including usage of <a href="https://github.com/hneemann/Digital">Digital</a>'s Tunnel and Splitter/Merger components and multi-bit capabilities. I also incorporated MIPS <a href="https://courses.missouristate.edu/kenvollmar/mars/help/MacrosHelp.html">macros</a>.</p>
-          </div>
-        </div>
-      </li>
-      <li class="list-group-item">
-        <div class="row">
-          <div class="col-sm-9">
-            I refactored existing autograder code to be more modular and extensible and provide better feedback to students.
-          </div>
-        </div>
-      </li>
-      <li class="list-group-item">
-        <div class="row">
-          <div class="col-sm-9">
-            I have written 35+ in-use quiz and exam questions. I verify and edit, as needed, all assessment questions in the course. I wrote all of Quiz 7 (MIPS processor and control signals).
-          </div>
-          <div class="col-sm-3">
-          </div>
-        </div>
-      </li>
-      <li class="list-group-item">
-        <div class="row">
-          <div class="col-sm-9">
-            I refined and automated our question creation and review process. In particular, I developed a workflow in which we write questions in Markdown format on GitHub and convert (via <a href="https://github.com/jgm/pandoc">pandoc</a>) to HTML/PDF, allowing for version control and better collaboration.
-          </div>
-          <div class="col-sm-3">
-          </div>
-        </div>
-      </li>
-      <li class="list-group-item">
-        <div class="row">
-          <div class="col-sm-9">
-            I write and edit explanations for all assessment questions. I have also written explanations for the 180+ practice questions written by Professor Munsell.
-          </div>
-          <div class="col-sm-3">
-          </div>
-        </div>
-      </li>
-      <li class="list-group-item">
-        <div class="row">
-          <div class="col-sm-9">
-            I manage the undergraduate LA team, hold office hours, and answer student questions (on Piazza and elsewhere). In 23S, I held three in-person assessment review sessions for the course, with an average of 40 students at each.
-          </div>
-          <div class="col-sm-3">
-          </div>
-        </div>
-      </li>
-    </ul>
-  </div>
-</div>
+
+
 
 <!-- COMP 210 (Data Structures and Analysis) -->
 <div class="card mt-3">
