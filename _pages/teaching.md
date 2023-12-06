@@ -19,7 +19,7 @@ nav_order: 3
       </div>
       <div class="col-sm-2 text-sm-right">
         <span class="badge">
-          4240
+          4042
         </span>
       </div>
     </div>
@@ -49,13 +49,54 @@ nav_order: 3
 </div>
 
 
+<!-- Lógica I, 2024-2 -->
+<div class="card mt-3">
+  <div class="p-3">
+    <div class="row">
+      <div class="col-sm-10">
+        <h5 id="comp210" class="card-title"><a href="https://www.fciencias.unam.mx/docencia/horarios/busquedaglobal/20242/4241">Lógica Matemática 1</a></h5>
+        <h6 class="card-subtitle font-italic">Semestre 2024-2</h6>
+      </div>
+      <div class="col-sm-2 text-sm-right">
+        <span class="badge">
+          4241
+        </span>
+      </div>
+    </div>
+    <ul class="card-text font-weight-light list-group list-group-flush">
+      <li class="list-group-item">
+        <div class="row">
+          <div class="col-sm-9">
+            El temario de este curso es un poco más extenso que el temario oficial de la facultad.
+            <a href="../_posts/2023-12-02-igor.md">Temario</a>
+          </div>
+          <div class="col-sm-3">
+          <a>Temario test 1</a>
+          </div>
+        </div>
+      </li>
+      <li class="list-group-item">
+        <div class="row">
+          <div class="col-sm-9">
+            Bibliografía
+          </div>
+          <div class="col-sm-3">
+            Pronto habrá una bibliografía para el curso
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+
+
 <!-- Topos Elementales, 2023-2-->
 <div class="card mt-3">
   <div class="p-3">
     <div class="row">
       <div class="col-sm-10">
         <h5 id="comp311" class="card-title">Topos Elementales</h5>
-        <h6 class="card-subtitle font-italic">Seminario de Álgebra B</h6>
+        <h6 class="card-subtitle font-italic">Semestre 2023-2</h6>
       </div>
       <div class="col-sm-2 text-sm-right">
         <span class="badge">
