@@ -68,7 +68,7 @@ nav_order: 3
         <div class="row">
           <div class="col-sm-9">
             El temario de este curso es un poco más extenso que el temario oficial de la facultad.
-            [distill style post]({% post_url 2018-12-22-distill %})
+            <a href="{% post_url 2018-12-22-distill %}">test</a>
           </div>
           <div class="col-sm-3">
           <a href="{{% link _pages/log23_temario.md %}}">Temario test 5</a>
