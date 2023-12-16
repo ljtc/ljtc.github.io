@@ -71,7 +71,7 @@ nav_order: 3
             [distill style post]({% post_url 2018-12-22-distill %})
           </div>
           <div class="col-sm-3">
-          <a href="{{% post_url 2018-12-22-distill %}}">Temario test 4</a>
+          <a href="{{% link _pages/log23_temario.md %}}">Temario test 5</a>
           </div>
         </div>
       </li>
