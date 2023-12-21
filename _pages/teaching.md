@@ -67,11 +67,10 @@ nav_order: 3
       <li class="list-group-item">
         <div class="row">
           <div class="col-sm-9">
-            El temario de este curso es un poco más extenso que el temario oficial de la facultad.
-            <a href="{% post_url 2018-12-22-distill %}">test</a>
+            El temario de este curso es un poco más extenso que el temario oficial de la facultad. Puedes consultarlo, junto con la bibliografía y el método de evaluación en la presentación del curso de la página de la facultad.
           </div>
           <div class="col-sm-3">
-          <a href="{{% link _pages/log23_temario.md %}}">Temario test 5</a>
+          <a href="https://www.fciencias.unam.mx/docencia/horarios/presentacion/351702">Temario y bibliografía</a>
           </div>
         </div>
       </li>
