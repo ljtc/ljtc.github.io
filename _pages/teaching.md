@@ -37,10 +37,10 @@ nav_order: 3
       <li class="list-group-item">
         <div class="row">
           <div class="col-sm-9">
-            Bibliografía
+            Tanto la bibliografía como la evaluación se pueden consultar en la presentación de la página de la facultad. (Una vez que quede decido el método de evaluación también será puesto aquí.)
           </div>
           <div class="col-sm-3">
-            Pronto habrá una bibliografía para el curso
+            <a href="https://www.fciencias.unam.mx/docencia/horarios/presentacion/351461">Temario y bibliografía</a>
           </div>
         </div>
       </li>
@@ -71,16 +71,6 @@ nav_order: 3
           </div>
           <div class="col-sm-3">
           <a href="https://www.fciencias.unam.mx/docencia/horarios/presentacion/351702">Temario y bibliografía</a>
-          </div>
-        </div>
-      </li>
-      <li class="list-group-item">
-        <div class="row">
-          <div class="col-sm-9">
-            Bibliografía
-          </div>
-          <div class="col-sm-3">
-            Pronto habrá una bibliografía para el curso
           </div>
         </div>
       </li>
