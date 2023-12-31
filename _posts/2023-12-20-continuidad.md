@@ -62,16 +62,22 @@ Además, decimos que un morfismo precohesivo $$p\colon\mathcal{E}\to\mathcal{S}$
 Hasta el momento hemos fallado en entender el significado de este axioma. Sin embargo, en algunos casos podemos dar condiciones para que se satisfaga.
 
 
-# Colímites en conjuntos
+# Continuidad en conjuntos
 Lo primero que haremos en el camino para dar condiciones que impliquen que ciertos morfismos de topos son cohesivos es simplificar la situación. Desde este momento $$\mathcal{S}$$ es el topos $$\mathsf{Con}$$ y $$p\colon\mathcal{E}\to\mathsf{Con}$$ es un morfismo geométrico acotado, que puesto de una forma simple en este contexto significa que podemos pensar que $$\mathcal{E}$$ es un topos de gavillas.
 
 Johnstone encontró condiciones necesarias y suficientes para que exista un morfismo precohesivo en la situación a la cual nos hemos restringido
 
-> **Teorema** Un morfismo geométrico acotado $$p\colon\mathcal{E}\to\mathsf{Con}$$ es precohesivo si y sólo si $$\mathcal{E}$$ tiene un sitio de definición $$\text{Gav}(\mathsf{C},J)$$ conexo, localmente conexo y tal que todo objeto de $$\mathsf{C}$$ tiene un punto.  
+> ##### Teorema
+>
+> Un morfismo geométrico acotado $$p\colon\mathcal{E}\to\mathsf{Con}$$ es precohesivo si y sólo si $$\mathcal{E}$$ tiene un sitio de definición $$\text{Gav}(\mathsf{C},J)$$ conexo, localmente conexo y tal que todo objeto de $$\mathsf{C}$$ tiene un punto.
+{: .block-theorem }
 
 En el caso de pregavillas, es decir, cuando la topología de Grothendieck es discreta, Menni escribió la la equivalencia en <d-cite key="Menni2014"></d-cite>.
 
-> **Teorema** Si $$\mathsf{C}$$ es una categoría tal que los idempotentes se escinden, entones el morfismo canónico $$p\colon\mathsf{Con}^{\mathsf{C}^{\text{op}}}\to\mathsf{Con}$$ es precohesivo si y sólo $$\mathsf{C}$$ tiene objeto terminal y todo objeto tiene un punto.
+> ##### Teorema
+>
+> Si $$\mathsf{C}$$ es una categoría tal que los idempotentes se escinden, entones el morfismo canónico $$p\colon\mathsf{Con}^{\mathsf{C}^{\text{op}}}\to\mathsf{Con}$$ es precohesivo si y sólo $$\mathsf{C}$$ tiene objeto terminal y todo objeto tiene un punto.
+{: .block-theorem }
 
 Además, en el mismo artículo Menni encuentra la única propiedad que conocemos que implica la satisfacción del axioma de continuidad. Antes de ver esa propiedad veremos cómo se calculan los objetos que aparecen en el morfismo canónico del axioma de continuidad en el caso de pregavillas.
 
@@ -98,20 +104,48 @@ Con este isomorfismo podemos ver quién es la función en la componente $$C$$ de
 
 que a una clase $$\overline{(x_{s})_{s\in S}}$$ la manda a la función $$f\colon S\to\varinjlim_{C\in\mathsf{C}} EC$$ definida como $$s\mapsto\overline{x_{s}}$$.
 
-> **Definición** Dado un morfismo precohesivo $$p\colon\mathcal{E}\to\mathcal{S}$$, diremos que un objeto $$E\in\mathcal{E}$$ es *débilmente Kan* si para cualquier $$S\in\mathcal{S}$$ el morfismo canónico $$p_{!}(E^{p^{*}S})\to p_{!}(E)^{S}$$ es iso.
+> ##### Definición 
+>
+> Dado un morfismo precohesivo $$p\colon\mathcal{E}\to\mathcal{S}$$, diremos que un objeto $$E\in\mathcal{E}$$ es *débilmente Kan* si para cualquier $$S\in\mathcal{S}$$ el morfismo canónico $$p_{!}(E^{p^{*}S})\to p_{!}(E)^{S}$$ es iso.
+{: .block-theorem }
 
 Con estas observaciones podemos enunciar el siguiente resultado.
 
-> **Teorema** Sea $$E\in\widehat{\mathsf{C}}$$. Los siguientes enunciados son equivalentes:
+> ##### Teorema 
+>
+> Sea $$E\in\widehat{\mathsf{C}}$$. Los siguientes enunciados son equivalentes:
 > 1. $$E$$ es débilmente Kan,
 > 2. el morfismo canónico en \eqref{eq:morcan} es un iso para todo $$S\in\mathsf{Con}$$,
 > 3. el morfismo canónico en \eqref{eq:morcan} es un iso con $$S=\mathbb{N}$$,
 > 4. el morfismo canónico $$p_{!}(E^{p^{*}\mathbb{N}})\to p_{!}(E)^{\mathbb{N}}$$ es iso,
-> 5. existe $$M\in\mathbb{N}$$ tal que si $$\overline{x}=\overline{y} en $$p_{!}E$$, entonces existe una trayectoria de longitud menor o igual a $$M$$ que conecta a $$\overline{x}$$ con $$\overline{y}$$.
+> 5. existe $$M\in\mathbb{N}$$ tal que si $$\overline{x}=\overline{y}$$ en $$p_{!}E$$, entonces existe una trayectoria de longitud menor o igual a $$M$$ que conecta a $$\overline{x}$$ con $$\overline{y}$$.
+{: .block-theorem }
 
 Para demostrar que alguien es débilmente Kan se usará el inciso 5 del teorema anterior. Además, para demostrar que un morfismo precohesivo $$p\colon\mathcal{E}\to\mathcal{S}$$ es cohesivo se demostrará que todo objeto $$E\in\mathcal{E}$$ es débilmente Kan. Por lo tanto, lo que nos interesa es ver qué es una trayectoria en $$p_{!}E$$ y ver cómo se pueden acotar.
 
+
 # Trayectorias
+Sean $$p\colon\widehat{\mathsf{C}}\to\mathsf{Con}$$ precohesivo y $$X\in\widehat{\mathsf{C}}$$. Dados $$x\in XC$$ y $$x'\in XD$$, diremos que el cospan
+
+$$
+\begin{CD}
+C @>{\gamma_0}>> A @<{\gamma_1}<< D
+\end{CD}
+$$
+
+conecta a $$x$$ con $$x'$$ en $$p_{!}X$$ si existe $$y\in XA$$ tal que $$y\cdot\gamma_0=x$$ y $$y\cdot\gamma_1=x'$$.
+
+Además, cuando $$x\in XC$$ y $$x'\in XD$$ estén conectados con un cospan como arriba diremos que están conectados por una trayectoria de longitud $$1$$. Finalmente, $$x$$ y $$x'$$ están conectados si hay una trayectoria de longitud $$n$$ que los conecta, es decir, existe una suceción de cospans
+
+$$
+\begin{CD}
+C @>{\gamma^{1}_{0}}>> A_1 @<{\gamma^{1}_{1}}<< B_1 @>>> \ldots
+@<{\gamma^{n}_{0}}<< A_n @>{\gamma^{n}_{1}}>> D
+\end{CD}
+$$
+
+y elementos $$x_i\in A_{i}$$ y $$y_i\in A_{i}$$ tales que $$y_i\cdot\gamma^{i}_{0}=x_{i-1}$$ y $$y_i\cdot\gamma^{i}_{1}=x_{i}$$, donde $$x_{0}=x$$ y $$x_{n}=x'$$.
+
 
 # Conector
 

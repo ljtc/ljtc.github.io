@@ -29,6 +29,10 @@
   --global-danger-block-bg: #ffe0e0;
   --global-danger-block-text: #600;
   --global-danger-block-title: #c00;
+  --global-theorem-block: #5a5a5a75;
+  --global-theorem-block-bg: #5a5a5a75;
+  --global-theorem-block-text: #d4d4d4;
+  --global-theorem-block-title: #e7e7e7;
 
   .fa-sun {
     display : none;
@@ -74,6 +78,10 @@ html[data-theme='dark'] {
   --global-danger-block-bg: #ffe0e0;
   --global-danger-block-text: #600;
   --global-danger-block-title: #c00;
+  --global-theorem-block: #5a5a5a75;
+  --global-theorem-block-bg: #5a5a5a75;
+  --global-theorem-block-text: #d4d4d4;
+  --global-theorem-block-title: #e7e7e7;
 
   .fa-sun {
     padding-left: 10px;
