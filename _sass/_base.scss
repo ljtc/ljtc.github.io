@@ -65,7 +65,7 @@ blockquote {
   border-left: 5px solid var(--global-theme-color);
   margin: 1.5em 0;
   padding: 1em;
-  font-size: 1rem;
+  font-size: 1.2rem;
 
   p {
     margin-bottom: 0;
@@ -108,19 +108,6 @@ blockquote {
 
     h1, h2, h3, h4, h5, h6 {
       color: var(--global-danger-block-title);
-    }
-  }
-
-  &.block-theorem {
-    border-color: var(--global-theorem-block);
-    background-color: var(--global-theorem-block-bg);
-
-    p {
-      color: var(--global-theorem-block-text);
-    }
-
-    h1, h2, h3, h4, h5, h6 {
-      color: var(--global-theorem-block-title);
     }
   }
 }
@@ -1072,16 +1059,11 @@ nav[data-toggle="toc"] {
   }
 }
 
+.medium-zoom-overlay,
+.medium-zoom-image--opened {
+  z-index: 999;
+}
 
-/**
- * Source: https://maruan.alshedivat.com/assets/css/main.css
- */
-
-  /* Modified --global-bg-color (used in Maruan's site) to --global-card-bg-color. */
-  /* If you use --global-bg-color, you'll need to change some other CSS. */
-  .list-group-item {
-    background-color: var(--global-card-bg-color); border-color: var(--global-divider-color);
-  }
-  .badge {
-    background-color: var(--global-theme-color); padding-left: 1rem; padding-right: 1rem;
-  }
+#toc-sidebar {
+  z-index: 1;
+}
