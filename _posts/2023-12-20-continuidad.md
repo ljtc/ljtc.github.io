@@ -125,7 +125,7 @@ Para demostrar que alguien es débilmente Kan se usará el inciso 5 del teorema 
 
 
 # Trayectorias
-Sean $$p\colon\widehat{\mathsf{C}}\to\mathsf{Con}$$ precohesivo y $$X\in\widehat{\mathsf{C}}$$. Dados $$x\in XC$$ y $$x'\in XD$$, diremos que el cospan
+Sean $$p\colon\widehat{\mathsf{C}}\to\mathsf{Con}$$ precohesivo y $$E\in\widehat{\mathsf{C}}$$. Dados $$x\in EC$$ y $$x'\in ED$$, diremos que el cospan
 
 $$
 \begin{CD}
@@ -133,9 +133,9 @@ C @>{\gamma_0}>> A @<{\gamma_1}<< D
 \end{CD}
 $$
 
-conecta a $$x$$ con $$x'$$ en $$p_{!}X$$ si existe $$y\in XA$$ tal que $$y\cdot\gamma_0=x$$ y $$y\cdot\gamma_1=x'$$.
+conecta a $$x$$ con $$x'$$ en $$p_{!}E$$ si existe $$y\in EA$$ tal que $$y\cdot\gamma_0=x$$ y $$y\cdot\gamma_1=x'$$.
 
-Además, cuando $$x\in XC$$ y $$x'\in XD$$ estén conectados con un cospan como arriba diremos que están conectados por una trayectoria de longitud $$1$$. Finalmente, $$x$$ y $$x'$$ están conectados si hay una trayectoria de longitud $$n$$ que los conecta, es decir, existe una suceción de cospans
+Además, cuando $$x\in EC$$ y $$x'\in ED$$ estén conectados con un cospan como arriba diremos que están conectados por una trayectoria de longitud $$1$$. Finalmente, $$x$$ y $$x'$$ están conectados si hay una trayectoria de longitud $$n$$ que los conecta, es decir, existe una suceción de cospans
 
 $$
 \begin{CD}
@@ -144,10 +144,59 @@ C @>{\gamma^{1}_{0}}>> A_1 @<{\gamma^{1}_{1}}<< B_1 @>>> \ldots
 \end{CD}
 $$
 
-y elementos $$x_i\in A_{i}$$ y $$y_i\in A_{i}$$ tales que $$y_i\cdot\gamma^{i}_{0}=x_{i-1}$$ y $$y_i\cdot\gamma^{i}_{1}=x_{i}$$, donde $$x_{0}=x$$ y $$x_{n}=x'$$.
+y elementos $$x_i\in EA_{i}$$ y $$y_i\in EA_{i}$$ tales que $$y_i\cdot\gamma^{i}_{0}=x_{i-1}$$ y $$y_i\cdot\gamma^{i}_{1}=x_{i}$$, donde $$x_{0}=x$$ y $$x_{n}=x'$$.
+
+No es difícil ver que la relación "estar conectado" es de equivalencia. Denotemos con $$\sim$$ a dicha relación.
+
+> ##### Proposición
+>
+> Dada $$E\in\widehat{\mathsf{C}}$$, se tiene $$p_{!}E = (\coprod EC) / {\sim}$$.
+{: .block-theorem }
+
+Con este resultado podemos denotar a los elementos del colímite $$p_{!}E$$ como clases de equivalencia de elementos del coproducto, $$[x\in EC]$$, o bin identificar las dos notaciones de clase de equivalencia del colímite.
+
+Ahora ya tenemos el significado completo del inciso 5 del teorema anterior, el cual seguiremos desarrollando para encontrar condiciones para que alguien sea débilmente Kan.
+
+Primero, si $$\mathsf{C}$$ es una categoría con objeto terminal y tal que todo objeto tiene un punto, de tal forma que el morfismo canónico $$p\colon\widehat{\mathsf{C}}\to\mathsf{Con}$$ es precohesivo, entonces basta conectar puntos, es decir elementos de $$p_{*}E=E1$$.
+
+> ##### Proposición
+>
+> Sea $$\mathsf{C}$$ una categoría con objeto terminal y tal que todo objeto tiene un punto. Todo elemento $$x\in EC$$ está conectado con un punto.
+{: .block-theorem }
+
+Si tomamos $$x\in EC$$ y $$c\colon 1\to C$$, entonces es fácil ver que 
+
+$$
+\begin{CD}
+  C @>{\text{id}}>> C @<{c}<< 1
+\end{CD}
+$$
+
+conecta a $$x\in EC$$ con $$x\cdot c\in E1$$.
+
+Gracias a la proposición anterior nos podemos restringir a conectar puntos de una pregavilla.
 
 
 # Conector
+Como el nombre sugiere, un conector es objeto que captura la idea de conexión. Siguiendo la intuición del intervalo unitario $$I=[0,1]$$, un conector debe ser un objeto con dos puntos $$0,1\colon 1\to I$$.
+
+Dado $$p\colon\widehat{\mathsf{C}}\to\mathsf{Con}$$ precohesivo, podemos pensar a una pregavilla $$E\in\widehat{\mathsf{C}}$$ como un espacio. El conjunto de puntos de este espacio es $$p_{*}E = E1$$. Lo que queremos es que $$EI$$ sea al conjunto de trayectorias del espacio, de tal forma que una trayectoria $$y\in EI$$ conecta a su punto inicial $$y\cdot 0$$ con su punto final $$y\cdot 1$$.
+
+Notemos que de la definición de $$p_{*}$$, evaluar en $$1$$, y la de exponencial en $$\widehat{\mathsf{C}}$$ se tiene que si $$C\in\mathsf{C}$$ e identificamos a $$C$$ con el funtor representable $$\mathsf{C}(-,C)$$, entonces $$p_{*}(E^{C})=EC$$. En particular con el objeto bipuntuado $$I$$. Así, para decir que conexiones entre puntos están dadas por trayectorias tenemos la siguiente
+
+> ##### Definición
+>
+> Sea $$\mathsf{C}$$ una categoría tal que el morfismo canónico $$p\colon\widehat{\mathsf{C}}\to\mathsf{Con}$$ es precohesivo. Un objeto bipuntuado $$0,1\colon 1\to I$$ en $$\mathsf{C}$$ es un conector si 
+>
+> <script type="text/tikz">
+> \begin{tikzpicture}
+>     \node at (0,0) {$$X$$};
+>     \draw[->] (0,0) -- (3,0);
+> \end{tikzpicture}
+</script>
+> es un coigualador. Test 4
+{: .block-theorem }
+
 
 # Intervalo abstracto
 
