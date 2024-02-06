@@ -44,6 +44,16 @@ nav_order: 3
           </div>
         </div>
       </li>
+      <li class="list-group-item">
+        <div class="row">
+          <div class="col-sm-9">
+            Revisión de algunas estructuras algebraicas. El objetivo es llegar a anillo y estudiar a los números enteros como un anillo.
+          </div>
+          <div class="col-sm-3">
+          <a href="{% post_url 2024-02-06-S2est %}">Estructuras algebraicas</a>
+          </div>
+        </div>
+      </li>
     </ul>
   </div>
 </div>
