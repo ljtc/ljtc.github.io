@@ -54,6 +54,16 @@ nav_order: 3
           </div>
         </div>
       </li>
+      <li class="list-group-item">
+        <div class="row">
+          <div class="col-sm-9">
+            El anillo de números enteros. En esta sección se mostrarán las propiedades básicas de los números enteros.
+          </div>
+          <div class="col-sm-3">
+          <a href="{% post_url 2024-02-06-S2ent %}">El anillo de números enteros</a>
+          </div>
+        </div>
+      </li>
     </ul>
   </div>
 </div>
