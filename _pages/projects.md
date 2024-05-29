@@ -1,6 +1,6 @@
 ---
 layout: page
-title: cursos
+title: projects
 permalink: /projects/
 description: Algunos cursos que he impartido
 nav: true
