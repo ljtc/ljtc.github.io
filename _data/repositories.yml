@@ -1,12 +1,8 @@
 github_users:
-  - torvalds
-  - alshedivat
+  - ljtc
 
 github_repos:
-  - alshedivat/al-folio
-  - twbs/bootstrap
-  - jekyll/jekyll
-  - jquery/jquery
-  - FortAwesome/Font-Awesome
-  - jpswalsh/academicons
-  - mathjax/MathJax
+  - ljtc/tesisFC
+  - ljtc/mycats
+  - ljtc/Lean
+  - ljtc/AlSup1
