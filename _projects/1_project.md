@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Álgebra Superior 1
-description: Información y notas del curso
+description: 2025-1 Grupo 4002
 img: assets/img/12.jpg
 importance: 1
 category: work
