@@ -60,7 +60,7 @@ blockquote {
   border-left: 5px solid var(--global-theme-color);
   margin: 1.5em 0;
   padding: 1em;
-  font-size: 1.2rem;
+  font-size: 1rem;
 
   p {
     margin-bottom: 0;
@@ -118,6 +118,44 @@ blockquote {
     h5,
     h6 {
       color: var(--global-danger-block-title);
+    }
+  }
+
+  /*Bloque para teoremas*/
+  &.block-thm {
+    border-color: var(--global-thm-block);
+    background-color: var(--global-thm-block-bg);
+
+    p {
+      color: var(--global-thm-block-text);
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      color: var(--global-thm-block-title);
+    }
+  }
+
+  /*Bloque para tikz*/
+  &.block-tikz {
+    border-color: var(--global-tikz-block);
+    background-color: var(--global-tikz-block-bg);
+
+    p {
+      color: var(--global-tikz-block-text);
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      color: var(--global-tikz-block-title);
     }
   }
 }
