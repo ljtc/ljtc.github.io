@@ -18,12 +18,14 @@ formalizando las cosas que veamos.
 Habrá tres tareas y tres exámenes. Las tareas aportan ... de la calificación final y los exámenes ...
 
 ## Temario
-Seguiremos el temario propuesto por la facultad, el cual puede ser consultado [aquí](https://www.fciencias.unam.mx/sites/default/files/temario/7.pdf). Conforma vaya habiendo notas o comentarios se harán links los siguientes puntos.
+Seguiremos el temario propuesto por la facultad, el cual puede ser consultado [aquí](https://www.fciencias.unam.mx/sites/default/files/temario/7.pdf). Conforme vaya habiendo notas o comentarios se harán links los siguientes puntos.
 
 1. Lógica
     * [Proposiciones]({% post_url 2024-05-29-s1prop %})
     * [Primer orden]({% post_url 2024-06-01-s1fol %})
 2. Conjuntos
+    * [Noción intuitiva de conjunto]({% post_url 2024-06-11-con %})
+    * [Operaciones con conjuntos]({% post_url 2024-06-03-s1conop %})
 3. Números naturales
 4. Espacios vectoriales
 5. Matrices

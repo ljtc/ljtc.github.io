@@ -124,7 +124,7 @@ blockquote {
   /*Bloque para teoremas*/
   &.block-thm {
     border-color: var(--global-thm-block);
-    background-color: var(--global-thm-block-bg);
+    background-color: var(--global-bg-color);
 
     p {
       color: var(--global-thm-block-text);
