@@ -26,7 +26,9 @@ Seguiremos el temario propuesto por la facultad, el cual puede ser consultado [a
 2. Conjuntos
     * [Noción intuitiva de conjunto]({% post_url 2024-06-11-con %})
     * [Operaciones con conjuntos]({% post_url 2024-06-03-s1conop %})
-3. Números naturales
-4. Espacios vectoriales
-5. Matrices
-6. Sistemas de ecuaciones
+    * [Familias de conjuntos]({% post_url 2024-06-21-s1fam %})
+3. Relaciones y funciones
+4. Números naturales
+5. Espacios vectoriales
+6. Matrices
+7. Sistemas de ecuaciones
