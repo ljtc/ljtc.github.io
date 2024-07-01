@@ -27,8 +27,32 @@ Seguiremos el temario propuesto por la facultad, el cual puede ser consultado [a
     * [Noción intuitiva de conjunto]({% post_url 2024-06-11-con %})
     * [Operaciones con conjuntos]({% post_url 2024-06-03-s1conop %})
     * [Familias de conjuntos]({% post_url 2024-06-21-s1fam %})
+    * [Producto cartesiano]({% post_url 2024-07-01-s1prodcart %})
 3. Relaciones y funciones
+    * Relaciones, dominio codominio e imagen
+    * Funciones, imágenes directas e inversas
+    * Composición de funciones y funciones inversas
+    * Funciones inyectivas, sobreyectivas y biyectivas
+    * Cardinalidad, conjuntos finitos y conjuntos infinitos
+    * Relaciones de equivalencia y particiones
 4. Números naturales
+    * Inducción matemática
+    * Cálculo combinatorio
+    * Teorema del binomio
 5. Espacios vectoriales
+    * Los espacios $$\mathbb{R}^2$$ y $$\mathbb{R}^3$$
+    * El espacio $$\mathbb{R}^n$$
+    * Subespacios, combinaciones lineales y generadores
+    * Dependencia e independencia lineal
+    * Bases y dimensión
 6. Matrices
+    * Operaciones con matrices
+    * Operaciones elementales
+    * Determinante de una matriz
+    * Rango de una matriz
 7. Sistemas de ecuaciones
+    * Sistemas, soluciones y matriz aumentada
+    * Criterio de existencia de soluciones
+    * Regla de Cramer
+    * Espacio de soluciones de un sistema no-homogéneo
+    * Resolución de sistemas.
