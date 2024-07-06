@@ -29,7 +29,7 @@ Seguiremos el temario propuesto por la facultad, el cual puede ser consultado [a
     * [Familias de conjuntos]({% post_url 2024-06-21-s1fam %})
     * [Producto cartesiano]({% post_url 2024-07-01-s1prodcart %})
 3. Relaciones y funciones
-    * Relaciones, dominio codominio e imagen
+    * [Relaciones, dominio codominio e imagen]({% post_url 2024-07-06-s1rel %})
     * Funciones, imágenes directas e inversas
     * Composición de funciones y funciones inversas
     * Funciones inyectivas, sobreyectivas y biyectivas
