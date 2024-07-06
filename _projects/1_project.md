@@ -56,3 +56,10 @@ Seguiremos el temario propuesto por la facultad, el cual puede ser consultado [a
     * Regla de Cramer
     * Espacio de soluciones de un sistema no-homogéneo
     * Resolución de sistemas.
+
+## Bibliografía
+* {% reference Raggi1990 %}
+* {% reference Laveaga2019 %}
+* {% reference Hulk %}
+
+Además de estos tres libros, en cada tema se irán recomendando otros libros que puedan ser de utilidad.
