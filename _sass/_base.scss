@@ -26,7 +26,7 @@ hr {
 table {
   td,
   th {
-    font-size: 1rem;
+    font-size: 1.1rem;
   }
 
   th {
@@ -60,7 +60,7 @@ blockquote {
   border-left: 5px solid var(--global-theme-color);
   margin: 1.5em 0;
   padding: 1em;
-  font-size: 1rem;
+  font-size: 1.15rem;
 
   p {
     margin-bottom: 0;
@@ -125,7 +125,7 @@ blockquote {
   &.block-thm {
     border-color: var(--global-thm-block);
     background-color: var(--global-bg-color);
-    font-size: 18px;
+    font-size: 1.15rem;
 
     p {
       color: var(--global-thm-block-text);
@@ -145,7 +145,7 @@ blockquote {
   &.block-tikz {
     border-color: var(--global-tikz-block);
     background-color: var(--global-tikz-block-bg);
-    font-size: 1rem;
+    font-size: 1.15rem;
 
     p {
       color: var(--global-tikz-block-text);

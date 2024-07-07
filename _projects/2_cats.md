@@ -28,4 +28,5 @@ Diagrama de producto
 >     A & A \times B \arrow[l, "\pi_A"swap] \arrow[r, "\pi_B"] & B \\
 >     & C\arrow[ul, "f"] \arrow[u, dashed, "h"] \arrow[ur, "g"swap]
 >   \end{tikzcd}
+> </script>
 {:.block-tikz}
