@@ -130,7 +130,7 @@ bing_site_verification: # out your bing-site-verification ID (Bing Webmaster)
 # -----------------------------------------------------------------------------
 
 blog_name: Notas # blog_name will be displayed in your blog page
-blog_description: Aquí estarán las notas de cursos y de otras ideas
+blog_description: Aquí estarán las notas de cursos y otras ideas
 permalink: /blog/:year/:title/
 lsi: false # produce an index for related posts
 
@@ -293,8 +293,8 @@ jekyll-archives:
     tag: "/blog/tag/:name/"
     category: "/blog/category/:name/"
 
-display_tags: ["formatting", "images", "links", "math", "code"] # these tags will be displayed on the front page of your blog
-display_categories: ["blockquotes"] # these categories will be displayed on the front page of your blog
+display_tags: ["math"] # these tags will be displayed on the front page of your blog
+display_categories: ["cursos"] # these categories will be displayed on the front page of your blog
 
 # -----------------------------------------------------------------------------
 # Jekyll Scholar
@@ -305,7 +305,7 @@ scholar:
   first_name: [Albert, A.]
 
   style: chicago-author-date
-  locale: en
+  locale: es-ES
 
   source: /_bibliography/
   bibliography: papers.bib
