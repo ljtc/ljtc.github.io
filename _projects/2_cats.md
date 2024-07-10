@@ -13,7 +13,7 @@ se requiere una buena forma de dibujar diagramas conmutativos y que se vean bien
 en la página. 
 
 [MathJax](https://www.mathjax.org/) tiene incluido
-[amscd](https://docs.mathjax.org/en/latest/input/amscd.html) pero no es
+[amscd](https://ctan.org/pkg/amscd) pero no es
 suficiente ya que sólo se pueden hacer cuadrados. 
 
 También pensé en incluir los diagramas como imágenes, pero no me gusta la idea
@@ -22,7 +22,7 @@ de tener que guardar cientos de imágenes en el repositorio.
 Hasta el momento lo mejor que he encontrado es [TikzJax](https://tikzjax.com/).
 Con este se puede hacer todo lo que hace [TikZ](https://tikz.dev/), aunque no
 estoy seguro que bibliotecas se puedan usar. 
-afortunadamente se puede usar la biblioteca `cd` que es la que necesito para
+Afortunadamente se puede usar la biblioteca `cd` que es la que necesito para
 dibujar los diagramas de esta serie de posts. Como dice en la página de
 [TikzJax](https://tikzjax.com/), todo lo hace el navegador. La desventaja de
 esto es que no todos los navegadores pueden hacer lo necesario para que
