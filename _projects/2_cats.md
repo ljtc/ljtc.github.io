@@ -30,15 +30,5 @@ funcione. Así que si no ves los diagramas, te recomiendo que uses un navegador
 diferente (tal vez incluso en un dispositivo diferente, las versiones para
 celulares no son tan completas como las versiones para computadoras).
 
-Para ver si tu navegador soporta TikzJax puedes desplegar el diagrama de
-producto de abajo.
-
-{% details Diagrama de producto %}
-> <script type="text/tikz">
->   \begin{tikzcd}
->     A & A \times B \arrow[l, "\pi_A"swap] \arrow[r, "\pi_B"] & B \\
->     & C\arrow[ul, "f"] \arrow[u, dashed, "h"] \arrow[ur, "g"swap]
->   \end{tikzcd}
-> </script>
-{:.block-tikz}
-{% enddetails %}
+Para ver si tu navegador soporta TikzJax entra a su
+[página](https://tikzjax.com/).
