@@ -10,7 +10,7 @@ category: work
 En el curso de álgebra superior 1 veremos las bases de lógica, conjuntos y
 álgebra que serán útiles para el resto de la carrera, cualquiera que sea.
 Además, en este curso intentaremos usar un asistente de pruebas para verificar
-la correctud de las demostraciones que vayamos haciendo. Con ese proposito se ha
+la correctud de las demostraciones que vayamos haciendo. Con ese propósito se ha
 hecho un [repositorio en Github](https://github.com/ljtc/as1) donde se irán
 formalizando las cosas que veamos.
 
@@ -32,7 +32,7 @@ Seguiremos el temario propuesto por la facultad, el cual puede ser consultado [a
     * [Relaciones, dominio codominio e imagen]({% post_url 2024-07-06-s1rel %})
     * [Funciones, imágenes directas e inversas]({% post_url 2024-07-11-s1fun %})
     * Composición de funciones y funciones inversas
-    * Funciones inyectivas, subrayectivas y biyectivas
+    * Funciones inyectivas, suprayectivas y biyectivas
     * Cardinalidad, conjuntos finitos y conjuntos infinitos
     * [Relaciones de equivalencia y particiones]({% post_url 2024-07-14-s1eqpar %})
 4. Números naturales
