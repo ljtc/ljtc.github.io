@@ -31,8 +31,8 @@ Seguiremos el temario propuesto por la facultad, el cual puede ser consultado [a
 3. Relaciones y funciones
     * [Relaciones, dominio codominio e imagen]({% post_url 2024-07-06-s1rel %})
     * [Funciones, imágenes directas e inversas]({% post_url 2024-07-11-s1fun %})
-    * [Composición de funciones y funciones inversas]({% post_url 2024-07-13-s1funcomp %})
-    * [Funciones inyectivas, suprayectivas y biyectivas]({% post_url 2024-07-09-s1bi %})
+    * [Composición de funciones y funciones inversas]({% post_url 2024-07-17-s1funcomp %})
+    * [Funciones inyectivas, suprayectivas y biyectivas]({% post_url 2024-07-17-s1biy %})
     * Cardinalidad, conjuntos finitos y conjuntos infinitos
     * [Relaciones de equivalencia y particiones]({% post_url 2024-07-14-s1eqpar %})
 4. Números naturales

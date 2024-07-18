@@ -160,7 +160,7 @@ giscus:
   
 
 # Disqus comments (DEPRECATED)
-disqus_shortname: al-folio # put your disqus shortname
+disqus_shortname: # put your disqus shortname
 # https://help.disqus.com/en/articles/1717111-what-s-a-shortname
 
 # External sources.
@@ -294,15 +294,15 @@ jekyll-archives:
     category: "/blog/category/:name/"
 
 display_tags: ["math"] # these tags will be displayed on the front page of your blog
-display_categories: ["cursos"] # these categories will be displayed on the front page of your blog
+display_categories: ["superior1"] # these categories will be displayed on the front page of your blog
 
 # -----------------------------------------------------------------------------
 # Jekyll Scholar
 # -----------------------------------------------------------------------------
 
 scholar:
-  last_name: [Einstein]
-  first_name: [Albert, A.]
+  last_name: [Turcio]
+  first_name: [Luis]
 
   style: chicago-author-date
   locale: es-ES
