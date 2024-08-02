@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Álg Superior 1
+title: Superior 1
 description: 2025-1 Grupo 4002
 img: assets/img/12.jpg
 importance: 1
@@ -33,10 +33,10 @@ Seguiremos el temario propuesto por la facultad, el cual puede ser consultado [a
     * [Funciones, imágenes directas e inversas]({% post_url 2024-07-11-s1fun %})
     * [Composición de funciones y funciones inversas]({% post_url 2024-07-17-s1funcomp %})
     * [Funciones inyectivas, suprayectivas y biyectivas]({% post_url 2024-07-17-s1biy %})
-    * Cardinalidad, conjuntos finitos y conjuntos infinitos
+    * [Cardinalidad, conjuntos finitos e infinitos]({% post_url 2024-07-25-s1card %})
     * [Relaciones de equivalencia y particiones]({% post_url 2024-07-14-s1eqpar %})
 4. Números naturales
-    * Inducción matemática
+    * [Inducción matemática]({% post_url 2024-07-31-s1ind %})
     * [Cálculo combinatorio]({% post_url 2024-07-17-s1com %})
     * Teorema del binomio
 5. Espacios vectoriales

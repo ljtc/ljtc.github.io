@@ -3,7 +3,7 @@ layout: page
 title: Categorías
 description: Lo básico de teoría de categorías
 img: assets/img/6.jpg
-importance: 2
+importance: 1
 category: fun
 tikzjax: true
 ---
