@@ -1,0 +1,70 @@
+---
+layout: page
+title: Lean
+description: Intentaremos usar un asistente de pruebas para demostrar teoremas
+img: assets/img/6.jpg
+importance: 2
+category: fun
+---
+
+El objetivo de este proyecto es aprender a usar el asistente de pruebas
+[Lean](https://lean-lang.org/) y ver si la interacción con él es útil para
+"aprender a demostrar".
+
+
+## Instalación
+
+
+### Instalación de VS Code
+
+1. Ir a la página de [visual studio](https://code.visualstudio.com/)
+2. Descargar el instalador para el sistema operativo correspondiente
+3. Seguir las instrucciones para instalar la aplicación
+En mi caso, en Ubuntu, después de descargar el archivo deb en una terminal escribo:
+```
+sudo dpkg -i code_1.92.0-1722473020_amd64.deb
+```
+la versión puede cambiar, basta con escribir las primeras letras y dar tab para
+que se complete.
+
+
+## Instalación de git
+
+Para ver de qué se trata git y github revisar esta [presentación](https://jpyamamoto.github.io/github-workshop/#/) .
+
+1. El proceso de instalación depende del sistema operativo que uses:
+	+ para [Linux](https://git-scm.com/download/linux)
+	+ para [Mac](https://git-scm.com/download/mac)
+	+ para [Winbugs](https://gitforwindows.org/)
+2. Hacer una cuenta en [github](https://github.com/)
+3. Después de la instalación se tiene que configurar, asociar nuestro nombre y correo de la cuenta de github
+	```
+	git config --global user.name "mi nombre de usraio"
+	git config --global user.email "mi correo electrónico"
+	```
+Todo esto y más aparece en la presentación mencionada arriba. Así, que es buena
+idea revisarla.
+
+
+## Instalación de curl
+
+Para poder usar la biblioteca de matemáticas de Lean hay que instalar [curl](https://curl.se/)
++ En Linux se puede hacer desde la terminal. Por ejemplo, en Ubuntu se instala con
+	```
+	sudo apt install curl
+	```
++ En Mac, con [homebrew](https://brew.sh/) se instala con el comando
+	```
+	brew install curl
+	```
++ En Winbugs, si no está instalado hay que seguir las instrucciones del sitio de [curl](https://curl.se/windows/)
+
+
+## Instalación de Lean
+
+Seguiremos las [instrucciones oficiales](https://lean-lang.org/lean4/doc/quickstart.html) para la instalación
+1. Abrir VS Code
+2. Buscar la extensión "lean4" e instalarla
+3. Seguir las instrucciones del *Setup Guide*. Si no se abre después de haber instalado la extensión, dar clic en el $$\forall$$ en la parte superior derecha de la ventana y luego ir a *Documentation > Docs: Show Setup Guide*.
+	1. La primera parte es instalar las dependencias. Estas son git y curl, que ya fueron instaladas en los pasos previos
+	2. La parte importante está en *Install Lean Version Manager*. En esta parte simplemente hay que dar clic en el botón de instalar
