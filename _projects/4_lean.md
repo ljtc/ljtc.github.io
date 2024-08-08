@@ -42,8 +42,9 @@ Para ver de qué se trata git y github revisar esta [presentación](https://jpya
 	git config --global user.name "mi nombre de usraio"
 	git config --global user.email "mi correo electrónico"
 	```
-Todo esto y más aparece en la presentación mencionada arriba. Así, que es buena
-idea revisarla.
+Todo esto y más aparece en la presentación mencionada arriba. Además incluye
+explicaciones y ejemplos de cómo usar git y github. Por lo tanto, se recomienda
+ampliamente revisar la presentación. 
 
 
 ## Instalación de curl
@@ -67,4 +68,44 @@ Seguiremos las [instrucciones oficiales](https://lean-lang.org/lean4/doc/quickst
 2. Buscar la extensión "lean4" e instalarla
 3. Seguir las instrucciones del *Setup Guide*. Si no se abre después de haber instalado la extensión, dar clic en el $$\forall$$ en la parte superior derecha de la ventana y luego ir a *Documentation > Docs: Show Setup Guide*.
 	1. La primera parte es instalar las dependencias. Estas son git y curl, que ya fueron instaladas en los pasos previos
-	2. La parte importante está en *Install Lean Version Manager*. En esta parte simplemente hay que dar clic en el botón de instalar
+	2. La parte importante está en *Install Lean Version Manager*. En esta parte
+	simplemente hay que dar clic en el botón de instalar
+	
+
+## Uso de Lean en VS Code
+
+Técnicamente podemos acceder a todo los referente a Lean desde el símbolo
+$$\forall$$ en la parte superior derecha de la ventana de VS Code. 
+
+Algo común es acceder a la documentación. Por ejemplo, en
+*Documentation > Docs: Show Documentation Resources*  se puede acceder a las dos
+guías que más me han gustado, *Mathematics in Lean* y *Theorem Proving in Lean*.
+En ese mismo lugar se puede acceder a *Functional Programming in
+Lean*. Para mí no fue tan divertido como las otras dos, pero para alguien de
+computación que tal vez necesite aprender algún lenguaje funcional puede se de
+utilidad. 
+
+Otra cosa común que hacer es crear un proyecto. Hay dos opciones, la
+*Standalone* y usando la librería de matemáticas *Mathlib*. La segunda opción es
+la que estaremos usando, aunque no lo haremos de esa manera.
+
+Para "instalar" el proyecto con el que estaremos trabajando en una terminal hay
+que ir al directorio donde queremos que viva el proyecto, por ejemplo si
+quisiera guardarlo en la carpeta Documentos, entonces hay que escribir
+```
+cd Documentos
+```
+Después hay que clonar el repositorio de github, por ejemplo con
+```
+git clone https://github.com/ljtc/cursoLean.git
+```
+Luego hay que entrar a la carpeta del proyecto
+```
+cd cursoLean
+```
+y finalmente hay que "instalar" la biblioteca de matemáticas
+```
+lake exe cache get
+```
+
+Ahora sí, ya se puede abrir la carpeta en VS Code y empezar a trabajar.
