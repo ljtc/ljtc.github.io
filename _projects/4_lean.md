@@ -32,12 +32,20 @@ que se complete.
 
 Para ver de qué se trata git y github revisar esta [presentación](https://jpyamamoto.github.io/github-workshop/#/) .
 
-1. El proceso de instalación depende del sistema operativo que uses:
-	+ para [Linux](https://git-scm.com/download/linux)
-	+ para [Mac](https://git-scm.com/download/mac)
-	+ para [Winbugs](https://gitforwindows.org/)
-2. Hacer una cuenta en [github](https://github.com/)
-3. Después de la instalación se tiene que configurar, asociar nuestro nombre y correo de la cuenta de github
+El proceso de instalación depende del sistema operativo que uses:
+* para [Linux](https://git-scm.com/download/linux)
+* para [Mac](https://git-scm.com/download/mac)
+* para [Winbugs](https://gitforwindows.org/)
+
+En Mac se recomienda usar [homebrew](https://brew.sh/) para instalar git.
+Actualmente tiene más paquetes que MacPorts, más actualizaciones y es más fácil
+de usar.
+
+Para usar Lean no es necesario tener una cuenta en github, pero es muy útil así
+que se recomienda hacer una.
+
+1. Hacer una cuenta en [github](https://github.com/)
+2. Después de la instalación se tiene que configurar, asociar nuestro nombre y correo de la cuenta de github
 	```
 	git config --global user.name "mi nombre de usraio"
 	git config --global user.email "mi correo electrónico"
@@ -109,3 +117,6 @@ lake exe cache get
 ```
 
 Ahora sí, ya se puede abrir la carpeta en VS Code y empezar a trabajar.
+
+De cualquier forma se puede ver el [proyecto](https://github.com/ljtc/cursoLean)
+desde la página de github.
