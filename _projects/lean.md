@@ -2,7 +2,7 @@
 layout: page
 title: Lean
 description: Intentaremos usar un asistente de pruebas para demostrar teoremas
-img: assets/img/6.jpg
+img: assets/img/4.jpg
 importance: 2
 category: fun
 ---
