@@ -11,6 +11,12 @@ El objetivo de este proyecto es aprender a usar el asistente de pruebas
 [Lean](https://lean-lang.org/) y ver si la interacción con él es útil para
 "aprender a demostrar".
 
+## Sesiones
+
+Las sesiones serán en línea y se llevarán a cabo los miércoles a las 5:00 pm en
+[zoom](https://cuaieed-unam.zoom.us/j/84254919471). La primera sesión será el
+miércoles 21 de agosto.
+
 
 ## Instalación
 
@@ -120,9 +126,3 @@ Ahora sí, ya se puede abrir la carpeta en VS Code y empezar a trabajar.
 
 De cualquier forma se puede ver el [proyecto](https://github.com/ljtc/cursoLean)
 desde la página de github.
-
-
-## Sesiones
-
-Las sesiones serán en línea y se llevarán a cabo los miércoles a las 5:00 pm en
-[zoom](https://cuaieed-unam.zoom.us/j/84254919471)
