@@ -94,7 +94,7 @@ computación que tal vez necesite aprender algún lenguaje funcional puede se de
 utilidad. 
 
 Otra cosa común que hacer es crear un proyecto. Hay dos opciones, la
-*Standalone* y usando la librería de matemáticas *Mathlib*. La segunda opción es
+*Standalone* y usando la biblioteca de matemáticas *Mathlib*. La segunda opción es
 la que estaremos usando, aunque no lo haremos de esa manera.
 
 Para "instalar" el proyecto con el que estaremos trabajando en una terminal hay
@@ -120,3 +120,9 @@ Ahora sí, ya se puede abrir la carpeta en VS Code y empezar a trabajar.
 
 De cualquier forma se puede ver el [proyecto](https://github.com/ljtc/cursoLean)
 desde la página de github.
+
+
+## Sesiones
+
+Las sesiones serán en línea y se llevarán a cabo los miércoles a las 5:00 pm en
+[zoom](https://cuaieed-unam.zoom.us/j/84254919471)
