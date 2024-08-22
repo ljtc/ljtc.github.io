@@ -18,10 +18,7 @@ Las sesiones serán en línea y se llevarán a cabo los miércoles a las 5:00 pm
 miércoles 21 de agosto.
 
 
-## Instalación
-
-
-### Instalación de VS Code
+## Instalación de VS Code
 
 1. Ir a la página de [visual studio](https://code.visualstudio.com/)
 2. Descargar el instalador para el sistema operativo correspondiente
@@ -34,21 +31,69 @@ la versión puede cambiar, basta con escribir las primeras letras y dar tab para
 que se complete.
 
 
-## Instalación de git
+## Instalación de Lean
 
-Para ver de qué se trata git y github revisar esta [presentación](https://jpyamamoto.github.io/github-workshop/#/) .
+Seguiremos las [instrucciones oficiales](https://lean-lang.org/lean4/doc/quickstart.html) para la instalación
+1. Abrir VS Code
+2. Buscar la extensión "lean4" e instalarla
+3. Seguir las instrucciones del *Setup Guide*. Si no se abre después de haber instalado la extensión, dar clic en el $$\forall$$ en la parte superior derecha de la ventana y luego ir a *Documentation > Docs: Show Setup Guide*.
+	1. La primera parte es instalar las dependencias. 
+	2. La parte importante está en *Install Lean Version Manager*. En esta parte
+	simplemente hay que dar clic en el botón de instalar.
 
-El proceso de instalación depende del sistema operativo que uses:
-* para [Linux](https://git-scm.com/download/linux)
-* para [Mac](https://git-scm.com/download/mac)
-* para [Winbugs](https://gitforwindows.org/)
+Dependiendo del sistema operativo serán las dependencias que se tengan que
+instalar.
 
-En Mac se recomienda usar [homebrew](https://brew.sh/) para instalar git.
-Actualmente tiene más paquetes que MacPorts, más actualizaciones y es más fácil
-de usar.
+### En Winbugs
+La única dependencia para Winbugs es [git](https://gitforwindows.org/). Para
+instalarlo hay que seguir el enlace y descargar el instalador.
+
+Después de instalar git ya se puede seguir con las instrucciones del 
+*Setup Guide*.
+
+
+### En Mac
+Las dependencias son [git](https://git-scm.com/download/mac) y
+[curl](https://curl.se/). Una forma fácil de instalarlos es con 
+[homebrew](https://brew.sh/). Para esto hay que abrir una terminal, hay que
+presionar `cmd + espacio` y escribir terminal. Luego, en la terminal hay que
+escribir:
+```
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+```
+Con ese comando se instalara homebrew. Luego, se instala git con
+```
+brew install git
+```
+Finalmente, se instala curl con
+```
+brew install curl
+```
+
+Después de instalar las dependencias ya se puede seguir con las instrucciones
+del *Setup Guide*.
+
+
+### En Linux
+
+Las dependencias son [git](https://git-scm.com/download/linux) y
+[curl](https://curl.se/). Para instalarlas hay que abrir una terminal y escribir
+el comando correspondiente a la distribución de Linux que se esté usando. Por
+ejemplo, en las distribuciones basadas en Debian, como Ubuntu, se instalan con
+```
+sudo apt install git curl
+```
+
+Después de instalar las dependencias ya se puede seguir con las instrucciones
+del *Setup Guide*.
+
+
+## git y GitHub (opcional)
 
 Para usar Lean no es necesario tener una cuenta en github, pero es muy útil así
-que se recomienda hacer una.
+que se recomienda hacer una. Una explicación de cómo usar git y github se puede
+encontrar en la siguiente
+[presentación](https://jpyamamoto.github.io/github-workshop/#/). 
 
 1. Hacer una cuenta en [github](https://github.com/)
 2. Después de la instalación se tiene que configurar, asociar nuestro nombre y correo de la cuenta de github
@@ -60,31 +105,6 @@ Todo esto y más aparece en la presentación mencionada arriba. Además incluye
 explicaciones y ejemplos de cómo usar git y github. Por lo tanto, se recomienda
 ampliamente revisar la presentación. 
 
-
-## Instalación de curl
-
-Para poder usar la biblioteca de matemáticas de Lean hay que instalar [curl](https://curl.se/)
-+ En Linux se puede hacer desde la terminal. Por ejemplo, en Ubuntu se instala con
-	```
-	sudo apt install curl
-	```
-+ En Mac, con [homebrew](https://brew.sh/) se instala con el comando
-	```
-	brew install curl
-	```
-+ En Winbugs, si no está instalado hay que seguir las instrucciones del sitio de [curl](https://curl.se/windows/)
-
-
-## Instalación de Lean
-
-Seguiremos las [instrucciones oficiales](https://lean-lang.org/lean4/doc/quickstart.html) para la instalación
-1. Abrir VS Code
-2. Buscar la extensión "lean4" e instalarla
-3. Seguir las instrucciones del *Setup Guide*. Si no se abre después de haber instalado la extensión, dar clic en el $$\forall$$ en la parte superior derecha de la ventana y luego ir a *Documentation > Docs: Show Setup Guide*.
-	1. La primera parte es instalar las dependencias. Estas son git y curl, que ya fueron instaladas en los pasos previos
-	2. La parte importante está en *Install Lean Version Manager*. En esta parte
-	simplemente hay que dar clic en el botón de instalar
-	
 
 ## Uso de Lean en VS Code
 
@@ -103,24 +123,82 @@ Otra cosa común que hacer es crear un proyecto. Hay dos opciones, la
 *Standalone* y usando la biblioteca de matemáticas *Mathlib*. La segunda opción es
 la que estaremos usando, aunque no lo haremos de esa manera.
 
-Para "instalar" el proyecto con el que estaremos trabajando en una terminal hay
-que ir al directorio donde queremos que viva el proyecto, por ejemplo si
-quisiera guardarlo en la carpeta Documentos, entonces hay que escribir
-```
-cd Documentos
-```
-Después hay que clonar el repositorio de github, por ejemplo con
+Para "instalar" el proyecto con el que estaremos trabajando hay que abrir VS
+Code y abrir la carpeta donde se quiera guardar el proyecto.
+
+Usare una carpeta llamada `Ejemplo` para guardar el proyecto. Para abrir la
+carpeta hay que dar clic en *Archivo > Abrir Carpeta* y seleccionar la carpeta.
+
+<div>
+  {% include figure.liquid path="assets/img/lean/carpeta.png" class="img-fluid rounded z-depth-1" zoomable=true %}
+</div>
+<div class="caption">
+    La carpeta `Ejemplo` se puede ver en el panel de la izquierda.
+</div>
+
+Después de abrir la carpeta hay que abrir una terminal. Se puede hacer desde la pestaña
+"Terminal" en la parte superior de la ventana o con `ctrl + j` (o `cmd + j` en
+Mac). Esto abrirá un panel en la parte inferior de la ventana.
+
+<div>
+  {% include figure.liquid path="assets/img/lean/terminal.png" class="img-fluid rounded z-depth-1" zoomable=true %}
+</div>
+<div class="caption">
+    La terminal aparece en la parte inferior de la ventana.
+</div>
+
+Hay que asegurarse que la terminal está `bash`. Esto está en la parte derecha
+del panel de la terminal. Si no está en `bash` hay dar clic en el símbolo hacia
+abajo a la derecha de + y seleccionar `bash`.
+
+<div>
+  {% include figure.liquid path="assets/img/lean/bash.png" class="img-fluid rounded z-depth-1" zoomable=true %}
+</div>
+<div class="caption">
+    La terminal debe estar en `bash`.
+</div>
+
+Ya que está en `bash` hay que clonar el proyecto con el siguiente comando
 ```
 git clone https://github.com/ljtc/cursoLean.git
 ```
-Luego hay que entrar a la carpeta del proyecto
+
+En el panel de la izquierda se puede ver que se creó una carpeta llamada
+`cursoLean`. Es importante no intentar desplegar los archivos de la carpeta.
+
+<div>
+  {% include figure.liquid path="assets/img/lean/clone.png" class="img-fluid rounded z-depth-1" zoomable=true %}
+</div>
+<div class="caption">
+    La carpeta `cursoLean` se puede ver en el panel de la izquierda, debajo de `Ejemplo`.
+</div>
+
+Antes de desplegar los archivos hay que cambiar de directorio con el comando
 ```
 cd cursoLean
 ```
-y finalmente hay que "instalar" la biblioteca de matemáticas
+
+<div>
+  {% include figure.liquid path="assets/img/lean/cd.png" class="img-fluid rounded z-depth-1" zoomable=true %}
+</div>
+<div class="caption">
+    La terminal se ha movido a la carpeta `cursoLean`.
+</div>
+
+Finalmente hay que "instalar" la biblioteca de matemáticas con el comando
 ```
 lake exe cache get
 ```
+
+Este comando tarda algunos minutos en terminar. Si todo sale bien, se verá un
+mensaje que dice `Completed successfully!`
+
+<div>
+  {% include figure.liquid path="assets/img/lean/lake.png" class="img-fluid rounded z-depth-1" zoomable=true %}
+</div>
+<div class="caption">
+    `lake` ha terminado de instalar la biblioteca de matemáticas.
+</div>
 
 Ahora sí, ya se puede abrir la carpeta en VS Code y empezar a trabajar.
 
