@@ -21,23 +21,23 @@ propuesto por la facultad. Conforme vaya habiendo notas o comentarios se harán
 links los siguientes puntos.
 
 1. Lógica
-    * [Proposiciones]({% post_url 2024-05-29-s1prop %})
-    * [Primer orden]({% post_url 2024-06-01-s1fol %})
+    * [Proposiciones]({% post_url sup1/2024-05-29-s1prop %})
+    * [Primer orden]({% post_url sup1/2024-06-01-s1fol %})
 2. Conjuntos
-    * [Noción intuitiva de conjunto]({% post_url 2024-06-11-con %})
-    * [Operaciones con conjuntos]({% post_url 2024-06-03-s1conop %})
-    * [Familias de conjuntos]({% post_url 2024-06-21-s1fam %})
-    * [Producto cartesiano]({% post_url 2024-07-01-s1prodcart %})
+    * [Noción intuitiva de conjunto]({% post_url sup1/2024-06-11-con %})
+    * [Operaciones con conjuntos]({% post_url sup1/2024-06-03-s1conop %})
+    * [Familias de conjuntos]({% post_url sup1/2024-06-21-s1fam %})
+    * [Producto cartesiano]({% post_url sup1/2024-07-01-s1prodcart %})
 3. Relaciones y funciones
-    * [Relaciones, dominio codominio e imagen]({% post_url 2024-07-06-s1rel %})
-    * [Funciones, imágenes directas e inversas]({% post_url 2024-07-11-s1fun %})
-    * [Composición de funciones y funciones inversas]({% post_url 2024-07-17-s1funcomp %})
-    * [Funciones inyectivas, suprayectivas y biyectivas]({% post_url 2024-07-17-s1biy %})
-    * [Cardinalidad, conjuntos finitos e infinitos]({% post_url 2024-07-25-s1card %})
-    * [Relaciones de equivalencia y particiones]({% post_url 2024-07-14-s1eqpar %})
+    * [Relaciones, dominio codominio e imagen]({% post_url sup1/2024-07-06-s1rel %})
+    * [Funciones, imágenes directas e inversas]({% post_url sup1/2024-07-11-s1fun %})
+    * [Composición de funciones y funciones inversas]({% post_url sup1/2024-07-17-s1funcomp %})
+    * [Funciones inyectivas, suprayectivas y biyectivas]({% post_url sup1/2024-07-17-s1biy %})
+    * [Cardinalidad, conjuntos finitos e infinitos]({% post_url sup1/2024-07-25-s1card %})
+    * [Relaciones de equivalencia y particiones]({% post_url sup1/2024-07-14-s1eqpar %})
 4. Números naturales
-    * [Inducción matemática]({% post_url 2024-07-31-s1ind %})
-    * [Cálculo combinatorio]({% post_url 2024-07-17-s1com %})
+    * [Inducción matemática]({% post_url sup1/2024-07-31-s1ind %})
+    * [Cálculo combinatorio]({% post_url sup1/2024-07-17-s1com %})
     * Teorema del binomio
 5. Espacios vectoriales
     * Los espacios $$\mathbb{R}^2$$ y $$\mathbb{R}^3$$
