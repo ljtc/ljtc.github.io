@@ -23,6 +23,7 @@ links los siguientes puntos.
 1. Lógica
     * [Proposiciones]({% post_url sup1/2024-05-29-s1prop %})
     * [Primer orden]({% post_url sup1/2024-06-01-s1fol %})
+    * [Equivalencias e implicaciones lógicas]({% post_url sup1/2024-09-17-s1eqimp %})
 2. Conjuntos
     * [Noción intuitiva de conjunto]({% post_url sup1/2024-06-11-con %})
     * [Operaciones con conjuntos]({% post_url sup1/2024-06-03-s1conop %})
