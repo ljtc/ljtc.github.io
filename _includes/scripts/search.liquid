@@ -2,10 +2,10 @@
   <script type="module" src="{{ '/assets/js/search/ninja-keys.min.js' | relative_url | bust_file_cache }}"></script>
   <ninja-keys hideBreadcrumbs noAutoLoadMdIcons placeholder="Type to start searching"></ninja-keys>
   <script>
-    let searchTheme = determineComputedTheme();
+    let theme = determineComputedTheme();
     const ninjaKeys = document.querySelector('ninja-keys');
 
-    if (searchTheme === 'dark') {
+    if (theme === 'dark') {
       ninjaKeys.classList.add('dark');
     } else {
       ninjaKeys.classList.remove('dark');
@@ -13,9 +13,9 @@
 
     const openSearchModal = () => {
       // collapse navbarNav if expanded on mobile
-      const $navbarNav = $('#navbarNav');
-      if ($navbarNav.hasClass('show')) {
-        $navbarNav.collapse('hide');
+      const navbarNav = document.querySelector('.navbar-collapse');
+      if (navbarNav.classList.contains('show')) {
+        navbarNav.classList.remove('show');
       }
       ninjaKeys.open();
     };
@@ -27,11 +27,11 @@
     // add the home and posts menu items
     ninja.data = [
       {%- for page in site.pages -%}
-        {%- if page.permalink == '/' -%}{%- assign about_title = page.title | strip -%}{%- endif -%}
+        {%- if page.permalink == '/' -%}{%- assign about_title = page.title -%}{%- endif -%}
       {%- endfor -%}
       {
         id: "nav-{{ about_title | slugify }}",
-        title: "{{ about_title | truncatewords: 13 }}",
+        title: "{{ about_title }}",
         section: "Navigation",
         handler: () => {
           window.location.href = "{{ '/' | relative_url }}";
@@ -44,11 +44,11 @@
             {%- for child in p.children -%}
               {%- unless child.title == 'divider' -%}
                 {
-                  {%- assign title = child.title | escape | strip -%}
+                  {%- assign title = child.title | escape -%}
                   {%- if child.permalink contains "/blog/" -%}{%- assign url = "/blog/" -%} {%- else -%}{%- assign url = child.url -%}{%- endif -%}
                   id: "dropdown-{{ title | slugify }}",
-                  title: "{{ title | truncatewords: 13 }}",
-                  description: "{{ child.description | strip_html | strip_newlines | escape | strip }}",
+                  title: "{{ title }}",
+                  description: "{{ child.description | strip_html | strip_newlines | escape }}",
                   section: "Dropdown",
                   handler: () => {
                     window.location.href = "{{ url | relative_url }}";
@@ -59,11 +59,11 @@
 
           {%- else -%}
             {
-              {%- assign title = p.title | escape | strip -%}
+              {%- assign title = p.title | escape -%}
               {%- if p.permalink contains "/blog/" -%}{%- assign url = "/blog/" -%} {%- else -%}{%- assign url = p.url -%}{%- endif -%}
               id: "nav-{{ title | slugify }}",
-              title: "{{ title | truncatewords: 13 }}",
-              description: "{{ p.description | strip_html | strip_newlines | escape | strip }}",
+              title: "{{ title }}",
+              description: "{{ p.description | strip_html | strip_newlines | escape }}",
               section: "Navigation",
               handler: () => {
                 window.location.href = "{{ url | relative_url }}";
@@ -74,49 +74,35 @@
       {%- endfor -%}
       {%- for post in site.posts -%}
         {
-          {%- assign title = post.title | escape | strip -%}
+          {%- assign title = post.title | escape -%}
           id: "post-{{ title | slugify }}",
-          {% if post.redirect == blank %}
-            title: "{{ title | truncatewords: 13 }}",
-          {% elsif post.redirect contains '://' %}
-            title: '{{ title | truncatewords: 13 }} <svg width="1.2rem" height="1.2rem" top=".5rem" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg"><path d="M17 13.5v6H5v-12h6m3-3h6v6m0-6-9 9" class="icon_svg-stroke" stroke="#999" stroke-width="1.5" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round"></path></svg>',
-          {% else %}
-            title: "{{ title | truncatewords: 13 }}",
-          {% endif %}
-          description: "{{ post.description | strip_html | strip_newlines | escape | strip }}",
+          title: "{{ title }}",
+          description: "{{ post.description | strip_html | strip_newlines | escape }}",
           section: "Posts",
           handler: () => {
-            {% if post.redirect == blank %}
-              window.location.href = "{{ post.url | relative_url }}";
-            {% elsif post.redirect contains '://' %}
-              window.open("{{ post.redirect }}", "_blank");
-            {% else %}
-              window.location.href = "{{ post.redirect | relative_url }}";
-            {% endif %}
+            window.location.href = "{{ post.url | relative_url }}";
           },
         },
       {%- endfor -%}
       {%- for collection in site.collections -%}
-        {%- if collection.label != 'posts' -%}
-          {%- for item in collection.docs -%}
-            {
-              {%- if item.inline -%}
-                {%- assign title = item.content | newline_to_br | replace: "<br />", " " | replace: "<br/>", " " | strip_html | strip_newlines | escape | strip -%}
-              {%- else -%}
-                {%- assign title = item.title | newline_to_br | replace: "<br />", " " | replace: "<br/>", " " | strip_html | strip_newlines | escape | strip -%}
-              {%- endif -%}
-              id: "{{ collection.label }}-{{ title | slugify }}",
-              title: '{{ title | escape | emojify | truncatewords: 13 }}',
-              description: "{{ item.description | strip_html | strip_newlines | escape | strip }}",
-              section: "{{ collection.label | capitalize }}",
-              {%- unless item.inline -%}
-                handler: () => {
-                  window.location.href = "{{ item.url | relative_url }}";
-                },
-              {%- endunless -%}
-            },
-          {%- endfor -%}
-        {%- endif -%}
+        {%- for item in collection.docs -%}
+          {
+            {%- if item.inline -%}
+              {%- assign title = item.content | remove: '<p>' | remove: '</p>' | escape | strip -%}
+            {%- else -%}
+              {%- assign title = item.title | escape -%}
+            {%- endif -%}
+            id: "{{ collection.label }}-{{ title | slugify }}",
+            title: '{{ title | emojify }}',
+            description: "{{ item.description | strip_html | strip_newlines | escape }}",
+            section: "{{ collection.label | capitalize }}",
+            {%- unless item.inline -%}
+              handler: () => {
+                window.location.href = "{{ item.url | relative_url }}";
+              },
+            {%- endunless -%}
+          },
+        {%- endfor -%}
       {%- endfor -%}
       {%- if site.socials_in_search -%}
         {%- if site.email -%}
@@ -200,7 +186,6 @@
           },
         {%- endif -%}
         {%- if site.osf_id -%}
-          {
             id: 'socials-open-science-framework',
             title: 'Open Science Framework',
             section: 'Socials',
@@ -215,7 +200,7 @@
             title: 'ResearchGate',
             section: 'Socials',
             handler: () => {
-              window.open("https://www.researchgate.net/profile/{{ site.research_gate_profile }}/", "_blank");
+              window.open("https://www.researchgate.net/profile/{{site.research_gate_profile}}/", "_blank");
             },
           },
         {%- endif -%}
@@ -225,7 +210,7 @@
             title: 'IEEE Xplore',
             section: 'Socials',
             handler: () => {
-              window.open("https://ieeexplore.ieee.org/author/{{ site.ieee_id }}/", "_blank");
+              window.open("https://ieeexplore.ieee.org/author/{{site.ieee_id}}/", "_blank");
             },
           },
         {%- endif -%}
@@ -235,7 +220,7 @@
             title: 'ACM DL',
             section: 'Socials',
             handler: () => {
-              window.open("https://dl.acm.org/profile/{{ site.acm_id }}/", "_blank");
+              window.open("https://dl.acm.org/profile/{{site.acm_id}}/", "_blank");
             },
           },
         {%- endif -%}
@@ -245,7 +230,7 @@
             title: 'Scopus',
             section: 'Socials',
             handler: () => {
-              window.open("https://www.scopus.com/authid/detail.uri?authorId={{ site.scopus_id }}", "_blank");
+              window.open("https://www.scopus.com/authid/detail.uri?authorId={{site.scopus_id}}", "_blank");
             },
           },
         {%- endif -%}
@@ -575,5 +560,4 @@
       {%- endif -%}
     ];
   </script>
-  <script src="{{ '/assets/js/shortcut-key.js' | relative_url | bust_file_cache }}"></script>
 {% endif %}
