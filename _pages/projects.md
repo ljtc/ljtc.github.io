@@ -1,10 +1,10 @@
 ---
 layout: page
-title: projects
+title: cursos
 permalink: /projects/
-description: A growing collection of your cool projects.
+description: Aquí organizaré los cursos para la facultad
 nav: true
-nav_order: 3
+nav_order: 2
 display_categories: [work, fun]
 horizontal: false
 ---

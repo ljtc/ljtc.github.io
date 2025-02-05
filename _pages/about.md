@@ -2,18 +2,18 @@
 layout: about
 title: about
 permalink: /
-subtitle: <a href='#'>Affiliations</a>. Address. Contacts. Motto. Etc.
+# subtitle: <a href='#'>Affiliations</a>. Address. Contacts. Moto. Etc.
 
 profile:
   align: right
-  image: prof_pic.jpg
-  image_circular: false # crops the image to make it circular
+  image: me.jpg
+  image_circular: true # crops the image to make it circular
   more_info: >
-    <p>555 your office number</p>
-    <p>123 your address street</p>
-    <p>Your City, State 12345</p>
+    <p>Prof de asignatura B</p>
+    <p>Facultad de Ciencias,</p>
+    <p>UNAM</p>
 
-selected_papers: true # includes a list of papers marked as "selected={true}"
+selected_papers: false # includes a list of papers marked as "selected={true}"
 social: true # includes social icons at the bottom of the page
 
 announcements:
@@ -27,8 +27,18 @@ latest_posts:
   limit: 3 # leave blank to include all the blog posts
 ---
 
-Write your biography here. Tell the world about yourself. Link to your favorite [subreddit](http://reddit.com). You can put a picture in, too. The code is already in, just name your picture `prof_pic.jpg` and put it in the `img/` folder.
+Soy matemático de la UNAM. Mis intereses son, principalmente, la teoría de
+categorías y, más específicamente la teoría de topos encaminada al estudio del
+concepto de espacio.
 
-Put your address / P.O. box / other info right below your picture. You can also disable any of these elements by editing `profile` property of the YAML header of your `_pages/about.md`. Edit `_bibliography/papers.bib` and Jekyll will render your [publications page](/al-folio/publications/) automatically.
+También me interesan las aplicaciones de la teoría de categorías a otras áreas,
+por ejemplo, en computación, física y biología. En computación he estado
+estudiando la correspodencia de Curry-Howard-Lambeck y cómo ayuda a interactuar
+con los asistentes de pruebas, en mi caso [L∃∀N](https://lean-lang.org/). En
+física he estado leyendo *Categories for Continuum Physics*, el cual puede
+servir como motivación para el estudio del concepto de espacio. En biología me
+interesa el estudio de sistemas abiertos, procesos irreversibles y
+autoregulación-evolución, como en Prigogine y Kauffman.
 
-Link to your social media connections, too. This theme is set up to use [Font Awesome icons](https://fontawesome.com/) and [Academicons](https://jpswalsh.github.io/academicons/), like the ones below. Add your Facebook, Twitter, LinkedIn, Google Scholar, or just disable all of them.
+Mis hobbies son el Go, el origami y el Tai Chi, aunque no soy muy bueno en
+ninguno de los tres...

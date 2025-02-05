@@ -41,6 +41,14 @@
   --global-danger-block-bg: #ffe0e0;
   --global-danger-block-text: #600;
   --global-danger-block-title: #c00;
+  --global-thm-block: #826bd3;
+  --global-thm-block-bg: #746b99;
+  --global-thm-block-text: #000000;
+  --global-thm-block-title: #826bd3;
+  --global-tikz-block: #6b6b6b;
+  --global-tikz-block-bg: #ffffff;
+  --global-tikz-block-text: #000;
+  --global-tikz-block-title: #000000;
 
   #light-toggle-system {
     padding-left: 10px;
@@ -111,6 +119,14 @@ html[data-theme="dark"] {
   --global-danger-block-bg: #ffe0e0;
   --global-danger-block-text: #600;
   --global-danger-block-title: #c00;
+  --global-thm-block: #4d4764;
+  --global-thm-block-bg: #3c3361;
+  --global-thm-block-text: #ffffff;
+  --global-thm-block-title: #a395d8;
+  --global-tikz-block: #6b6b6b;
+  --global-tikz-block-bg: #9b9b9b;
+  --global-tikz-block-text: #000;
+  --global-tikz-block-title: #413f3f;
 
   .only-light {
     display: none;
