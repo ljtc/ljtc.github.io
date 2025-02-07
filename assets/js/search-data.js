@@ -58,9 +58,20 @@ ninja.data = [{
               handler: () => {
                 window.location.href = "";
               },
-            },{id: "post-conjuntos-abstractos",
+            },{id: "post-clase-3",
       
-        title: "Conjuntos abstractos",
+        title: "Clase 3",
+      
+      description: "Resumen de la tercera clase",
+      section: "Posts",
+      handler: () => {
+        
+          window.location.href = "/blog/2025/c3/";
+        
+      },
+    },{id: "post-clases-1-y-2",
+      
+        title: "Clases 1 y 2",
       
       description: "Contenido de las dos primeras clases",
       section: "Posts",
