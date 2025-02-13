@@ -222,3 +222,57 @@ Ahora sí, el principio que nos falta.
 {: .block-thm }
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/5b_lZ-GNDTs?si=rhF0Mf_lTFLIXifJ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+
+### Clase 5
+En esta clase definimos pertenencia y contención en $$\mathcal{S}$$. Algo
+importante que hay que notar es que estas nociones no son exactamente las mismas
+que en conjuntos usuales. Por ejemplo, ninguna de ellas es global y admiten
+propiedades que no satisfacen los conjunto usuales.
+
+Antes de las definiciones importantes definimos un *subobjeto* de $$A$$ como un
+mono de la forma $$m\colon S\to A$$.
+
+> ##### Definición
+>
+> Sean $$x\colon X\to A$$ y $$m\colon S\to A$$. Decimos que $$x$$ 
+> *pertenece a $$m$$ según $$A$$*, y lo denotamos $$x\in_A m$$, si existe
+> $$h\colon X\to S$$ tal que $$mh=x$$.
+>
+> $$
+> \begin{CD}
+> X @>h>> S\\
+> @VxVV @VVmV\\
+> A @= A
+> \end{CD}
+> $$
+{: .block-thm }
+
+> ##### Definición
+>
+> Sean $$m\colon S\to A$$ y $$n\colon T\to A$$. Decimos que $$m$$ 
+> *está contenido en $$n$$ según $$A$$*, y lo denotamos $$m\subseteq_A n$$, si
+> existe $$h\colon S\to T$$ tal que $$nh=m$$.
+>
+> $$
+> \begin{CD}
+> S @>h>> T\\
+> @VmVV @VVnV\\
+> A @= A
+> \end{CD}
+> $$
+{: .block-thm }
+
+Observamos que en ambas definiciones, de existir la flecha $$h$$, esta es única.
+Además, en la definición de contención, mostramos que $$h$$ es mono.
+
+> ##### Proposición
+>
+> Sean $$m\colon S\to A$$ y $$n\colon T\to A$$.
+> 1. $$m\in_A m$$.
+> 2. $$n\in_A m$$ si y sólo si $$n\subseteq_A m$$.
+> 3. $$n\subseteq_A m$$ si y sólo si para todo $$x\colon X\to A$$ se tiene que 
+>    $$x\in_A n$$ implica $$x\in_A m$$.
+{: .block-thm }
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/1UxG0Uf52zI?si=52uGFldcl7JZJz43" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
