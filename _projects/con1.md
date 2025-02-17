@@ -17,7 +17,9 @@ En esta página se irán agregando notas acerca de las clases
 
 ## La categoría de conjuntos abstractos
 
-### Clases 1 y 2
+### Semana 1
+
+#### Clases 1 y 2
 
 La definición más básica para poder dar la *categoría de conjuntos abstractos*
 es la de categoría.
@@ -72,7 +74,12 @@ $$\mathcal{S}$$:
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/wPSP7RoWdBo?si=4szb7cDDkmMM1R08" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
-### Clase 3
+<br>
+<br>
+
+### Semana 2
+
+#### Clase 3
 
 Empezamos con la definición de isomorfismo.
 
@@ -176,7 +183,9 @@ categoría con objeto terminal.
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/DYBUWzdJ3t4?si=KRXYNpGYjq2WPWDb" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
-### Clase 4
+<br>
+
+#### Clase 4
 
 En esta clase necesitamos la definición de mono(morfismo) y epi(morfismo).
 
@@ -210,9 +219,9 @@ Luego, para enunciar el principio que nos falta necesitamos dos conceptos más.
 
 Ahora sí, el principio que nos falta.
 
-> ##### Axioma de elección
+> ##### Axioma 4 (axioma de elección)
 >
-> Todo epi tiene una sección.
+> En $$\mathcal{S}$$, todo epi tiene una sección.
 {: .block-thm }
 
 > ##### Proposición
@@ -223,9 +232,13 @@ Ahora sí, el principio que nos falta.
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/5b_lZ-GNDTs?si=rhF0Mf_lTFLIXifJ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
+<br>
+<br>
 
-### Clase 5
-En esta clase definimos pertenencia y contención en $$\mathcal{S}$$. Algo
+### Semana 3
+
+#### Clase 5
+En esta clase definimos pertenencia y contensión en $$\mathcal{S}$$. Algo
 importante que hay que notar es que estas nociones no son exactamente las mismas
 que en conjuntos usuales. Por ejemplo, ninguna de ellas es global y admiten
 propiedades que no satisfacen los conjunto usuales.
@@ -264,7 +277,7 @@ mono de la forma $$m\colon S\to A$$.
 {: .block-thm }
 
 Observamos que en ambas definiciones, de existir la flecha $$h$$, esta es única.
-Además, en la definición de contención, mostramos que $$h$$ es mono.
+Además, en la definición de contensión, mostramos que $$h$$ es mono.
 
 > ##### Proposición
 >
@@ -276,3 +289,151 @@ Además, en la definición de contención, mostramos que $$h$$ es mono.
 {: .block-thm }
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/1UxG0Uf52zI?si=52uGFldcl7JZJz43" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+<br>
+
+#### Clase 6
+
+La definición principal de esta clase fue la de *producto fibrado*. 
+
+> ##### Definición
+>
+> Sean $$f\colon A\to B$$ y $$g\colon A\to C$$ en $$\mathbf{A}$$. Un 
+> *producto fibrado* de $$g$$ a lo largo de $$f$$ es un objeto $$P$$ y dos
+> flechas que hacen conmutar al siguiente diagrama:
+>
+> $$
+> \begin{CD}
+> P @>p_B>> B\\
+> @Vp_AVV @VVgV\\
+> A @>>f> C
+> \end{CD}
+> $$
+>
+> Además, si $$X$$ es otro objeto con flechas $$x_B\colon X\to B$$ y
+> $$x_A\colon X\to A$$ que hacen conmutar a
+>
+> $$
+> \begin{CD}
+> X @>x_B>> B\\
+> @Vx_AVV @VVgV\\
+> A @>>f> C
+> \end{CD}
+> $$
+>
+> entonces existe una única flecha $$h\colon X\to P$$ tal que $$p_Bh=x_B$$ y
+> $$p_Ah=x_A$$.
+{: .block-thm }  
+
+Vimos que, en $$\mathbf{Con}$$, el producto fibrado de $$g$$ a lo largo de $$f$$
+es el conjunto
+
+$$
+P=\{(a,b)\in A\times B\mid f(a)=g(b)\}
+$$
+
+junto con las proyecciones a cada entrada.
+
+Como queremos que la categoría de conjuntos abstractos se parezca a la de
+conjuntos usuales, necesitamos pedir la existencia de productos fibrados.
+
+> ##### Axioma 5
+>
+> $$\mathcal{S}$$ tiene productos fibrados.
+{: .block-thm }
+
+Luego, queremos al producto fibrado para hacer algunas construcciones. Por
+ejemplo, podemos definir la imagen inversa como sigue.
+
+> ##### Definición
+>
+> Sean $$f\colon A\to B$$ e $$n\colon T\rightarrowtail B$$. La *imagen inversa*
+> de $$n$$ bajo $$f$$ es el producto fibrado de $$n$$ a lo largo de $$f$$.
+>
+> $$
+> \begin{CD}
+> f^{-1}n @>>> B\\
+> @VVV @VVnV\\
+> A @>>f> B
+> \end{CD}
+> $$
+{: .block-thm }
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/jwYDF6fah9o?si=AgMIEXGLWn1kKbw4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+<br>
+
+#### Clase 7
+
+Lo primero que deberíamos revisar en la definición de imagen inversa es que esta
+nos da un subobjeto de $$A$$.
+
+> ##### Proposición
+>
+> Con la notación de la definición de producto fibrado, si $$g$$ es mono, 
+> entonces $$p_A$$ es mono.
+{: .block-thm }
+
+Ahora, podemos ver que nuestra definición satisface lo mismo que la imagen
+inversa en conjunto usuales.
+
+> ##### Proposición
+>
+> Sean $$f\colon A\to B$$ e $$n\colon T\rightarrowtail B$$. Para cualquier
+> elemento generalizado $$x\colon X\to A$$, se tiene que $$x\in_A p_A$$ si y
+> sólo si $$fx\in_B n$$.
+{: .block-thm }
+
+Así como la imagen inversa es un caso particular de un producto fibrado, la
+intersección es un caso particular de imagen inversa.
+
+> ##### Definición
+>
+> Sean $$m\colon S\rightarrowtail A$$ y $$n\colon T\rightarrowtail A$$. 
+> La *intersección* de $$m$$ y $$n$$ es el subobjeto de $$A$$ dado por la
+> imagen inversa de $$n$$ bajo $$m$$.
+>
+> $$
+> \begin{CD}
+> S\cap T @>>> T\\
+> @VVV @VVnV\\
+> S @>>m> A
+> \end{CD}
+> $$
+{: .block-thm }
+
+Como la composición de monos es un mono, entonces la intersección es un
+subobjeto de $$A$$. Así, la intersección de los subobjetos $$m$$ y $$n$$ de
+arriba será denotada $$m\cap n\colon S\cap T\rightarrowtail A$$.
+
+De nuevo vimos que la intersección satisface lo que esperamos de ella.
+
+> ##### Proposición
+>
+> Sean $$m\colon S\rightarrowtail A$$ y $$n\colon T\rightarrowtail A$$. Para
+> cualquier elemento generalizado $$x\colon X\to A$$, se tiene que $$x\in_A
+> m\cap n$$ si y sólo si $$x\in_A m$$ y $$x\in_A n$$.
+{: .block-thm }
+
+Finalmente vimos la definición de clasificador de subobjetos. Seguimos lo que
+pasa en conjuntos usuales con el conjunto $$2=\{0,1\}$$. Este conjunto sirve
+como un conjunto de valores de verdad y puede ser usado para representar
+subconjuntos por medio de funciones características.
+
+> ##### Definición
+>
+> Un *clasificador de subobjetos* en $$\mathbf{A}$$ es un objeto $$\Omega$$ y
+> una flecha $$v\colon 1\to\Omega$$ tal que para cualquier subobjeto 
+> $$m\colon S\rightarrowtail A$$ existe una única flecha $$\chi_m\colon A\to\Omega$$
+> tal que el siguiente diagrama es un producto fibrado.
+>
+> $$
+> \begin{CD}
+> S @>>> 1\\
+> @VmVV @VVvV\\
+> A @>>\chi_m> \Omega
+> \end{CD}
+> $$
+{: .block-thm }
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/7i2lS9Vx6ZI?si=jXLPtI9Wx1yVNq1A" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
