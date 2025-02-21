@@ -420,6 +420,17 @@ pasa en conjuntos usuales con el conjunto $$2=\{0,1\}$$. Este conjunto sirve
 como un conjunto de valores de verdad y puede ser usado para representar
 subconjuntos por medio de funciones características.
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/7i2lS9Vx6ZI?si=jXLPtI9Wx1yVNq1A" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+<br>
+<br>
+
+
+### Semana 4
+#### Clase 8
+
+En esta clase vimos la definición de clasificador de subobjetos.
+
 > ##### Definición
 >
 > Un *clasificador de subobjetos* en $$\mathbf{A}$$ es un objeto $$\Omega$$ y
@@ -436,4 +447,36 @@ subconjuntos por medio de funciones características.
 > $$
 {: .block-thm }
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/7i2lS9Vx6ZI?si=jXLPtI9Wx1yVNq1A" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+Esta definición sigue lo que satisface el conjunto $$2$$ en conjuntos usuales.
+Además, vimos que el clasificador de subobjetos es único salvo isomorfismo.
+
+> ##### Proposición
+>
+> Si $$v\colon 1\to\Omega$$ y $$v'\colon 1\to\Omega'$$ son clasificadores de 
+> subobjetos en $$\mathbf{A}$$, entonces $$\Omega\cong\Omega'$$.
+{: .block-thm }
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/mSCb5aZz5uM?si=36bP1fZ4I3sbkQeh" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+<br>
+
+#### Clase 9
+
+Para demostrar que el clasificado de subobjetos es único salvo isomorfismo, es
+necesario usar un resultado acerca de productos fibrados.
+
+> ##### Lema del producto fibrado
+>
+> Consideremos el diagrama conmutativo~\eqref{eq:lpf}. Si los dos cuadrados
+> son productos fibrados, entonces el rectángulo también es un producto
+> fibrado. Además, si el rectángulo y el cuadrado de la derecha son productos
+> fibrados, entonces el cuadrado de la izquierda también es un producto
+> fibrado.
+> \begin{equation}\label{eq:lpf}
+>   \begin{CD}
+>     \bullet @>>> \bullet @>>> \bullet\\
+>     @VVV @VVV @VVV\\
+>     \bullet @>>> \bullet @>>> \bullet\\
+>   \end{CD}
+> \end{equation}
+{: .block-thm }
