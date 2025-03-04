@@ -480,3 +480,83 @@ necesario usar un resultado acerca de productos fibrados.
 >   \end{CD}
 > \end{equation}
 {: .block-thm }
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/HT-Yycr1B4o?si=uWuSML3RQ72D6hGi" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+<br>
+<br>
+
+### Semana 5
+#### Clases 10 y 11
+
+En estas clases vimos algunas construcciones y propiedades con el clasificador
+de subobjetos. La primera, y la razón por la cual necesitamos el lema del
+producto fibrado es la siguiente.
+
+> ##### Proposición
+>
+> El clasificador de subobjetos es único salvo iso.
+{: .block-thm }
+
+Como habíamos comentado, una flecha de la forma $$A\to\Omega$$ se puede
+interpretar como una propiedad de "elementos" de $$A$$. Una de las propiedades
+que estaremos usando es la que es verdadera en todos los elementos de $$A$$.
+Esta es una flecha $$v_A\colon A\to\Omega$$ definida como la siguiente
+composición
+
+$$
+\begin{CD}
+A @>!_A>> 1 @>v>> \Omega.
+\end{CD}
+$$
+
+Lo siguiente que necesitamos para hacer la construcción que queremos es la
+diagonal del producto $$A\times A$$. En conjuntos sabemos como es,
+
+$$
+\Delta_A=\{(a,a)\mid a\in A\}.
+$$
+
+Este conjunto se puede ver como la imagen de la función 
+$$\Delta_A\colon A\to A\times A$$ definida por $$a\mapsto(a,a)$$. Finalmente,
+esta función satisface que al componerla con las proyecciones se obtiene la
+identidad en $$A$$. Así, la diagonal se define mediante la propiedad universal
+del producto, como en el siguiente diagrama. (Escrito aquí usando cuadrados en
+lugar de triángulos ya que TiKzJax dejó de funcionar en esta página y amscd sólo
+soporta cuadrados.)
+
+$$
+\begin{CD}
+A @<p_2<< A\times A @>p_1>> A\\
+@A{id_A}AA @A{\Delta_A}AA @AA{id_A}A\\ 
+A @= A @= A
+\end{CD}
+$$
+
+Una observación acerca de la flecha diagonal es que esta es mono.
+
+> ##### Proposición
+>
+> La diagonal $$\Delta_A\colon A\to A\times A$$ es mono.
+{: .block-thm }
+
+Ahora podemos usar al clasificador de subobjetos para obtener la característica
+de la diagonal. Esto es, consideramos el siguiente producto fibrado,
+
+$$
+\begin{CD}
+A @>!_A>> 1\\
+@V{\Delta_A}VV @VVvV\\
+A\times A @>>{=_A}> \Omega
+\end{CD}
+$$
+
+Finalmente, mostramos que $$=_A$$ es de verdad el predicado de igualdad en
+$$A$$. Un predicado con dos variables libres del mismo tipo.
+
+> ##### Proposición
+>
+> Sean $$x,y\colon X\to A$$. Sucede que $$=A(x,y)=v_X$$ si y sólo si $$x=y$$.
+{: .block-thm }
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/ogl6Kg7U3iE?si=5ouER4-ZnGgOb7d8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
