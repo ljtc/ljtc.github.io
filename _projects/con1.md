@@ -472,6 +472,7 @@ necesario usar un resultado acerca de productos fibrados.
 > fibrado. Además, si el rectángulo y el cuadrado de la derecha son productos
 > fibrados, entonces el cuadrado de la izquierda también es un producto
 > fibrado.
+> $$
 > \begin{equation}\label{eq:lpf}
 >   \begin{CD}
 >     \bullet @>>> \bullet @>>> \bullet\\
@@ -479,6 +480,7 @@ necesario usar un resultado acerca de productos fibrados.
 >     \bullet @>>> \bullet @>>> \bullet\\
 >   \end{CD}
 > \end{equation}
+> $$
 {: .block-thm }
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/HT-Yycr1B4o?si=uWuSML3RQ72D6hGi" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
