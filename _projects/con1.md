@@ -5,6 +5,7 @@ description: 2025-2
 img: assets/img/1.jpg
 importance: 4
 category: work
+giscus_comments: true
 toc:
   sidebar: left
 ---
@@ -169,9 +170,12 @@ categoría con objeto terminal.
 
 > ##### Definición
 >
-> * Una flecha $$f\colon A\to B$$ es *inyectiva* si ...
-> * $$f\colon A\to B$$ es *suprayectiva* si ...
-> * $$f\colon A\to B$$ es *biyectiva* si ...
+> * Una flecha $$f\colon A\to B$$ es *inyectiva* si para cualquier
+>   elemento global $$b\colon 1\to B$$ existe a lo más un elemento global 
+>   $$a\colon 1\to A$$ tal que $$fa=b$$.
+> * $$f\colon A\to B$$ es *suprayectiva* si para todo $$b\colon 1\to B$$ existe
+>   un $$a\colon 1\to A$$ tal que $$fa=b$$.
+> * $$f\colon A\to B$$ es *biyectiva* si es inyectiva y suprayectiva.
 {: .block-thm }
 
 > ##### Proposición
@@ -352,7 +356,7 @@ ejemplo, podemos definir la imagen inversa como sigue.
 >
 > $$
 > \begin{CD}
-> f^{-1}n @>>> B\\
+> f^{-1}n @>>> T\\
 > @VVV @VVnV\\
 > A @>>f> B
 > \end{CD}
@@ -467,7 +471,7 @@ necesario usar un resultado acerca de productos fibrados.
 
 > ##### Lema del producto fibrado
 >
-> Consideremos el diagrama conmutativo~\eqref{eq:lpf}. Si los dos cuadrados
+> Consideremos el diagrama conmutativo \eqref{eq:lpf}. Si los dos cuadrados
 > son productos fibrados, entonces el rectángulo también es un producto
 > fibrado. Además, si el rectángulo y el cuadrado de la derecha son productos
 > fibrados, entonces el cuadrado de la izquierda también es un producto
