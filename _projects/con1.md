@@ -566,3 +566,214 @@ $$A$$. Un predicado con dos variables libres del mismo tipo.
 {: .block-thm }
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/ogl6Kg7U3iE?si=5ouER4-ZnGgOb7d8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+<br>
+<br>
+
+### Semana 6
+#### Clases 12 y 13
+
+En esta clase vimos definimos una relación entre subobjetos y vimos algunas
+equivalencias.
+
+> ##### Proposición
+>
+> Sean $$m\colon S\rightarrowtail A$$ y $$n\colon T\rightarrowtail A$$. Sean 
+> $$\chi_m\colon A\to\Omega$$ y $$\chi_n\colon A\to\Omega$$ las flechas
+> características de $$m$$ y $$n$$, respectivamente. Los siguientes enunciados
+> son equivalentes:
+> 1. $$m\subseteq_A n$$ y $$n\subseteq_A m$$.
+> 2. Existen $$h\colon S\to T$$ y $$k\colon T\to S$$ tales que $$nh=m$$,
+>    $$mk=n$$ y son inversas, es decir, $$hk=\text{id}_T$$ y $$kh=\text{id}_S$$.
+> 3. $$\chi_m=\chi_n$$.
+{: .block-thm }
+
+Luego, escogimos una de las propiedades de la proposición anterior para definir
+cuando dos subobjetos son equivalentes.
+
+> ##### Definición
+>
+> Sean $$m\colon S\rightarrowtail A$$ y $$n\colon T\rightarrowtail A$$. Decimos que
+> $$m$$ y $$n$$ son *equivalentes* si $$m\subseteq_A n$$ y $$n\subseteq_A m$$.
+{: .block-thm }
+
+La notación que usamos para la equivalencia de subobjetos es $$m\sim_A n$$. No
+es difícil ver que la relación $$\sim_A$$ es de equivalencia.
+
+Como dice en el punto 2 de la proposición anterior, cuando consideramos clases
+de equivalencia de subobjetos, estas pueden verse como subobjetos salvo iso.
+
+> ##### Definición
+>
+> $$\text{Sub}(A)=\{m\colon S\rightarrowtail A\mid S\text{ subobjeto de }A\}/\sim_A.
+{: .block-thm }
+
+Con esto podemos demostrar que, en efecto, el clasificador de subobjetos puede
+representar a los subobjetos de un objeto.
+
+> ##### Proposición
+>
+> $$\mathcal{S}(A,\Omega)\cong\text{Sub}(A)$$.
+{: .block-thm }
+
+Finalmente, vimos una forma de construir la conjunción
+$$\land\colon\Omega\times\Omega\to\Omega$$. La idea para decir cómo se comporta
+esta flecha es como sigue. Sean $$\varphi,\psi\colon A\to\Omega$$. Diremos cual
+es el resultado de hacer la composición $$\land(\varphi,\psi)$$, que denotamos
+$$\varphi\land\psi$$. Primero tomamos los subobjetos caracterizados por
+$$\varphi$$ y $$\psi$$, digamos $$m$$ y $$n$$. Luego, tomamos la intersección
+de estos subobjetos, $$m\cap n$$. Finalmente, la flecha característica de la
+intersección será el resultado de la composición.
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/DA3oIU7ru7A?si=Uv52siJxhuLwldrP" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+<br>
+<br>
+
+### Semana 7
+
+Para formalizar la construcción de la conjunción, necesitamos de algunos
+resultados técnicos. En esta semana haremos un paréntesis para ver estos
+resultados.
+
+#### Clase 14
+
+Empezamos este paréntesis con la definición de funtor.
+
+> ##### Definición
+>
+> Un *funtor covariante* $$F\colon\mathbf{A}\to\mathbf{B}$$ entre dos categorías consta de
+> dos asignaciones $$F_0\colon\text{Obj}(\mathbf{A})\to\text{Obj}(\mathbf{B})$$ y
+> $$F_1\colon\text{Fl}(\mathbf{A})\to\text{Fl}(\mathbf{B})$$ que satisfacen las
+> siguientes propiedades:
+> 1. $$\text{dom}(F_1(f))=F_0(\text{dom}(f))$$,
+> 2. $$\text{cod}(F_1(f))=F_0(\text{cod}(f))$$,
+> 3. $$F_1(\text{id}_A)=\text{id}_{F_0(A)}$$, y
+> 4. $$F_1(gf)=F_1(g)F_1(f)$$.
+{: .block-thm }
+
+No es usual distinguir las dos asignaciones que conforman un funtor, así que
+seguiremos la notación usual y denotaremos a ambas con $$F$$.
+
+Además de los funtores covariantes también existen los funtores contravariantes.
+Para definir estos últimos necesitamos la noción de categoría opuesta.
+
+> ##### Definición
+>
+> La *categoría opuesta* de una categoría $$\mathbf{A}$$, denotada
+> $$\mathbf{A}^{\text{op}}$$, consta de los mismos objetos que $$\mathbf{A}$$ y
+> las mismas flechas, pero con el sentido inverso. Esto es, hay una flecha
+> $$A\to B$$ en $$\mathbf{A}^{\text{op}}$$ si y sólo si hay una flecha
+> $$B\to A$$ en $$\mathbf{A}$$.
+{: .block-thm }
+
+> ##### Definición
+>
+> Un *funtor contravariante* $$F\colon\mathbf{A}\to\mathbf{B}$$ es un funtor covariante
+> $$F\colon\mathbf{A}^{\text{op}}\to\mathbf{B}$$.
+{: .block-thm }
+
+Es posible describir a un funtor contravariante en términos de la categoría
+$$\mathbf{A}$$. Para esto simplemente se cambia el sentido de las flechas, es
+decir, una flecha $$f\colon A\to B$$ en $$\mathbf{A}$$ va a una flecha de la
+forma $$F(f)\colon F(B)\to F(A)$$ en $$\mathbf{B}$$. Hay que observar que la
+condición anterior nos obliga a cambiar el orden en las composiciones.
+
+Luego, definimos transformación natural.
+
+> ##### Definición
+>
+> Sean $$F,G\colon\mathbf{A}\to\mathbf{B}$$ funtores. Una *transformación
+> natural* $$\tau\colon F\to G$$ es una familia de flechas
+> $$\tau_A\colon FA\to GA$$, una para cada $$A\in\mathbf{A}$$ que satisfacen
+> que para cada flecha $$a\colon A\to A'$$ en $$\mathbf{A}$$, el siguiente
+> diagrama conmuta.
+>
+> $$
+> \begin{CD}
+> FA @>\tau_A>> GA\\
+> @V{Fa}VV @VV{Ga}V\\
+> FA' @>>\tau_{A'}> GA'
+> \end{CD}
+> $$
+{: .block-thm }
+
+Observamos que la composición de transformaciones naturales es una
+transformación natural, que esta composición es asociativa y que tiene neutros.
+Así, es posible considerar a los funtores y transformaciones naturales como una
+categoría.
+
+> ##### Definición
+>
+> Sean $$\mathbf{A}$$ y $$\mathbf{B}$$ categorías. La *categoría de funtores*
+> entre $$\mathbf{A}$$ y $$\mathbf{B}$$, denotada $$\mathbf{B}^{\mathbf{A}}$$,
+> tiene como objetos a los funtores entre $$\mathbf{A}$$ y $$\mathbf{B}$$ y como
+> flechas a las transformaciones naturales entre estos funtores.
+{: .block-thm }
+
+Finalmente, la razón por la que vimos funtor y transformación natural es que
+necesitamos una categoría de funtores especial.
+
+> ##### Definición
+>
+> Sea $$\mathbf{A}$$ una categoría. La *categoría de pregavillas* de
+> $$\mathbf{A}$$ es la categoría de funtores 
+> $$\textbf{Con}^{\mathbf{A}^{\text{op}}}$$.
+{: .block-thm }
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/aCfwBIDPk9Y?si=eZ83tr9SqhViyPAM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+<br>
+
+#### Clase 15
+
+En esta clase vimos un tipo especial de pregavilla, la representable.
+
+> ##### Definición
+>
+> Dado un objeto $$A\in\mathbf{A}$$, la *pregavilla representable*, representada
+> por $$A$$, es el funtor
+> $$\mathbf{A}(-,A)\colon\mathbf{A}^{\text{op}}\to\mathbf{Con}$$.
+{: .block-thm }
+
+Ahora podemos enunciar uno de los pendientes que quedó en la construcción de la
+conjunción de la siguiente forma:
+
+> ##### Proposición
+>
+> Sea $$A$$, $$B$$ y $$C$$ objetos de $$\mathbf{A}$$. Sucede que
+> $$\mathbf{A}(A,B)\times\mathbf{A}(A,C)\cong\mathbf{A}(A,B\times C)$$.
+{: .block-thm }
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/YUTB3GA3UZw?si=yo7Q1B94ziA-VmK7" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+<br>
+
+#### Clase 16
+
+En esta clase demostramos el lema de Grothendieck-Yoneda y vimos un corolario de
+él.
+
+> ##### Lema de Grothendieck-Yoneda
+>
+> Sean $$\mathbf{A}$$ una categoría pequeña, $$A$$ un objeto de $$\mathbf{A}$$ y 
+> $$P$$ una pregavilla. Sucede que hay una biyección (natural)
+> 
+> $$\text{Nat}(\mathbf(-,A),P)\cong P(A)$$.
+{: .block-thm }
+
+El funtor de Grothendieck-Yoneda es de la forma
+$$\mathbf{A}\to\textbf{Con}^{\mathbf{A}^{\text{op}}}$$. A cada objeto $$A$$ le
+asigna el funtor representable $$\mathbf{A}(-,A)$$ y a cada flecha 
+$$f\colon A\to B$$ le asigna la transformación natural
+$$\mathbf{A}(-,f)\colon\mathbf{A}(-,A)\to\mathbf{A}(-,B)$$, que en cada
+componente es la función que compone con $$f$$ por la derecha.
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/CiAxjkLrauU?si=CEWeatELJXH09zLY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+<br>
+
+> ##### Corolario
+>
+> El funtor de Grothendieck-Yoneda es fiel y pleno.
+{: .block-thm }
