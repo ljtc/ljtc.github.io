@@ -777,3 +777,36 @@ componente es la función que compone con $$f$$ por la derecha.
 >
 > El funtor de Grothendieck-Yoneda es fiel y pleno.
 {: .block-thm }
+
+
+### Semana 8
+
+#### Clase 17
+
+Después del largo paréntesis para demostrar el lema de Grothendieck-Yoneda y su
+corolario, volvimos a la construcción de la conjunción.
+
+Consideramos el siguiente diagrama (la flecha de en medio no va, pero TikZJax
+sigue sin funcionar y an amscd no hay forma de dibujarlo sin ponerla).
+
+$$
+\begin{CD}
+\text{Sub}(A)\times\text{Sub}(A) @>\cap>> \text{Sub}(A)\\
+@V\cong VV @VV\text{id} V\\
+\mathbf{A}(A,\Omega)\times\mathbf{A}(A,\Omega) @>>> \text{Sub}(A)\\
+@V\cong VV @VV\cong V\\
+\mathbf{A}(A,\Omega\times\Omega) @>>> \mathbf{A}(A,\Omega)
+\end{CD}
+$$
+
+Como todas la biyecciones son naturales, entonces la flecha de abajo es la
+componente en $$A$$ de una transformación natural
+$$\tau\colon\mathbf{A}(-,\Omega\times\Omega)\to\mathbf{A}(-,\Omega)$$. Por el
+corolario anterior, esta transformación natural está determinada por una flecha
+entre los objetos $$\Omega\times\Omega$$ y $$\Omega$$. Esta flecha es nuestra
+definición de conjunción $$\land\colon\Omega\times\Omega\to\Omega$$.
+
+#### Clase 18
+
+En esta clase regresamos a las construcciones que nos faltan en la categoría de
+conjuntos abstractos. En concreto, vimos la definición de exponencial.
