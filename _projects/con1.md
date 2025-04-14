@@ -806,7 +806,130 @@ corolario anterior, esta transformación natural está determinada por una flech
 entre los objetos $$\Omega\times\Omega$$ y $$\Omega$$. Esta flecha es nuestra
 definición de conjunción $$\land\colon\Omega\times\Omega\to\Omega$$.
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/7X7Uy_Be92g?si=pN1TJRSLFx51hKSP" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+<br>
+
 #### Clase 18
 
 En esta clase regresamos a las construcciones que nos faltan en la categoría de
 conjuntos abstractos. En concreto, vimos la definición de exponencial.
+
+> ##### Definición
+>
+> Sean $$\mathbf{A}$$ una categoría con productos finitos y $$A$$ y $$B$$
+> objetos en $$\mathbf{A}$$. El *objeto exponencial* $$B^A$$ es un objeto junto
+> con una flecha $$\text{ev}_{A,B}\colon A\times B^A\to B$$ tal que para
+> cualquier objeto $$C$$ y flecha $$f\colon A\times C\to B$$, existe una única
+> flecha $$g\colon C\to B^A$$ tal que el siguiente diagrama conmuta
+>
+> $$
+> \begin{CD}
+>   A\times B^A @>\text{ev}_{A,B}>> B\\
+>   @A{\text{id}_A\times g}AA @AAfA\\
+>   A\times C @= A\times C
+> \end{CD}
+> $$
+{: .block-thm }
+
+De la definición se puede ver que hay una biyección
+
+$$
+\begin{equation}\label{eq:exp}
+\mathbf{A}(C,B^A)\cong\mathbf{A}(A\times C,B).
+\end{equation}
+$$
+
+No es difícil mostrar que el conjunto de funciones 
+$$B^A=\{f\colon A\to B\mid f\text{ es función}\}$$ junto con la función
+$$\text{ev}_{A,B}\colon A\times B^A\to B$$ dada por
+$$
+\text{ev}_{A,B}(a,f)=f(a)
+$$
+satisface la propiedad universal de la definición anterior. Así, el conjunto de
+funciones es el exponencial en $$\mathbf{Con}$$.
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/P08Bkq5hQBI?si=OsFOY9t9sTYSe0iv" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+<br>
+
+#### Clase 19
+En la categoría generada por la lógica de proposiciones, la exponencial de dos
+fórmulas es la implicación $$\beta^{\alpha}=\alpha\to\beta$$. Además, la
+vealuación es *modus ponens*. Finalmente, la biyección \eqref{eq:exp} es el
+teorema de la deducción.
+
+
+
+### Semana 9
+#### Clase 20
+Ahora empezaremos a usar la exponencial en la categoría de conjuntos abstractos.
+Para lo cual primero necesitamos la existencia de exponenciales en dicha
+categoría.
+
+> ##### Axioma 6
+>
+> $$\mathcal{S}$$ tiene exponenciales.
+{: .block-thm }
+
+Cuando usamos la biyección \eqref{eq:exp} y el hecho $$A\times 1\cong A$$ podemos ver que los
+elementos globales de $$B^A$$ son flechas $$A\to B$$. Esto es, cada
+flecha $$f\colon A\to B$$ tiene un *nombre* en la exponencial, que denotamos
+$$\ulcorner f\urcorner\colon 1\to B^A$$. Esta flecha es la que se obtiene
+mediante la propiedad universal de la exponencial:
+
+$$
+\begin{CD}
+A\times B^A @>\text{ev}>> B\\
+@A{\text{id}\times\ulcorner f\urcorner}AA @AAfA\\
+A\times 1 @>>{p_A}> A
+\end{CD}
+$$
+
+Ahora, notemos que la exponencial define dos funciones. Una de ellas es 
+$$X^{()}\colon\mathcal{S}\to\mathcal{S}$$, que a cada objeto $$A$$ le asigna el
+exponencial $$X^A$$. La otra función es
+$$()^{Y}\colon\mathcal{S}\to\mathcal{S}$$, que a cada objeto $$A$$ le asigna
+el exponencial $$A^Y$$.
+
+En esta clase vimos que ambas asignaciones se pueden completar a funtores. Para
+el resto de esta clase fijemos una flecha $$f\colon A\to B$$ en $$\mathcal{S}$$.
+
+Definimos $$X^f$$ usando la propiedad universal de la exponencial. Esto es,
+mediante el siguiente diagrama conmutativo:
+
+$$
+\begin{CD}
+A\times X^A @>\text{ev}>> X\\
+@A{\text{id}\times X^f}AA @AA\text{ev}A\\
+A\times X^B @>>{f\times\text{id}}> B\times X^B
+\end{CD}
+$$
+
+No es difícil ver que esta asignación en flechas define un funtor
+contravariante.
+
+> ##### Proposición
+>
+> La flecha $$X^f$$ es la única que satisface 
+$$X^f\ulcorner g\urcorner=\ulcorner g\circ f\urcorner$$.
+{: .block-thm }
+
+La flecha $$f^Y$$ se define de forma análoga, es decir, se considera:
+
+$$
+\begin{CD}
+Y\times B^Y @>\text{ev}>> B\\
+@A{\text{id}\times f^Y}AA @AA{f}A\\
+Y\times A^Y @>>\text{ev}> A
+\end{CD}
+$$
+
+Esta asignación también define un funtor contravariante.
+
+> ##### Proposición
+>
+> La flecha $$f^Y$$ es la única que satisface
+$$f^Y\ulcorner g\urcorner=\ulcorner f\circ g\urcorner$$.
+{: .block-thm }
+
