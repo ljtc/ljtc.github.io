@@ -887,9 +887,9 @@ A\times 1 @>>{p_A}> A
 $$
 
 Ahora, notemos que la exponencial define dos funciones. Una de ellas es 
-$$X^{()}\colon\mathcal{S}\to\mathcal{S}$$, que a cada objeto $$A$$ le asigna el
+$$X^{(\;)}\colon\mathcal{S}\to\mathcal{S}$$, que a cada objeto $$A$$ le asigna el
 exponencial $$X^A$$. La otra función es
-$$()^{Y}\colon\mathcal{S}\to\mathcal{S}$$, que a cada objeto $$A$$ le asigna
+$$(\;)^{Y}\colon\mathcal{S}\to\mathcal{S}$$, que a cada objeto $$A$$ le asigna
 el exponencial $$A^Y$$.
 
 En esta clase vimos que ambas asignaciones se pueden completar a funtores. Para
@@ -912,7 +912,7 @@ contravariante.
 > ##### Proposición
 >
 > La flecha $$X^f$$ es la única que satisface 
-$$X^f\ulcorner g\urcorner=\ulcorner g\circ f\urcorner$$.
+> $$X^f\ulcorner g\urcorner=\ulcorner g\circ f\urcorner$$.
 {: .block-thm }
 
 La flecha $$f^Y$$ se define de forma análoga, es decir, se considera:
@@ -925,11 +925,12 @@ Y\times A^Y @>>\text{ev}> A
 \end{CD}
 $$
 
-Esta asignación también define un funtor contravariante.
+Esta asignación define un funtor covariante.
 
 > ##### Proposición
 >
 > La flecha $$f^Y$$ es la única que satisface
-$$f^Y\ulcorner g\urcorner=\ulcorner f\circ g\urcorner$$.
+> $$f^Y\ulcorner g\urcorner=\ulcorner f\circ g\urcorner$$.
 {: .block-thm }
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/GMA_u6-z5Ok?si=PgirMk9QsFi3ITEI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
