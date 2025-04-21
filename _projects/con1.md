@@ -934,3 +934,96 @@ Esta asignación define un funtor covariante.
 {: .block-thm }
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/GMA_u6-z5Ok?si=PgirMk9QsFi3ITEI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+<br>
+
+#### Clase 21
+
+En esta clase vimos el teorema de Lawvere y como el teorema de Cantor es un
+corolario del primero. Empezamos con algunos conceptos que aparecerán en el
+enunciado del teorema de Lawvere.
+
+> ##### Definición
+>
+> Sea $$f\colon A\to A$$ en una categoría $$\mathbf{A}$$. Decimos que $$f$$
+> tiene un punto fijo si existe $$a\colon 1\to A$$ tal que $$fa=a$$. Además,
+> $$A$$ tiene la propiedad del punto fijo si toda $$f\colon A\to A$$ tiene un
+> punto fijo.
+{: .block-thm }
+
+Para dar el ejemplo que necesitamos de un objeto que no tiene la propiedad del
+punto fijo, antes debemos dar un axioma más acerca de la categoría de conjuntos
+abstractos.
+
+> ##### Axioma 7
+>
+> $$\mathcal{S}$$ es booleana, es decir, $$\Omega=1+1$$.
+{: .block-thm }
+
+Otra forma de escribir el axioma es $$\Omega=2$$. En lo siguiente usaremos la
+notación de $$\Omega$$ para recordar que daremos un nuevo conectivo lógico. Sin
+embargo en el teorema de Cantor usaremos $$2$$ ya que esta es la notación
+estándar en ese lugar.
+
+Ahora construyamos una flecha de la forma $$\Omega\to\Omega$$ usando la
+propiedad universal del coproducto.
+
+$$
+\begin{CD}
+1 @= 1\\
+@V{v}VV @VV{f}V\\
+1+1 @>{\neg}>> 1+1\\
+@A{f}AA @AA{v}A\\
+1 @= 1
+\end{CD}
+$$
+
+Gracias al axioma 7 podemos decir que la flecha definida en el diagrama es la
+negación.
+
+Es fácil ver, de la definición, que $$\neg\colon\Omega\to\Omega$$ no tiene
+puntos fijos. Así, $$\Omega$$ no tiene la propiedad del punto fijo.
+
+> ##### Teorema de Lawvere
+>
+> Si existe $$f\colon A\times A\to B$$ tal que para cualquier $$g\colon A\to B$$
+> existe $$a\colon 1\to A$$ tal que $$f(-,a)=g$$, entonces $$B$$ tiene la
+> propiedad del punto fijo.
+{: .block-thm }
+
+Este teorema está escrito en términos de productos en los dominios de las
+flechas. Si lo traducimos a exponenciales, tendremos una flecha 
+$$\bar{f}\colon A\to B^A$ y diremos que para cualquier 
+$$\ulcorner g\urcorner\colon 1\to B^A$$ existe $$a\colon 1\to A$$. Finalmente la
+condición $$f(-,a)=g$$ se traduce a $$\bar{f}a=\ulcorner g\urcorner$$. Esto
+último significa que $$\bar{f}$$ es suprayectiva.
+
+> ##### Teorema de Lawvere versión exponencial
+>
+> Si existe $$f\colon A\to B^A$$ suprayectiva, entonces $$B$$ tiene la propiedad
+> del punto fijo.
+{: .block-thm }
+
+> ##### Corolario (Teorema de Cantor)
+>
+> No existe $$f\colon A\to 2^A$$ suprayectiva.
+>
+> ##### Demostración
+>
+> Si existe $$f\colon A\to 2^A$$ suprayectiva, entonces, por el teorema de
+> Lawvere, $$2$$ tiene la propiedad del punto fijo. Sin embargo, ya vimos que
+> $$\neg\colon 2\to 2$$ no tiene puntos fijos. Lo cual es un absurdo.
+{: .block-thm }
+
+Una observación sobre la lógica de la demostración es que no es una demostración
+por contradicción. Lo que está usando es la interpretación de la lógica
+intuisionista de
+[Brower-Heting-Kolmogorov](https://en.wikipedia.org/wiki/Brouwer%E2%80%93Heyting%E2%80%93Kolmogorov_interpretation).
+Una demostración por contradicción (que haga uso de lógica clásica) es cuando se
+intententa demostrar $$\varphi$$, para ello se supone $$\neg\varphi$$ y se llega
+a una contradicción. Si al terminar este procedimiento se concluye $$\varphi$$
+entonces sí se usó lógica clásica. De manera intuisionista se concluiría
+$$\neg\neg\varphi$$, pero la afirmación $$\neg\neg\varphi\equiv\varphi$$ es
+clásica.
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/KSd7NrE4rpQ?si=GMN-3iHmhTXWMl0_" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
