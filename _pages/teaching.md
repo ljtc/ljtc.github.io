@@ -13,11 +13,41 @@ nav_order: 4
   <div class="p-3">
     <div class="row">
       <div class="col-sm-10">
+        <h5 class="font-weight-regular">Obra de William F. Lawvere</h5>
+      </div>
+      <div class="col-sm-2 text-left text-sm-right">
+        <span class="badge font-weight-bold danger-color-dark text-uppercase align-middle">
+            <a href="https://lawverearchives.com/">LA</a>
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="card mt-3">
+  <div class="p-3">
+    <div class="row">
+      <div class="col-sm-10">
         <h5 class="font-weight-regular">Theory and Applications of Categories</h5>
       </div>
       <div class="col-sm-2 text-left text-sm-right">
         <span class="badge font-weight-bold danger-color-dark text-uppercase align-middle">
             <a href="http://www.tac.mta.ca/tac/">TAC</a>
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="card mt-3">
+  <div class="p-3">
+    <div class="row">
+      <div class="col-sm-10">
+        <h5 class="font-weight-regular">Stacks Project</h5>
+      </div>
+      <div class="col-sm-2 text-left text-sm-right">
+        <span class="badge font-weight-bold danger-color-dark text-uppercase align-middle">
+            <a href="https://stacks.math.columbia.edu/">SP</a>
         </span>
       </div>
     </div>

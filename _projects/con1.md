@@ -1018,7 +1018,7 @@ condición $$f(-,a)=g$$ se traduce a $$\bar{f}a=\ulcorner g\urcorner$$. Esto
 Una observación sobre la lógica de la demostración es que no es una demostración
 por contradicción. Lo que está usando es la interpretación de la lógica
 intuisionista de
-[Brower-Hetyng-Kolmogorov](https://en.wikipedia.org/wiki/Brouwer%E2%80%93Heyting%E2%80%93Kolmogorov_interpretation).
+[Brower-Heyting-Kolmogorov](https://en.wikipedia.org/wiki/Brouwer%E2%80%93Heyting%E2%80%93Kolmogorov_interpretation).
 Una demostración por contradicción (que haga uso de lógica clásica) es cuando se
 intententa demostrar $$\varphi$$, para ello se supone $$\neg\varphi$$ y se llega
 a una contradicción. Si al terminar este procedimiento se concluye $$\varphi$$
