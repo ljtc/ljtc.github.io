@@ -1018,7 +1018,7 @@ condición $$f(-,a)=g$$ se traduce a $$\bar{f}a=\ulcorner g\urcorner$$. Esto
 Una observación sobre la lógica de la demostración es que no es una demostración
 por contradicción. Lo que está usando es la interpretación de la lógica
 intuisionista de
-[Brower-Heting-Kolmogorov](https://en.wikipedia.org/wiki/Brouwer%E2%80%93Heyting%E2%80%93Kolmogorov_interpretation).
+[Brower-Hetyng-Kolmogorov](https://en.wikipedia.org/wiki/Brouwer%E2%80%93Heyting%E2%80%93Kolmogorov_interpretation).
 Una demostración por contradicción (que haga uso de lógica clásica) es cuando se
 intententa demostrar $$\varphi$$, para ello se supone $$\neg\varphi$$ y se llega
 a una contradicción. Si al terminar este procedimiento se concluye $$\varphi$$
@@ -1027,3 +1027,53 @@ $$\neg\neg\varphi$$, pero la afirmación $$\neg\neg\varphi\equiv\varphi$$ es
 clásica.
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/KSd7NrE4rpQ?si=GMN-3iHmhTXWMl0_" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+<br>
+
+#### Clase 22
+
+En esta clase vimos más equivalencias del teorema de Lawvere.
+
+> ##### Corolario (paradoja de Russell)
+>
+> No existe $$R=\{x\mid x\notin x\}$$.
+{: .block-thm }
+
+Luego, vimos un par que tiene que ver con algo de lenguaje natural. Decimos que
+un adjetivo es *heterológico* si no satisface la propiedad que describe. Por
+ejemplo, monosilábica es heterológica ya que monosilábica no es una palabra
+monosilábica. En cambio, polisilábica no es heterológica por que sí es
+polisilábica.
+
+> ##### Corolario (paradoja de Grelling)
+>
+> No existe la colección de adjetivos heterológicos.
+{: .block-thm }
+
+Finalmente, vimos otra paradoja conocida.
+
+> ##### Corolario (paradoja del mentiroso)
+>
+> No existe la colección de enunciados que afirman su propia falsedad.
+{: .block-thm }
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/LZrx_9HLVnY?si=5fu1Pc_qeWXVCweq" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+<br>
+<br>
+
+### Semana 10
+
+Ahora empezamos un nuevo tema, el *objeto de números naturales*, que
+abreviaremos onn. Antes de decir qué es un onn, volveremos a revisar un poco
+acerca de categorías de pregavillas, es decir, veremos conjuntos variables.
+
+#### Clase 22
+
+Consideramos la categoría $$\mathbf{A}=(\bullet\to\bullet)$$, es decir, sólo hay
+dos objetos y una flecha no identidad (la identidades no se dibujan). Primero
+notemos que la opuesta de $$\mathbf{A}$$ se ve igual que la original, así que no
+pondremos opuesta para hacer las pregavillas con esta categoría.
+
+
+
