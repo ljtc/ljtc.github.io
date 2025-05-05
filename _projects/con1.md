@@ -1064,16 +1064,210 @@ Finalmente, vimos otra paradoja conocida.
 
 ### Semana 10
 
-Ahora empezamos un nuevo tema, el *objeto de números naturales*, que
+Ahora empezamos un tema nuevo, el *objeto de números naturales*, que
 abreviaremos onn. Antes de decir qué es un onn, volveremos a revisar un poco
 acerca de categorías de pregavillas, es decir, veremos conjuntos variables.
 
-#### Clase 22
+#### Clase 23
 
 Consideramos la categoría $$\mathbf{A}=(\bullet\to\bullet)$$, es decir, sólo hay
 dos objetos y una flecha no identidad (la identidades no se dibujan). Primero
 notemos que la opuesta de $$\mathbf{A}$$ se ve igual que la original, así que no
 pondremos opuesta para hacer las pregavillas con esta categoría.
 
+Un objeto (funtor) $$X\in\mathbf{Con}^{\mathbf{A}}$$ consta de dos conjuntos y una
+función entre ellos, $$f_X\colon X_0\to X_1$$. Si tenemos dos objetos $$X$$
+y $$Y$$, entonces una flecha (transformación natural) consta de dos funciones 
+$$\tau_0\colon X_0\to Y_0$$ y $$\tau_1\colon X_1\to Y_1$$ tales que el siguiente
+diagrama conmuta
 
+$$
+  \begin{CD}
+    X_0 @>{\tau_0}>> Y_0\\
+    @V{f_X}VV @VV{f_Y}V\\
+    X_1 @>>{\tau_1}>> Y_1
+  \end{CD}
+$$
 
+Podemos pensar que $$X$$ es un sistema que empieza en un estado inicial, $$X_0$$,
+pasa por un proceso, $$f_X$$, y termina en un estado final $$X_1$$. Esto es,
+$$X$$ es un conjunto que "evolucionó" del "tiempo 0" al "tiempo 1" mediante una
+"regla de evolución". En otras palabras es un conjunto que varía en el tiempo.
+
+Una flecha $$\tau\colon X\to Y$$ tranforma los estados iniciales y finales de
+los conjuntos de tal forma que se preserva la evolución, como indica el diagrama
+conmutativode arriba.
+
+Todas las categorías de pregavillas son *topos* así que tienen casi todas las
+propiedades que hemos visto en $$\mathcal{S}$$. En particular, tienen objeto
+terminal. Por cuestiones tipográficas denotaremos al terminal de pregavillas con
+$$T$$. Es fácil ver que el terminal debe cumplir $$T_0=\{*\}=T_1$$ y su regla de
+evolución es la función identidad, es un conjunto que permanece ivariante en el
+tiempo. 
+
+Podemos aprovechar que los subobjetos se pueden dar salvo isomorfismo, de tal
+forma que un subobjeto $$S\hookrightarrow X$$ es un par de subconjuntos
+$$S_i\subseteq X_i$$ con la restricción como regla de evolución,
+$$f_S=(f_X)|_S$$. Con esto se puede saber cómo es el clasificador de subobjetos
+de esta categoría.
+
+Un elemento $$x\in X_0$$ tiene tres opciones. Una es $$x\in S_0$$. Otra de
+ellas es $$x\notin S_0$$ pero $$f_X(x)\in S_1$$. La úlima es que no se de
+ninguna de las antariores, $$x\notin S_0$$ y $$f_X(x)\notin S_1$$. Así el
+clasificador en el tiempo $$0$$ es $$\Omega_0=\{1,2,0\}$$. Por otro lado, un
+elemento $$x\in X_1$$ sólo tiene dos opciones $$x\in S_1$$ y $$x\notin S_1$$.
+Así, en el tiempo $$1$$ el clasificador es $$\Omega_1=\{1,0\}$$.
+
+La transformación natural *verdadero*, $$v\colon T\to\Omega$$ es la que en cada
+tiempo elige a $$1$$. Esto es, $$1$$ sigue representando a verdadero, $$0$$
+seguirá siendo falso y $$2$$ es un nuevo valor que está entre los dos
+anteriores. (En un partido de fútbol se puede ganar, $$1$$, perder, $$0$$, o
+empatar, $$2$$.)
+
+No es difícil ver que $$f_{\Omega}\colon\Omega_0\to\Omega_1$$ definida por
+$$f_{\Omega}(1)=f_{\Omega}(2)=1$$ y $$f_{\Omega}(0)=0$$ es la regla de evolución
+que hace que todo subobjeto tenga una única flecha característica.
+
+La categoría de pregavillas que nos interesa es muy similar a la anterior. Ahora
+consideramos una categoría $$\mathbf{A}$$ con sólo un objeto y una flecha no
+identidad del objeto en sí mismo. Ahora un objeto $$X$$ consta es una función 
+$$f_X\colon X\to X$$ y las flechas $$\tau\colon X\to Y$$ constan de sólo una
+función que hace conmutar al siguiente diagrama
+
+$$
+  \begin{CD}
+    X @>{\tau}>> Y\\
+    @V{f_X}VV @VV{f_Y}V\\
+    X @>>{\tau}>> Y
+  \end{CD}
+$$
+
+Un conjunto $$X$$ con una función $$f_X\colon X\to X$$ es un *sistema dinámico
+discreto*. Así, la categoría $$\mathbf{Con}^{\mathbf{A}}$$ es la categoría de
+sistemas dinámicos discretos.
+
+Lo que queremos hacer notar en esta categoría es que los elementos globales no
+son suficientemente buenos para hablar de los elementos de un sistema dinámico
+discreto. Si seguimos denotando al terminal con $$T$$, entonces un elemento
+global $$x\colon T\to X$$ es un elemento del sistema $$X$$ que se queda fijo
+bajo la dinámica $$f_X$$.
+
+Nos gustaría encontrar un objeto $$N\in\mathbf{Con}^{\mathbf{A}}$$ tal que los
+elementos del sistema $$X$$, fijos o no bajo la dinámica, estén en biyección con
+las flechas, transformaciones naturales, $$N\to X$$. De esto se extrae la
+definición de onn.
+
+> ##### Definición
+>
+> Un objeto de números naturales (onn) es un objeto $$N$$ con un par de flechas
+> $$0\colon 1\to N$$ y $$s\colon N\to N$$ tal que para cualquier otro objeto
+> $$A$$ con flechas $$a\colon 1\to A$$ y $$f\colon A\to A$$ existe una única
+> $$h\colon N\to A$$ que hace conmutar al siguiente diagrama
+>
+> $$
+> \begin{CD}
+> 1 @>0>> N @>s>> N\\
+> @V{id}VV @VhVV @VVhV\\
+> 1 @>>a> A @>>f> A
+> \end{CD}
+> $$
+{: .block-thm }
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/UwlzIJtz-tA?si=z44B6WlJvBgokp4I" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+<br>
+<br>
+
+### Paro
+
+Vamos a escribir el material que falta respecto al objeto de números naturales,
+aunque no lo veamos en clases.
+
+#### Onn es un sistema de Peano
+
+Originalmente Peano dió un conjunto de axiomas para los números naturales. Estos
+axiomas son suficientes para poder hacer toda la artmética de números naturales.
+La lista de axiomas es:
+
+1. $$0\in\mathbb{N}$$,
+2. si $$n\in\mathbb{N}$$, entonces $$s(n)\in\mathbb{N}$$,
+3. si $$s(n)=s(m)$$ entonces $$n=m$$,
+4. $$0\notin \text{im}(s)$$ y
+5. si $$A\subseteq\mathbb{N}$$ cumple $$0\in A$$ y $$n\in A\implies s(n)\in A$$
+   entonces $$A=N$$.
+
+En la teoría de conjuntos usual se demuestra, con estos 5 axiomas, que
+$$\mathbb{N}$$ tiene un teorema de recursión. En esta versión categórica
+definimos al onn mediante una propiedad universal, que resulta ser recursión.
+Caundo veamos que nuestro onn satisface los 5 axiomas de Peano obtendremos que
+esa lista de 5 axiomas es equivalente a un solo axioma.
+
+Los dos primeros axiomas son fáciles ya que $$0\in\mathbb{N}$$ se traduce a que
+haya una flecha $$0\colon 1\to N$$, lo cual es parte de la definición
+de onn. El segundo, traducido a lenguaje de flechas, dice que si 
+$$n\colon 1\to N$$ entonces $$sn\colon 1\to N$$, el cual se obtiene componiendo.
+
+Para demostrar el tercer axioma, antes debemos ver una variante de recursión.
+
+> ##### Proposición
+>
+> Sea $$A$$ en $$\mathcal{S}$$ con un elemento global $$a\colon 1\to A$$ y una
+> flecha $$f\colon N\times A \to A$$. Sucede que existe una única 
+> $$h\colon N\to A$$ tal que 
+> 1. $$h0=a$$ y
+> 2. $$h(sn)=f(n,hn)$$.
+{: .block-thm }
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/sExsntCBnw4?si=WuKkVrEJDulSJNhF" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+Con esta versión de recursión podemos construir una flecha especial.
+
+> ##### Corolario
+>
+> Existe una única flecha $$p\colon N\to N$$, llamada *predecesor*, tal que
+> 1. $$p0=0$$ y
+> 2. $$p(sn)=n$$.
+{: .block-thm }
+
+Como el segundo punto de la proposición anterior se satisface para cualquier 
+$$n\colon 1\to N$$, entonces podemos usar que $$1$$ es separador para concluir
+$$ps=\text{id}$$. Esto es, $$s$$ es una sección. Por lo tanto, $$s$$ es mono.
+Con esto tenemos el tercer axioma de Peano.
+
+El cuarto axioma se hace de manera directa.
+
+> ##### Proposición
+>
+> No existe $$n\colon 1\to N$$ tal que $$sn=0$$.
+{: .block-thm }
+
+Finalmente, para mostrar el axioma de inducción usaremos más fuertemente que
+$$1$$ es separador.
+
+> ##### Proposición
+>
+> Si $$A$$ está en $$\mathcal{S}$$, entonces
+>
+> $$A\cong\sum_{a\colon 1\to A} 1.$$
+{: .block-thm }
+
+Gracias a esta última proposición podemos concluir que para definir una flecha
+$$A\to B$$ basta decir a dónde van a dar los elementos globales 
+$$a\colon 1\to A$$.
+
+> ##### Corolario
+>
+> Sean $$A$$ y $$B$$ en $$\mathcal{S}$$. Si para cada $$a\colon 1\to A$$ existe
+> $$b_a\colon 1\to B$$, entonces existe una única $$f\colon A\to B$$ tal que 
+> $$fa=b_a$$.
+{: .block-thm }
+
+Con todo lo anterior estamos listos para demostrar inducción.
+
+> ##### Proposición
+>
+> Sea $$m\colon A\rightarrowtail N$$. Si se satisface
+> 1. $$0\in_N m$$ y
+> 2. $$n\in_N m \implies sn\in_N m$$,  
+> entonces $$m$$ es iso.
+{: .block-thm }
