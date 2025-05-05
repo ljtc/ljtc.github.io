@@ -234,17 +234,6 @@ ninja.data = [{
           window.location.href = "/blog/2024/con/";
         
       },
-    },{id: "post-instalación-de-lean-en-vs-code",
-      
-        title: "Instalación de Lean en VS Code",
-      
-      description: "Seguiremos las guías para instalar Lean y VS Code",
-      section: "Posts",
-      handler: () => {
-        
-          window.location.href = "/blog/2024/inst/";
-        
-      },
     },{id: "post-operaciones-con-conjuntos",
       
         title: "Operaciones con conjuntos",
