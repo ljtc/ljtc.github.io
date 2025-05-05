@@ -1194,7 +1194,7 @@ La lista de axiomas es:
 3. si $$s(n)=s(m)$$ entonces $$n=m$$,
 4. $$0\notin \text{im}(s)$$ y
 5. si $$A\subseteq\mathbb{N}$$ cumple $$0\in A$$ y $$n\in A\implies s(n)\in A$$
-   entonces $$A=N$$.
+   entonces $$A=\mathbb{N}$$.
 
 En la teoría de conjuntos usual se demuestra, con estos 5 axiomas, que
 $$\mathbb{N}$$ tiene un teorema de recursión. En esta versión categórica
@@ -1220,6 +1220,8 @@ Para demostrar el tercer axioma, antes debemos ver una variante de recursión.
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/sExsntCBnw4?si=WuKkVrEJDulSJNhF" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
+<br>
+
 Con esta versión de recursión podemos construir una flecha especial.
 
 > ##### Corolario
@@ -1240,6 +1242,10 @@ El cuarto axioma se hace de manera directa.
 >
 > No existe $$n\colon 1\to N$$ tal que $$sn=0$$.
 {: .block-thm }
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/IbkK1aYK1rE?si=4s36XkPSXJfLUbZs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+<br>
 
 Finalmente, para mostrar el axioma de inducción usaremos más fuertemente que
 $$1$$ es separador.
