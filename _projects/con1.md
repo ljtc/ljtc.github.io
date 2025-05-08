@@ -1268,6 +1268,10 @@ $$a\colon 1\to A$$.
 > $$fa=b_a$$.
 {: .block-thm }
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/vAJvNze6YhI?si=FnWy9TJSTfTIsgMA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+<br>
+
 Con todo lo anterior estamos listos para demostrar inducción.
 
 > ##### Proposición
@@ -1277,3 +1281,5 @@ Con todo lo anterior estamos listos para demostrar inducción.
 > 2. $$n\in_N m \implies sn\in_N m$$,  
 > entonces $$m$$ es iso.
 {: .block-thm }
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/QvfoGpF5qV4?si=Kp8ncFKYsAkZVgGG" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
