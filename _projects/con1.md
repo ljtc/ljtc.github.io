@@ -1283,3 +1283,51 @@ Con todo lo anterior estamos listos para demostrar inducción.
 {: .block-thm }
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/QvfoGpF5qV4?si=Kp8ncFKYsAkZVgGG" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+<br>
+<br>
+
+#### Aritmética
+
+En lo que sigue veremos cómo definir las operaciones usuales con el objeto de
+números naturales, $$\cdot,+\colon N\times N\to N$$.
+
+Antes de poder definir las operaciones necesitamos algunos resultados y flechas
+especiales. Empezamos con todo ese preámbulo.
+
+> ##### Proposición
+>
+> Sea $$a\colon A\to A$$ en $$\mathcal{S}$$. Existe una única 
+> $$a^{(\,)}\colon N\to A^A$$ tal que
+> 1. $$a^0=\ulcorner\text{id}_A\urcorner$$ y 
+> 2. $$a^{sn}=\ulcorner a\, a^n\urcorner$$.
+{: .block-thm }
+
+Notemos que, si usamos nombres en la exponencial, la proposición anterior dice
+que dado un elemento generalizado $$\ulcorner a\urcorner\colon 1\to A^A$$ existe
+uno $$\ulcorner a^{(\,)}\urcorner\colon 1\to (A^A)^N$$. Si usamos el corolario
+anterior en esta situación obtenemos el siguiente resultado:
+
+> ##### Proposición
+>
+> Existe una única $$\text{iter}\colon A^A\to (A^A)^N$$ tal que
+> $$\text{iter}\ulcorner a\urcorner=\ulcorner a^{(\,)}\urcorner$$.
+{: .block-thm }
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/fKMvufXgGvA?si=bRJuHORG-70xD4nX" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+<br>
+
+Lo siguiente es tomar $$A=N$$, es decir, $$\text{iter}\colon N^N\to (N^N)^N$$.
+Luego, nos gustaría que esta flecha represente operaciones binarias. De manera
+más precisa, si tomamos $$f\colon N\to N$$ entonces nos gustaría que
+$$\text{iter}\ulcorner f\urcorner$$ sea el nombre de una operación binaria. Para
+lograr esto nececitamos mostrar que $$(N^N)^N$$ es lo mismo que 
+$$N^{N\times N}$$.
+
+> ##### Proposición
+>
+> $$(A^B)^C\cong A^{B\times C}$$.
+{: .block-thm }
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/LFEtO14GZD8?si=Ixui2p7o2ehACiy9" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
