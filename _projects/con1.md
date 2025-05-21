@@ -1319,15 +1319,37 @@ anterior en esta situación obtenemos el siguiente resultado:
 <br>
 
 Lo siguiente es tomar $$A=N$$, es decir, $$\text{iter}\colon N^N\to (N^N)^N$$.
-Luego, nos gustaría que esta flecha represente operaciones binarias. De manera
-más precisa, si tomamos $$f\colon N\to N$$ entonces nos gustaría que
-$$\text{iter}\ulcorner f\urcorner$$ sea el nombre de una operación binaria. Para
-lograr esto nececitamos mostrar que $$(N^N)^N$$ es lo mismo que 
-$$N^{N\times N}$$.
+En este contexto hay que notar que si $$k\colon N\to N^N$$, entonces $$k$$
+representa una operación binaria
 
-> ##### Proposición
->
-> $$(A^B)^C\cong A^{B\times C}$$.
-{: .block-thm }
+$$
+\begin{CD}
+  N\times N @>{\text{id}\times k}>>
+  N\times N^N @>{\text{ev}}>> N.
+\end{CD}
+$$
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/LFEtO14GZD8?si=Ixui2p7o2ehACiy9" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+Así, si empezamos con $$f\colon N\to N$$ podemos considerar 
+$$f^{(\,)}\colon N\to N^N$$. Con lo anterior, definimos 
+$$\bar{f}\colon N\times N\to N$$ como la composición
+$$\text{ev}(\text{id}\times f^{(\,)})$$. Con esto tenemos las siguientes dos
+cosas:
+1. $$\bar{f}(n,0)=\text{ev}(n,f^0)=\text{ev}(n,\ulcorner\text{id}\urcorner) =
+   \text{id}n = n$$ y
+2. $$\bar{f}(n,sm)=\text{ev}(n,f^{sm})=\text{ev}(n,\ulcorner ff^m \urcorner)$$   
+   $$=f f^m n = f \text{ev}(n,\ulcorner f^m \urcorner) = f \text{ev}(n,f^m) =
+   f\bar{f}(n,m)$$.
+
+Finalmente, aplicamos este proceso a la flecha sucesor $$s\colon N\to N$$. Con
+esto obtenemos una flecha $$\bar{s}\colon N\times N\to N$$ que satisface:
+1. $$\bar{s}(n,0)=n$$ y
+2. $$\bar{s}(n,sm)=s\bar{s}(n,m)$$.
+
+Si denotamos con $$x+y$$ a la composición $$\bar{s}(x,y)$$, entonces los dos
+puntos anteriores se traducen a lo siguiente:
+1. $$n+0=n$$ y
+2. $$n+sm=s(n+m)$$.
+
+Lo cual nos da la definición recursiva de la suma.
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/SQT1cSaJlgI?si=dcMJIQdfnJeNeZnl" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
