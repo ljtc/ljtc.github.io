@@ -10,10 +10,15 @@ category: work
 En el curso de álgebra superior 1 veremos las bases de lógica, conjuntos y
 álgebra que serán útiles para el resto de la carrera, cualquiera que sea.
 
-## Evaluación
-Habrá tres tareas y tres exámenes, si hay tiempo podrían ser cuatro de cada uno.
-Los exámenes aportan el 100% de la calificación final y las tareas darán puntos extra.
-
+## Verificación
+Del lado de quien expone, el momento en el que es más peligroso cometer un error
+es en los primeros semestres, que es posible que el alumnono se de cuenta del
+error y lo replique. Para evitar esa posibilidad usaremos un asistente de
+pruebas para asegurarnos que todos nuestros resultados sean correctos y están
+bien demostrados. Estaremos usando [LEAN](https://lean-lang.org/) para la
+verificación. La formalización del curso estará disponible en el siguiente
+[repositorio](https://github.com/ljtc/AS1Lean).
+ 
 ## Temario
 Seguiremos el 
 [temario](https://www.fciencias.unam.mx/sites/default/files/temario/7.pdf)
