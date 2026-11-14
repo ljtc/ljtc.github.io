@@ -1,0 +1,12 @@
+{% assign destination = nil %}
+{% for article in site.papers %}
+  {% if article.slug == include.paper or article.url == include.paper %}
+    {% assign destination = article %}
+    {% break %}
+  {% endif %}
+{% endfor %}
+{% if destination and include.id %}
+<a class="statement-reference cross-paper-reference" href="{{ destination.url | relative_url }}#{{ include.id | escape }}" data-cross-ref="{{ include.id | escape }}" data-cross-ref-url="{{ destination.url | relative_url }}" data-ref-prefix="{{ include.prefix | default: 'auto' | escape }}">{{ include.fallback | default: 'Ver resultado en otro artículo' | escape }}</a>
+{% else %}
+<span class="reference-missing" title="Artículo o identificador no indicado">{{ include.fallback | default: 'Referencia no encontrada' | escape }}</span>
+{% endif %}

@@ -5,17 +5,32 @@ date: 2026-11-13
 abstract: "Ejemplo de teoremas, demostraciones, ecuaciones numeradas, referencias, bibliografía y diagramas."
 keywords: ["Álgebra", "LaTeX", "Jekyll"]
 tikz: true
-math: true
 ---
 
-## 1. Introducción
+## Introducción
 
-Este artículo es una plantilla. Las expresiones en línea, como \(a^2+b^2\), se procesan con MathJax.
+Para una aplicación en otro artículo, véase el
+{% include cross_ref.html paper="segunda-nota" id="thm-producto" %}.
 
-## 2. Resultados
+También podemos citar la
+{% include cross_ref.html paper="segunda-nota" id="sec-propiedades" %}.
+
+{:#sec-introduccion}
+
+Consulta la {% include ref.html id="sec-resultados" %} y la {% include ref.html id="subsec-pares" %}.
+
+Este artículo es una plantilla. Las expresiones en línea, como $a^2+b^2$, se procesan con MathJax.
+
+## Resultados
+{:#sec-resultados}
+
+### Enteros pares
+{:#subsec-pares}
+
+Los teoremas siguen numerándose por sección, no por subsección.
 
 {% capture contenido_def %}
-Un **entero par** es un entero \(n\) para el cual existe \(k\in\mathbb Z\) tal que \(n=2k\).
+Un **entero par** es un entero  $n$  para el cual existe $k\in\mathbb Z$ tal que $n=2k$.
 {% endcapture %}
 {% include theorem.html type="definición" id="def-par" title="Entero par" content=contenido_def %}
 
@@ -25,17 +40,17 @@ La suma de dos enteros pares es par.
 {% include theorem.html type="teorema" id="thm-suma" title="Suma de pares" content=contenido_teorema %}
 
 {% capture contenido_prueba %}
-Sean \(a=2m\) y \(b=2n\), con $m,n\in\mathbb Z$. Entonces
+Sean $a=2m$ y $b=2n$, con $m,n\in\mathbb Z$. Entonces
 
 \begin{equation}
 a+b=2(m+n). \label{eq:suma-pares}
 \end{equation}
 
-Como \(m+n\in\mathbb Z\), la suma es par.
+Como $m+n\in\mathbb Z$, la suma es par.
 {% endcapture %}
 {% include proof.html content=contenido_prueba %}
 
-La ecuación \(\eqref{eq:suma-pares}\) justifica el resultado. También puedes enlazar directamente al [teorema](#thm-suma) o a la [definición](#def-par).
+La ecuación \(\eqref{eq:suma-pares}\) justifica el resultado. También puedes consultar el {% include ref.html id="thm-suma" %} y la {% include ref.html id="def-par" %}.
 
 
 \begin{equation}
@@ -44,7 +59,7 @@ La ecuación \(\eqref{eq:suma-pares}\) justifica el resultado. También puedes e
 
 Referencia cruzada: \(\eqref{eq:impares}\).
 
-## 3. Diagrama conmutativo
+## Diagrama conmutativo
 
 El siguiente diagrama sencillo se dibuja mediante TikZJax:
 
@@ -61,11 +76,22 @@ El siguiente diagrama sencillo se dibuja mediante TikZJax:
 \end{tikzpicture}
 </script>
 
-## 4. Referencias
+<script type="text/tikz">
+  \begin{tikzcd}
+    A \arrow[r, "\phi"] \arrow[d]
+      & B \arrow[d, "\psi"] \\
+    C \arrow[r, "\eta"]
+      & D
+  \end{tikzcd}
+</script>
 
-<ol class="bibliography">
-  <li id="ref-lamport">L. Lamport, <em>LaTeX: A Document Preparation System</em>, Addison-Wesley, 1994.</li>
-  <li id="ref-knuth">D. E. Knuth, <em>The TeXbook</em>, Addison-Wesley, 1984.</li>
-</ol>
+## Referencias
 
-Un ejemplo de cita bibliográfica: [Lamport, 1994](#ref-lamport).
+Para conocer más sobre TeX, consulta {% include cite.html key="knuth1984" %}.
+El sistema LaTeX se describe en {% include cite.html key="lamport1994" locator="p. 25" %}.
+También podemos citar ambas obras {% include cite.html keys="knuth1984,lamport1994" %}.
+Podemos citar de nuevo {% include cite.html key="knuth1984" %} sin duplicar la entrada.
+
+<div class="bibliography-auto" id="bibliografia" aria-label="Bibliografía automática">
+  <p class="bib-status">Cargando bibliografía…</p>
+</div>

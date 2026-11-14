@@ -38,3 +38,6 @@ exclude:
   - Gemfile
   - Gemfile.lock
   - vendor
+
+# numeric, author-year o alphabetic
+citation_style: numeric

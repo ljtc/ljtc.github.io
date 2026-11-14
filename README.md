@@ -102,3 +102,123 @@ El diseño y la numeración visual de teoremas se controlan con CSS/JavaScript; 
 ### Actualizar una instalación existente
 
 Sube los archivos nuevos y modificados, preservando tus cambios personales en `_config.yml`, páginas y publicaciones. Fusiona la configuración `papers` y sus `defaults` si ya modificaste `_config.yml`.
+
+
+## Numeración y referencias automáticas (v4)
+
+En artículos de `_papers/`, cada encabezado Markdown `##` inicia una sección.
+Los resultados (teoremas, definiciones, lemas, etc.) comparten un contador que se
+reinicia por sección. Por ejemplo, Definición 2.1 y Teorema 2.2.
+No escribas manualmente el número delante del título de la sección.
+
+Para insertar un resultado:
+
+```liquid
+{% capture enunciado %}
+Para todo $x\in\mathbb R$, se cumple $x^2\geq 0$.
+{% endcapture %}
+{% include theorem.html type="teorema" id="thm-positivo" title="Positividad" content=enunciado %}
+```
+
+Para referenciarlo desde el mismo artículo:
+
+```liquid
+Como vimos en el {% include ref.html id="thm-positivo" %}, ...
+```
+
+La referencia se transforma automáticamente en «Teorema 2.1» (según la sección)
+y enlaza al resultado. También admite `prefix="none"` para mostrar solo el número.
+Los identificadores deben ser únicos dentro del artículo.
+
+La numeración y las referencias de teoremas dependen de JavaScript en el navegador.
+MathJax sigue gestionando las referencias a ecuaciones con `\label` y `\eqref`.
+Este sistema no genera referencias entre artículos diferentes.
+
+
+## v5 — Secciones y referencias cruzadas
+
+En los artículos (`_papers`), los encabezados `##` se numeran como 1, 2, 3 y los `###` como 1.1, 1.2, 2.1. Los resultados (teoremas, definiciones, etc.) mantienen un contador compartido por sección `##`; las subsecciones no lo reinician.
+
+Añade identificadores explícitos con Kramdown, en una línea inmediatamente posterior al encabezado:
+
+```markdown
+## Preliminares
+{:#sec-preliminares}
+
+### Grupos
+{:#sec-grupos}
+```
+
+Para citar secciones, utiliza el mismo include que para teoremas:
+
+```liquid
+Véase la {% include ref.html id="sec-preliminares" %}.
+Véase la {% include ref.html id="sec-grupos" %}.
+Solo el número: {% include ref.html id="sec-grupos" prefix="none" %}.
+```
+
+No escribas los números manualmente en los títulos. Si no asignas un identificador explícito, Kramdown puede generar uno automáticamente, pero se recomienda usar IDs estables. Los números y las referencias se completan en el navegador mediante JavaScript; no se incluyen en el HTML inicial ni funcionan con JavaScript desactivado. No hay referencias entre artículos distintos.
+
+**Actualización desde v4:** sustituye `assets/js/main.js` y `assets/css/style.css` por las versiones v5; puedes añadir los ejemplos de `_papers/ejemplo-academico.md` sin sobrescribir tus artículos. El CSS v5 elimina los contadores antiguos que duplicaban la numeración.
+
+
+## Bibliografía BibTeX (v6)
+
+- Edita `assets/bibliografia.bib` con tus entradas BibTeX (`@book`, `@article`, etc.).
+- Cita en Markdown: `{% include cite.html key="knuth1984" %}`. Puedes citar varias veces la misma clave.
+- Al final del artículo añade `<div id="bibliografia" class="bibliography-auto"></div>`.
+- Las referencias se numeran por orden de primera cita y solo se muestran las citadas.
+- Si deseas un `.bib` diferente por artículo, define `bibliography: /assets/otro.bib` en el front matter.
+- El procesador es intencionalmente ligero: soporta campos entre llaves/comillas, pero no macros `@string`, concatenación `#`, `crossref`, ni conversión completa de comandos LaTeX. Para bibliografías complejas se recomienda una compilación previa.
+- Las citas se resuelven en el navegador, por lo que requieren JavaScript.
+
+
+## Estilos bibliográficos (v7)
+
+Configura `citation_style: numeric` en `_config.yml` para el valor por defecto.
+Puedes sobrescribirlo en el front matter de cada artículo:
+
+```yaml
+citation_style: author-year # numeric | author-year | alphabetic
+```
+
+Citas simples: `{% include cite.html key="knuth1984" %}`.
+Citas múltiples: `{% include cite.html keys="knuth1984,lamport1994" %}`.
+Con localizador: `{% include cite.html key="lamport1994" locator="p. 25" %}`.
+
+El estilo numérico ordena las referencias por primera aparición; autor-año y alfabético
+las ordenan por apellido. Las etiquetas alfabéticas son aproximaciones breves, no un
+estilo bibliográfico formal completo. El lector BibTeX es ligero y no admite macros
+`@string`, `crossref` ni toda la sintaxis LaTeX. Las citas múltiples enlazan a la
+primera entrada; la bibliografía completa contiene enlaces por entrada.
+
+
+## Referencias cruzadas entre artículos (v8)
+
+En el artículo origen utiliza la clave (`slug`) del archivo Markdown de destino
+(sin `.md`) y el `id` del teorema o sección:
+
+```liquid
+Véase el {% include cross_ref.html paper="segunda-nota" id="thm-producto" %}.
+Véase la {% include cross_ref.html paper="segunda-nota" id="sec-propiedades" %}.
+Solo el número: {% include cross_ref.html paper="segunda-nota" id="thm-producto" prefix="none" %}.
+```
+
+La plantilla `_includes/cross_ref.html` busca el artículo dentro de `site.papers`,
+genera una URL compatible con `baseurl` y deja un enlace permanente al `id`.
+El JavaScript descarga el HTML del artículo de destino, calcula los números
+siguiendo la misma lógica que las referencias locales y actualiza el texto del
+vínculo. Cada artículo de destino se descarga **una sola vez por página**.
+
+**Requisitos y limitaciones:** los artículos deben estar publicados en el mismo
+sitio; el sistema requiere JavaScript y acceso HTTP (en `file://` no funciona).
+Los IDs deben ser únicos dentro de cada artículo. Las referencias entre artículos
+no incluyen automáticamente el título del artículo. Si la página no existe o el
+ID es incorrecto, queda el texto alternativo y aparece una advertencia en consola.
+Los números se calculan con base en el orden de `h2`, `h3` y `.math-statement`;
+los encabezados numerados manualmente no cambian ese orden. El mecanismo no
+resuelve referencias a ecuaciones de MathJax en otro artículo.
+
+**Actualización desde v7:** agrega `_includes/cross_ref.html` y reemplaza
+`assets/js/main.js`. Los ejemplos son opcionales. No necesitas cambiar CSS,
+`_config.yml`, bibliografía ni los includes anteriores.

@@ -11,5 +11,6 @@ layout: default
     {% if page.abstract %}<section class="paper-abstract" aria-label="Resumen"><strong>Resumen.</strong> {{ page.abstract | escape }}</section>{% endif %}
     {% if page.keywords %}<div class="tags">{% for keyword in page.keywords %}<span class="tag">{{ keyword | escape }}</span>{% endfor %}</div>{% endif %}
   </header>
-  <div class="prose paper-content">{{ content }}</div>
+  <div class="prose paper-content" data-numbered-paper
+       data-bib-url="{{ page.bibliography | default: '/assets/bibliografia.bib' | relative_url }}" data-citation-style="{{ page.citation_style | default: site.citation_style | default: 'numeric' | escape }}">{{ content }}</div>
 </article>

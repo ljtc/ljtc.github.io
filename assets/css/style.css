@@ -17,10 +17,31 @@
 /* Publicaciones académicas v3 */
 .academic-article{max-width:850px}.paper-authors,.paper-meta{color:var(--muted)}.paper-abstract{border-left:3px solid var(--accent);padding:16px 20px;background:var(--panel);border-radius:0 9px 9px 0}.math-statement{margin:28px 0;padding:20px 24px;background:var(--panel);border:1px solid var(--border);border-left:3px solid #9faed0;border-radius:8px;scroll-margin-top:25px}.statement-heading{display:flex;gap:7px;flex-wrap:wrap;margin-bottom:10px;color:var(--text)}.statement-title{font-style:italic}.statement-body>p:last-child,.proof-body>p:last-child{margin-bottom:0}.math-proof{margin:24px 0 34px;position:relative}.proof-heading{font-style:italic;font-weight:650;margin-bottom:10px}.qed{display:block;text-align:right;font-size:1.35rem;line-height:1}.bibliography{padding-left:1.5rem}.bibliography li{margin:10px 0;scroll-margin-top:30px}.paper-content{overflow-wrap:break-word}.paper-content script[type="text/tikz"]{display:block}.paper-content mjx-container[display="true"]{overflow-x:auto;max-width:100%}@media(max-width:640px){.math-statement{padding:15px}}
 
-.academic-article{counter-reset:theorem lemma proposition corollary definition example}
-.math-statement[data-statement="teorema"]{counter-increment:theorem}.math-statement[data-statement="teorema"] .statement-label::after{content:" " counter(theorem) "."}
-.math-statement[data-statement="lema"]{counter-increment:lemma}.math-statement[data-statement="lema"] .statement-label::after{content:" " counter(lemma) "."}
-.math-statement[data-statement="proposición"]{counter-increment:proposition}.math-statement[data-statement="proposición"] .statement-label::after{content:" " counter(proposition) "."}
-.math-statement[data-statement="corolario"]{counter-increment:corollary}.math-statement[data-statement="corolario"] .statement-label::after{content:" " counter(corollary) "."}
-.math-statement[data-statement="definición"]{counter-increment:definition}.math-statement[data-statement="definición"] .statement-label::after{content:" " counter(definition) "."}
-.math-statement[data-statement="ejemplo"]{counter-increment:example}.math-statement[data-statement="ejemplo"] .statement-label::after{content:" " counter(example) "."}
+
+/* Resultados académicos y referencias cruzadas */
+.math-statement { scroll-margin-top: 5rem; }
+.statement-number { font-variant-numeric: tabular-nums; }
+.statement-number:not(:empty)::after { content: "."; }
+.statement-reference { text-decoration-thickness: 1px; text-underline-offset: .2em; }
+.reference-missing { text-decoration-style: wavy; }
+.math-statement:target { outline: 2px solid #8b9cff; outline-offset: 5px; }
+
+/* v5: numeración y enlaces a secciones */
+.paper-content h2[id], .paper-content h3[id] { scroll-margin-top: 5rem; }
+.paper-content h2:target, .paper-content h3:target { outline: 2px solid #8b9cff; outline-offset: 5px; border-radius: 3px; }
+.heading-number { font-variant-numeric: tabular-nums; }
+
+/* Bibliografía v6 */
+.bib-citation{white-space:nowrap;text-decoration:underline;text-underline-offset:.18em}.bibliography-auto{margin:1.5rem 0}.bibliography-auto .bibliography{padding-left:2.3rem}.bibliography-auto li{padding-left:.4rem;margin:0 0 1rem}.bibliography-auto li::marker{color:var(--accent)}.bibliography-auto li:target{outline:2px solid var(--accent);outline-offset:5px;border-radius:3px}.bib-status{color:var(--muted)}
+
+/* Bibliografía configurable */
+.bibliography-author-year,.bibliography-alphabetic{list-style:none;padding-left:0}
+.bibliography .bib-label{font-weight:650;color:var(--accent)}
+.bib-citation{white-space:normal}
+
+/* Diagramas TikZJax monocromáticos en blanco */
+.tikz-white svg {
+  filter: brightness(0) invert(1);
+  max-width: 100%;
+  height: auto;
+}

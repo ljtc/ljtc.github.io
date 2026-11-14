@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101114">
+  <meta name="description" content="Proyectos, ideas y publicaciones">
+  <title>Matemáticas y diagramas · Mi portafolio</title>
+  <link rel="stylesheet" href="/assets/css/style.css">
+  
+  <script>
+    window.MathJax = {
+      tex: { inlineMath: [['$', '$'], ['\\(', '\\)']], displayMath: [['\\[', '\\]']], processEscapes: true, tags: 'ams', packages: {'[+]': ['ams']} },
+      options: { skipHtmlTags: ['script','noscript','style','textarea','pre','code'] },
+      svg: { fontCache: 'global' }
+    };
+  </script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+  
+  
+  <link rel="stylesheet" href="https://tikzjax.com/v1/fonts.css">
+  <script defer src="https://tikzjax.com/v1/tikzjax.js"></script>
+  
+</head>
+<body>
+  <header class="site-header"><div class="container header-inner"><a class="brand" href="/">Mi portafolio<span class="accent">.</span></a><button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Abrir menú">☰</button><nav id="site-nav" class="site-nav" aria-label="Navegación principal"><a href="/">Inicio</a><a href="/proyectos/">Proyectos</a><a href="/blog/">Blog</a><a href="/articulos/">Artículos</a><a href="/acerca/">Acerca de</a></nav></div></header>
+  <main id="contenido" class="container main-content"><section class="page-intro"><p class="eyebrow">DEMOSTRACIÓN</p><h1>Matemáticas y diagramas<span class="accent">.</span></h1><p class="lead">Ejemplos de MathJax y TikZJax en GitHub Pages.</p></section>
+<div class="prose">
+<h2>MathJax</h2>
+<p>Una fórmula en línea: \(e^{i\pi}+1=0\).</p>
+<p>Una fórmula centrada:</p>
+\[
+\int_0^1 x^2\,dx = \frac{1}{3}.
+\]
+<h2>TikZJax</h2>
+<p>Un diagrama sencillo:</p>
+<script type="text/tikz">
+\begin{tikzpicture}
+  \draw[->] (0,0) -- (3,0) node[right] {$x$};
+  \draw[->] (0,0) -- (0,2) node[above] {$y$};
+  \draw[thick] (0,0) -- (2,1.5);
+  \fill (2,1.5) circle (2pt);
+\end{tikzpicture}
+</script>
+<p>Los diagramas se procesan en el navegador. TikZJax no admite todos los paquetes de una instalación completa de TeX.</p>
+</div>
+</main>
+  
+  <script>
+    document.querySelectorAll('script[type="text/tikz"]')
+      .forEach(script => {
+        if (script.parentElement.classList.contains('tikz-white')) {
+          return;
+        }
+
+        const wrapper = document.createElement('div');
+        wrapper.className = 'tikz-white';
+
+        script.parentNode.insertBefore(wrapper, script);
+        wrapper.appendChild(script);
+      });
+  </script>
+  
+  <footer class="site-footer"><div class="container footer-inner"><span>© 2026 Mi portafolio</span><span>Hecho con Jekyll y GitHub Pages</span></div></footer>
+  <script src="/assets/js/main.js" defer></script>
+</body>
+</html>

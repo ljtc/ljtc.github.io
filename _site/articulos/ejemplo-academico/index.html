@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101114">
+  <meta name="description" content="Proyectos, ideas y publicaciones">
+  <title>Una identidad elemental y diagramas · Mi portafolio</title>
+  <link rel="stylesheet" href="/assets/css/style.css">
+  
+  <script>
+    window.MathJax = {
+      tex: { inlineMath: [['$', '$'], ['\\(', '\\)']], displayMath: [['\\[', '\\]']], processEscapes: true, tags: 'ams', packages: {'[+]': ['ams']} },
+      options: { skipHtmlTags: ['script','noscript','style','textarea','pre','code'] },
+      svg: { fontCache: 'global' }
+    };
+  </script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+  
+  
+  <link rel="stylesheet" href="https://tikzjax.com/v1/fonts.css">
+  <script defer src="https://tikzjax.com/v1/tikzjax.js"></script>
+  
+</head>
+<body>
+  <header class="site-header"><div class="container header-inner"><a class="brand" href="/">Mi portafolio<span class="accent">.</span></a><button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Abrir menú">☰</button><nav id="site-nav" class="site-nav" aria-label="Navegación principal"><a href="/">Inicio</a><a href="/proyectos/">Proyectos</a><a href="/blog/">Blog</a><a href="/articulos/">Artículos</a><a href="/acerca/">Acerca de</a></nav></div></header>
+  <main id="contenido" class="container main-content"><article class="article academic-article">
+  <a class="back-link" href="/articulos/">← Todos los artículos</a>
+  <header>
+    <p class="eyebrow">PUBLICACIÓN ACADÉMICA</p>
+    <h1>Una identidad elemental y diagramas</h1>
+    <p class="paper-authors">Autor del portafolio</p>
+    <p class="paper-meta">13/11/2026</p>
+    <section class="paper-abstract" aria-label="Resumen"><strong>Resumen.</strong> Ejemplo de teoremas, demostraciones, ecuaciones numeradas, referencias, bibliografía y diagramas.</section>
+    <div class="tags"><span class="tag">Álgebra</span><span class="tag">LaTeX</span><span class="tag">Jekyll</span></div>
+  </header>
+  <div class="prose paper-content" data-numbered-paper
+       data-bib-url="/assets/bibliografia.bib" data-citation-style="numeric"><h2 id="introducción">Introducción</h2>
+
+<p>Para una aplicación en otro artículo, véase el</p>
+
+<p><a class="statement-reference cross-paper-reference" href="/articulos/segunda-nota/#thm-producto" data-cross-ref="thm-producto" data-cross-ref-url="/articulos/segunda-nota/" data-ref-prefix="auto">Ver resultado en otro artículo</a></p>
+
+<p>.</p>
+
+<p>También podemos citar la</p>
+
+<p><a class="statement-reference cross-paper-reference" href="/articulos/segunda-nota/#sec-propiedades" data-cross-ref="sec-propiedades" data-cross-ref-url="/articulos/segunda-nota/" data-ref-prefix="auto">Ver resultado en otro artículo</a></p>
+
+<p>.</p>
+
+<p id="sec-introduccion">Consulta la <a class="statement-reference" href="#sec-resultados" data-ref="sec-resultados" data-ref-prefix="auto">Ver resultado</a> y la <a class="statement-reference" href="#subsec-pares" data-ref="subsec-pares" data-ref-prefix="auto">Ver resultado</a>.</p>
+
+<p>Este artículo es una plantilla. Las expresiones en línea, como $a^2+b^2$, se procesan con MathJax.</p>
+
+<h2 id="sec-resultados">Resultados</h2>
+
+<h3 id="subsec-pares">Enteros pares</h3>
+
+<p>Los teoremas siguen numerándose por sección, no por subsección.</p>
+
+<div class="math-statement" data-statement="definición" id="def-par">
+  <div class="statement-heading"><strong class="statement-label">Definición <span class="statement-number" aria-label="Número"></span></strong><span class="statement-title">(Entero par)</span></div>
+  <div class="statement-body">
+<p>Un <strong>entero par</strong> es un entero  $n$  para el cual existe $k\in\mathbb Z$ tal que $n=2k$.</p>
+</div>
+</div>
+
+<div class="math-statement" data-statement="teorema" id="thm-suma">
+  <div class="statement-heading"><strong class="statement-label">Teorema <span class="statement-number" aria-label="Número"></span></strong><span class="statement-title">(Suma de pares)</span></div>
+  <div class="statement-body">
+<p>La suma de dos enteros pares es par.</p>
+</div>
+</div>
+
+<div class="math-proof"><div class="proof-heading">Demostración.</div><div class="proof-body">
+<p>Sean $a=2m$ y $b=2n$, con $m,n\in\mathbb Z$. Entonces</p>
+
+<p>\begin{equation}
+a+b=2(m+n). \label{eq:suma-pares}
+\end{equation}</p>
+
+<p>Como $m+n\in\mathbb Z$, la suma es par.</p>
+</div><span class="qed" aria-label="Fin de la demostración">□</span></div>
+
+<p>La ecuación (\eqref{eq:suma-pares}) justifica el resultado. También puedes consultar el <a class="statement-reference" href="#thm-suma" data-ref="thm-suma" data-ref-prefix="auto">Ver resultado</a> y la <a class="statement-reference" href="#def-par" data-ref="def-par" data-ref-prefix="auto">Ver resultado</a>.</p>
+
+<p>\begin{equation}
+1+3+5+\cdots+(2n-1)=n^2.\label{eq:impares}
+\end{equation}</p>
+
+<p>Referencia cruzada: (\eqref{eq:impares}).</p>
+
+<h2 id="diagrama-conmutativo">Diagrama conmutativo</h2>
+
+<p>El siguiente diagrama sencillo se dibuja mediante TikZJax:</p>
+
+<script type="text/tikz">
+\begin{tikzpicture}
+  \node (A) at (0,1.5) {$A$};
+  \node (B) at (3,1.5) {$B$};
+  \node (C) at (0,0) {$C$};
+  \node (D) at (3,0) {$D$};
+  \draw[->] (A) -- node[above] {$f$} (B);
+  \draw[->] (A) -- node[left] {$g$} (C);
+  \draw[->] (B) -- node[right] {$h$} (D);
+  \draw[->] (C) -- node[below] {$k$} (D);
+\end{tikzpicture}
+</script>
+
+<script type="text/tikz">
+  \begin{tikzcd}
+    A \arrow[r, "\phi"] \arrow[d]
+      & B \arrow[d, "\psi"] \\
+    C \arrow[r, "\eta"]
+      & D
+  \end{tikzcd}
+</script>
+
+<h2 id="referencias">Referencias</h2>
+
+<p>Para conocer más sobre TeX, consulta <a class="bib-citation" data-cite="knuth1984" href="#bibliografia" aria-label="Cita bibliográfica knuth1984">[?]</a>
+.
+El sistema LaTeX se describe en <a class="bib-citation" data-cite="lamport1994" data-locator="p. 25" href="#bibliografia" aria-label="Cita bibliográfica lamport1994">[?]</a>
+.
+También podemos citar ambas obras <a class="bib-citation" data-cite="knuth1984,lamport1994" href="#bibliografia" aria-label="Cita bibliográfica knuth1984,lamport1994">[?]</a>
+.
+Podemos citar de nuevo <a class="bib-citation" data-cite="knuth1984" href="#bibliografia" aria-label="Cita bibliográfica knuth1984">[?]</a>
+ sin duplicar la entrada.</p>
+
+<div class="bibliography-auto" id="bibliografia" aria-label="Bibliografía automática">
+  <p class="bib-status">Cargando bibliografía…</p>
+</div>
+</div>
+</article>
+</main>
+  
+  <script>
+    document.querySelectorAll('script[type="text/tikz"]')
+      .forEach(script => {
+        if (script.parentElement.classList.contains('tikz-white')) {
+          return;
+        }
+
+        const wrapper = document.createElement('div');
+        wrapper.className = 'tikz-white';
+
+        script.parentNode.insertBefore(wrapper, script);
+        wrapper.appendChild(script);
+      });
+  </script>
+  
+  <footer class="site-footer"><div class="container footer-inner"><span>© 2026 Mi portafolio</span><span>Hecho con Jekyll y GitHub Pages</span></div></footer>
+  <script src="/assets/js/main.js" defer></script>
+</body>
+</html>

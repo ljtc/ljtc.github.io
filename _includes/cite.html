@@ -1,0 +1,2 @@
+{%- assign cite_key = include.keys | default: include.key | default: '' | strip -%}
+<a class="bib-citation" data-cite="{{ cite_key | escape }}"{% if include.locator %} data-locator="{{ include.locator | escape }}"{% endif %} href="#bibliografia" aria-label="Cita bibliográfica {{ cite_key | escape }}">[?]</a>

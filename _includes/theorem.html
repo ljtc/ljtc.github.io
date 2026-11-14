@@ -1,5 +1,5 @@
 {% assign theorem_kind = include.type | default: 'teorema' | downcase %}
 <div class="math-statement" data-statement="{{ theorem_kind | escape }}" {% if include.id %}id="{{ include.id | escape }}"{% endif %}>
-  <div class="statement-heading"><strong class="statement-label">{{ theorem_kind | capitalize }}</strong>{% if include.title %}<span class="statement-title">({{ include.title | escape }})</span>{% endif %}</div>
+  <div class="statement-heading"><strong class="statement-label">{{ theorem_kind | capitalize }} <span class="statement-number" aria-label="Número"></span></strong>{% if include.title %}<span class="statement-title">({{ include.title | escape }})</span>{% endif %}</div>
   <div class="statement-body">{{ include.content | markdownify }}</div>
 </div>
