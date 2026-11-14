@@ -24,7 +24,7 @@ La suma de dos enteros pares es par.
 {% include theorem.html type="teorema" id="thm-suma" title="Suma de pares" content=contenido_teorema %}
 
 {% capture contenido_prueba %}
-Sean \(a=2m\) y \(b=2n\), con \(m,n\in\mathbb Z\). Entonces
+Sean \(a=2m\) y \(b=2n\), con $m,n\in\mathbb Z$. Entonces
 
 \begin{equation}
 a+b=2(m+n). \label{eq:suma-pares}
