@@ -23,4 +23,12 @@ tikz: true
 \end{tikzpicture}
 </script>
 <p>Los diagramas se procesan en el navegador. TikZJax no admite todos los paquetes de una instalación completa de TeX.</p>
+<script type="text/tikz">
+  \begin{tikzcd}
+    A \arrow[r, "\phi"] \arrow[d, red]
+      & B \arrow[d, "\psi" red] \\
+    C \arrow[r, red, "\eta" blue]
+      & |[blue, rotate=-15]| D
+  \end{tikzcd}
+</script>
 </div>
