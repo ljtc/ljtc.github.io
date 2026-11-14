@@ -10,7 +10,7 @@
   {% if page.math or page.tikz %}
   <script>
     window.MathJax = {
-      tex: { inlineMath: [['\\(', '\\)']], displayMath: [['\\[', '\\]']], processEscapes: true },
+      tex: { inlineMath: [['\\(', '\\)']], displayMath: [['\\[', '\\]']], processEscapes: true, tags: 'ams', packages: {'[+]': ['ams']} },
       options: { skipHtmlTags: ['script','noscript','style','textarea','pre','code'] },
       svg: { fontCache: 'global' }
     };

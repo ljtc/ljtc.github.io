@@ -13,3 +13,14 @@
 .will-reveal{opacity:0;transform:translateY(13px)}.will-reveal.is-visible{opacity:1;transform:translateY(0);transition:opacity .55s ease,transform .55s ease}
 .prose mjx-container[display="true"]{max-width:100%;overflow-x:auto;overflow-y:hidden;padding:7px 0}.prose svg{max-width:100%}
 @media(prefers-reduced-motion:reduce){.will-reveal{opacity:1;transform:none}.will-reveal.is-visible{transition:none}.card-arrow .ui-icon{transition:none}}
+
+/* Publicaciones académicas v3 */
+.academic-article{max-width:850px}.paper-authors,.paper-meta{color:var(--muted)}.paper-abstract{border-left:3px solid var(--accent);padding:16px 20px;background:var(--panel);border-radius:0 9px 9px 0}.math-statement{margin:28px 0;padding:20px 24px;background:var(--panel);border:1px solid var(--border);border-left:3px solid #9faed0;border-radius:8px;scroll-margin-top:25px}.statement-heading{display:flex;gap:7px;flex-wrap:wrap;margin-bottom:10px;color:var(--text)}.statement-title{font-style:italic}.statement-body>p:last-child,.proof-body>p:last-child{margin-bottom:0}.math-proof{margin:24px 0 34px;position:relative}.proof-heading{font-style:italic;font-weight:650;margin-bottom:10px}.qed{display:block;text-align:right;font-size:1.35rem;line-height:1}.bibliography{padding-left:1.5rem}.bibliography li{margin:10px 0;scroll-margin-top:30px}.paper-content{overflow-wrap:break-word}.paper-content script[type="text/tikz"]{display:block}.paper-content mjx-container[display="true"]{overflow-x:auto;max-width:100%}@media(max-width:640px){.math-statement{padding:15px}}
+
+.academic-article{counter-reset:theorem lemma proposition corollary definition example}
+.math-statement[data-statement="teorema"]{counter-increment:theorem}.math-statement[data-statement="teorema"] .statement-label::after{content:" " counter(theorem) "."}
+.math-statement[data-statement="lema"]{counter-increment:lemma}.math-statement[data-statement="lema"] .statement-label::after{content:" " counter(lemma) "."}
+.math-statement[data-statement="proposición"]{counter-increment:proposition}.math-statement[data-statement="proposición"] .statement-label::after{content:" " counter(proposition) "."}
+.math-statement[data-statement="corolario"]{counter-increment:corollary}.math-statement[data-statement="corolario"] .statement-label::after{content:" " counter(corollary) "."}
+.math-statement[data-statement="definición"]{counter-increment:definition}.math-statement[data-statement="definición"] .statement-label::after{content:" " counter(definition) "."}
+.math-statement[data-statement="ejemplo"]{counter-increment:example}.math-statement[data-statement="ejemplo"] .statement-label::after{content:" " counter(example) "."}

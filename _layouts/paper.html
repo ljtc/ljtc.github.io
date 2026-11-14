@@ -1,0 +1,15 @@
+---
+layout: default
+---
+<article class="article academic-article">
+  <a class="back-link" href="{{ '/articulos/' | relative_url }}">← Todos los artículos</a>
+  <header>
+    <p class="eyebrow">PUBLICACIÓN ACADÉMICA</p>
+    <h1>{{ page.title | escape }}</h1>
+    {% if page.authors %}<p class="paper-authors">{{ page.authors | join: ', ' | escape }}</p>{% endif %}
+    {% if page.date %}<p class="paper-meta">{{ page.date | date: '%d/%m/%Y' }}</p>{% endif %}
+    {% if page.abstract %}<section class="paper-abstract" aria-label="Resumen"><strong>Resumen.</strong> {{ page.abstract | escape }}</section>{% endif %}
+    {% if page.keywords %}<div class="tags">{% for keyword in page.keywords %}<span class="tag">{{ keyword | escape }}</span>{% endfor %}</div>{% endif %}
+  </header>
+  <div class="prose paper-content">{{ content }}</div>
+</article>

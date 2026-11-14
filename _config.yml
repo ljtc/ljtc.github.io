@@ -9,6 +9,9 @@ collections:
   projects:
     output: true
     permalink: /proyectos/:name/
+  papers:
+    output: true
+    permalink: /articulos/:name/
 defaults:
   - scope:
       path: ""
@@ -24,6 +27,12 @@ defaults:
       type: projects
     values:
       layout: project
+  - scope:
+      path: ""
+      type: papers
+    values:
+      layout: paper
+      math: true
 exclude:
   - README.md
   - Gemfile

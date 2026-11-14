@@ -75,3 +75,30 @@ Los scripts se cargan desde los CDN públicos de MathJax y TikZJax; el visitante
 ### Actualizar tu repositorio
 
 Descomprime el ZIP y copia el **contenido** de `portafolio-jekyll-v2/` en la raíz del repositorio, conservando los archivos personales que hayas añadido. Revisa diferencias antes de sobrescribir `_config.yml`, `index.md`, `acerca.md` u otros archivos personalizados. GitHub Pages reconstruirá el sitio tras confirmar los cambios.
+
+
+## v3: Publicaciones académicas
+
+- `/articulos/`: índice de artículos.
+- `_papers/`: cada archivo Markdown genera una publicación.
+- `_layouts/paper.html`: diseño de artículo, autores, resumen y palabras clave.
+- `_includes/theorem.html`: resultados con estilos (teorema, lema, definición, etc.).
+- `_includes/proof.html`: demostraciones con símbolo QED.
+- `math: true` viene activado por defecto para los artículos; `tikz: true` activa TikZJax.
+
+### Escribir un teorema
+
+```liquid
+{% capture enunciado %}
+Sea \(x\in\mathbb R\). Entonces \(x^2\ge 0\).
+{% endcapture %}
+{% include theorem.html type="lema" id="lema-uno" title="Positividad" content=enunciado %}
+```
+
+El diseño y la numeración visual de teoremas se controlan con CSS/JavaScript; para referencias fiables a resultados utiliza enlaces Markdown como `[Lema](#lema-uno)`. La numeración de ecuaciones y `\eqref` los realiza MathJax. Las referencias bibliográficas de ejemplo son enlaces internos manuales; no se incluye procesador BibTeX.
+
+**Atención:** TikZJax solo admite una parte de TikZ. Los diagramas complejos se deben compilar como SVG externamente. MathJax y TikZJax dependen de sus CDN, por lo que requieren conexión a Internet.
+
+### Actualizar una instalación existente
+
+Sube los archivos nuevos y modificados, preservando tus cambios personales en `_config.yml`, páginas y publicaciones. Fusiona la configuración `papers` y sus `defaults` si ya modificaste `_config.yml`.
