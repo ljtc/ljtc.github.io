@@ -5,6 +5,7 @@ date: 2026-11-13
 abstract: "Ejemplo de teoremas, demostraciones, ecuaciones numeradas, referencias, bibliografía y diagramas."
 keywords: ["Álgebra", "LaTeX", "Jekyll"]
 tikz: true
+math: true
 ---
 
 ## 1. Introducción
