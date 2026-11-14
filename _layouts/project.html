@@ -1,0 +1,4 @@
+---
+layout: default
+---
+<article class="article"><a class="back-link" href="{{ '/proyectos/' | relative_url }}">← Volver a proyectos</a><p class="eyebrow">Proyecto</p><h1>{{ page.title | escape }}</h1>{% if page.description %}<p class="lead">{{ page.description }}</p>{% endif %}{% if page.tags %}<div class="tags">{% for tag in page.tags %}<span class="tag">{{ tag }}</span>{% endfor %}</div>{% endif %}<div class="prose">{{ content }}</div>{% if page.repository %}<p><a class="button" href="{{ page.repository | escape }}" rel="noopener noreferrer">Ver repositorio ↗</a></p>{% endif %}</article>

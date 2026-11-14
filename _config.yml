@@ -1,0 +1,31 @@
+title: "Mi portafolio"
+description: "Proyectos, ideas y publicaciones"
+url: ""
+baseurl: ""
+lang: es
+markdown: kramdown
+permalink: /blog/:year/:month/:day/:title/
+collections:
+  projects:
+    output: true
+    permalink: /proyectos/:name/
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: default
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
+  - scope:
+      path: ""
+      type: projects
+    values:
+      layout: project
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - vendor
