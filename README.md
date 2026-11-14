@@ -44,3 +44,34 @@ Abre `http://localhost:4000/`. Para probar una instalación en subruta, revisa `
 ## Notas
 
 El archivo `Gemfile` utiliza la gema `github-pages` para mantener compatibilidad con las versiones soportadas por GitHub Pages. No es necesario ejecutar comandos localmente para publicar desde la rama `main`.
+
+
+## Mejoras v2
+
+- Animaciones suaves de entrada y hover, con respeto a `prefers-reduced-motion`.
+- Iconos SVG integrados (no necesitas instalar una biblioteca).
+- Buscador de proyectos en `/proyectos/`: filtra título, descripción y etiquetas, sin servidor.
+- MathJax y TikZJax activables por página con `math: true` y `tikz: true` en el front matter.
+- Página de demostración en `/matematicas/`.
+
+### Añadir matemáticas a un artículo
+
+En el front matter Markdown añade `math: true`. En el cuerpo usa `\( ... \)` para matemáticas en línea o `\[ ... \]` para fórmulas centradas. Puedes usar HTML en Markdown para evitar problemas de escapes.
+
+### Añadir un diagrama TikZ
+
+En el front matter añade `tikz: true` (también carga MathJax). En el cuerpo incluye:
+
+```html
+<script type="text/tikz">
+\begin{tikzpicture}
+  \draw (0,0) -- (2,1);
+\end{tikzpicture}
+</script>
+```
+
+Los scripts se cargan desde los CDN públicos de MathJax y TikZJax; el visitante necesita conexión a Internet. TikZJax admite un subconjunto de TikZ y no reemplaza a LuaLaTeX/TeX Live. Si un dibujo no funciona, compílalo localmente a SVG y enlaza el SVG desde `assets/`.
+
+### Actualizar tu repositorio
+
+Descomprime el ZIP y copia el **contenido** de `portafolio-jekyll-v2/` en la raíz del repositorio, conservando los archivos personales que hayas añadido. Revisa diferencias antes de sobrescribir `_config.yml`, `index.md`, `acerca.md` u otros archivos personalizados. GitHub Pages reconstruirá el sitio tras confirmar los cambios.
