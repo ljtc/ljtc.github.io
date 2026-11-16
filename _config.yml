@@ -41,3 +41,12 @@ exclude:
 
 # numeric, author-year o alphabetic
 citation_style: numeric
+
+# giscus
+giscus:
+  enabled: true
+  repo: "ljtc/ljtc.github.io"
+  repo_id: "R_kgDOVt3FVw"
+  category: "Announcements"
+  category_id: "DIC_kwDOVt3FV84DLRat"
+

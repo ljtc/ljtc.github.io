@@ -173,3 +173,35 @@
   }
 }
 
+
+/* Comentarios Giscus */
+
+.article-comments {
+  margin-top: 64px;
+  padding-top: 28px;
+  border-top: 1px solid var(--border);
+}
+
+.article-comments h2 {
+  margin: 0 0 12px;
+  color: var(--text);
+  font-size: 1.4rem;
+}
+
+.comments-intro {
+  margin-bottom: 24px;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.article-comments .giscus,
+.article-comments .giscus-frame {
+  width: 100%;
+}
+
+@media (max-width: 640px) {
+  .article-comments {
+    margin-top: 40px;
+  }
+}
+

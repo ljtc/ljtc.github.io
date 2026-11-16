@@ -6,4 +6,4 @@ layout: default
 <p class="eyebrow">Publicación · <time datetime="{{ page.date | date: '%Y-%m-%d'}}">{{ page.date | date: '%d/%m/%Y' }}</time></p>
 <h1>{{ page.title | escape }}</h1>
 {% if page.description %}<p class="lead">{{ page.description }}</p>{% endif %}
-<div class="prose">{{ content }}</div></article>
+<div class="prose">{{ content }}{% include comments.html %}</div></article>
