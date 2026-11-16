@@ -404,3 +404,105 @@ if (search) {
   updateButtons();
 })();
 
+
+/* Índice automático para artículos y entradas del blog */
+
+(() => {
+  const toc = document.querySelector("[data-toc]");
+  const content = document.querySelector(
+    "[data-numbered-paper], [data-toc-content]"
+  );
+
+  if (!toc || !content) return;
+
+  const list = toc.querySelector("[data-toc-list]");
+  const headings = [
+    ...content.querySelectorAll("h2, h3")
+  ].filter(heading => !heading.closest(
+    ".math-proof, .math-statement, .bibliography-auto"
+  ));
+
+  // Mostrar el índice solo si hay al menos dos encabezados.
+  if (headings.length < 2) return;
+
+  const usedIds = new Set(
+    [...document.querySelectorAll("[id]")]
+      .map(element => element.id)
+  );
+
+  headings.forEach((heading, index) => {
+    // Conservar los identificadores que ya creó Jekyll.
+    if (!heading.id) {
+      const base = heading.textContent
+        .normalize("NFD")
+        .replace(/[\u0300-\u036f]/g, "")
+        .toLowerCase()
+        .replace(/[^a-z0-9]+/g, "-")
+        .replace(/^-|-$/g, "") || `seccion-${index + 1}`;
+
+      let id = base;
+      let suffix = 2;
+
+      while (usedIds.has(id)) {
+        id = `${base}-${suffix++}`;
+      }
+
+      heading.id = id;
+      usedIds.add(id);
+    }
+
+    const item = document.createElement("li");
+    item.className = heading.matches("h3")
+      ? "toc-item toc-subsection"
+      : "toc-item";
+
+    const link = document.createElement("a");
+    link.href = `#${heading.id}`;
+    link.textContent = heading.textContent.trim();
+
+    item.appendChild(link);
+    list.appendChild(item);
+  });
+
+  toc.hidden = false;
+
+  const links = [...list.querySelectorAll("a")];
+
+  function updateActive() {
+    let activeIndex = 0;
+
+    headings.forEach((heading, index) => {
+      if (heading.getBoundingClientRect().top <= 140) {
+        activeIndex = index;
+      }
+    });
+
+    links.forEach((link, index) => {
+      const active = index === activeIndex;
+      link.classList.toggle("is-active", active);
+
+      if (active) {
+        link.setAttribute("aria-current", "location");
+      } else {
+        link.removeAttribute("aria-current");
+      }
+    });
+  }
+
+  let scheduled = false;
+
+  window.addEventListener("scroll", () => {
+    if (scheduled) return;
+
+    scheduled = true;
+    requestAnimationFrame(() => {
+      updateActive();
+      scheduled = false;
+    });
+  }, { passive: true });
+
+  window.addEventListener("resize", updateActive);
+
+  updateActive();
+})();
+
