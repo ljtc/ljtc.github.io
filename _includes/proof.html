@@ -1,1 +1,24 @@
-<div class="math-proof"><div class="proof-heading">Demostración.</div><div class="proof-body">{{ include.content | markdownify }}</div><span class="qed" aria-label="Fin de la demostración">□</span></div>
+
+<details class="math-proof"
+  {% if include.open %}open{% endif %}>
+
+  <summary class="proof-heading">
+    <span class="proof-title">
+      {{ include.title | default: "Demostración" }}
+    </span>
+    <span class="proof-toggle"
+          aria-hidden="true"></span>
+  </summary>
+
+  <div class="proof-content">
+    <div class="proof-body">
+      {{ include.content }}
+    </div>
+
+    <span class="qed"
+          aria-label="Fin de demostración">
+      □
+    </span>
+  </div>
+
+</details>

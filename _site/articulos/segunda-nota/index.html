@@ -32,7 +32,24 @@
     <div class="tags"><span class="tag">Álgebra</span><span class="tag">Referencias cruzadas</span></div>
   </header>
   <div class="prose paper-content" data-numbered-paper
-       data-bib-url="/assets/bibliografia.bib" data-citation-style="numeric"><h2 id="sec-propiedades">Propiedades</h2>
+  data-bib-url="/assets/bibliografia.bib"
+  data-citation-style="numeric">
+  <div class="proof-controls"
+     data-proof-controls
+     hidden>
+  <button type="button"
+          class="proof-control-button"
+          data-proof-action="show">
+    Mostrar todas las demostraciones
+  </button>
+
+  <button type="button"
+          class="proof-control-button"
+          data-proof-action="hide">
+    Ocultar todas las demostraciones
+  </button>
+</div>
+  <h2 id="sec-propiedades">Propiedades</h2>
 
 <h3 id="subsec-producto">Producto de enteros pares</h3>
 
@@ -43,9 +60,28 @@
 </div>
 </div>
 
-<div class="math-proof"><div class="proof-heading">Demostración.</div><div class="proof-body">
-<p>Si $a=2m$ y $b=2n$, entonces $ab=2(2mn)$, que es par.</p>
-</div><span class="qed" aria-label="Fin de la demostración">□</span></div>
+<details class="math-proof">
+
+  <summary class="proof-heading">
+    <span class="proof-title">
+      Demostración
+    </span>
+    <span class="proof-toggle" aria-hidden="true"></span>
+  </summary>
+
+  <div class="proof-content">
+    <div class="proof-body">
+      
+Si $a=2m$ y $b=2n$, entonces $ab=2(2mn)$, que es par.
+
+    </div>
+
+    <span class="qed" aria-label="Fin de demostración">
+      □
+    </span>
+  </div>
+
+</details>
 
 <p>La <a class="statement-reference" href="#sec-propiedades" data-ref="sec-propiedades" data-ref-prefix="auto">Ver resultado</a> contiene el resultado anterior.</p>
 

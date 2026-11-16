@@ -15,7 +15,81 @@
 @media(prefers-reduced-motion:reduce){.will-reveal{opacity:1;transform:none}.will-reveal.is-visible{transition:none}.card-arrow .ui-icon{transition:none}}
 
 /* Publicaciones académicas v3 */
-.academic-article{max-width:850px}.paper-authors,.paper-meta{color:var(--muted)}.paper-abstract{border-left:3px solid var(--accent);padding:16px 20px;background:var(--panel);border-radius:0 9px 9px 0}.math-statement{margin:28px 0;padding:20px 24px;background:var(--panel);border:1px solid var(--border);border-left:3px solid #9faed0;border-radius:8px;scroll-margin-top:25px}.statement-heading{display:flex;gap:7px;flex-wrap:wrap;margin-bottom:10px;color:var(--text)}.statement-title{font-style:italic}.statement-body>p:last-child,.proof-body>p:last-child{margin-bottom:0}.math-proof{margin:24px 0 34px;position:relative}.proof-heading{font-style:italic;font-weight:650;margin-bottom:10px}.qed{display:block;text-align:right;font-size:1.35rem;line-height:1}.bibliography{padding-left:1.5rem}.bibliography li{margin:10px 0;scroll-margin-top:30px}.paper-content{overflow-wrap:break-word}.paper-content script[type="text/tikz"]{display:block}.paper-content mjx-container[display="true"]{overflow-x:auto;max-width:100%}@media(max-width:640px){.math-statement{padding:15px}}
+.academic-article{max-width:850px}
+.paper-authors,.paper-meta{color:var(--muted)}
+.paper-abstract{border-left:3px solid var(--accent);padding:16px 20px;background:var(--panel);border-radius:0 9px 9px 0}
+.math-statement{margin:28px 0;padding:20px 24px;background:var(--panel);border:1px solid var(--border);border-left:3px solid #9faed0;border-radius:8px;scroll-margin-top:25px}
+.statement-heading{display:flex;gap:7px;flex-wrap:wrap;margin-bottom:10px;color:var(--text)}
+.statement-title{font-style:italic}
+.statement-body>p:last-child,.proof-body>p:last-child{margin-bottom:0}
+.qed{display:block;text-align:right;font-size:1.35rem;line-height:1}
+.bibliography{padding-left:1.5rem}.bibliography li{margin:10px 0;scroll-margin-top:30px}
+.paper-content{overflow-wrap:break-word}.paper-content script[type="text/tikz"]{display:block}
+.paper-content mjx-container[display="true"]{overflow-x:auto;max-width:100%}@media(max-width:640px){.math-statement{padding:15px}}
+.math-proof {
+  margin: 28px 0;
+  padding: 0;
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-left: 3px solid #7d9a91;
+  border-radius: 8px;
+  overflow: hidden;
+}
+.math-proof > summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 18px 24px;
+  cursor: pointer;
+  list-style: none;
+  color: var(--text);
+  font-weight: 650;
+  font-style: italic;
+}
+.math-proof > summary::-webkit-details-marker {
+  display: none;
+}
+.math-proof > summary::marker {
+  content: "";
+}
+.proof-toggle::after {
+  content: "+";
+  font-size: 1.4rem;
+  font-style: normal;
+  font-weight: 400;
+  color: var(--muted);
+}
+.math-proof[open] .proof-toggle::after {
+  content: "−";
+}
+.proof-content {
+  padding: 20px 24px;
+  border-top: 1px solid var(--border);
+}
+.proof-body > p:last-child {
+  margin-bottom: 0;
+}
+.math-proof .qed {
+  display: block;
+  margin-top: 14px;
+  text-align: right;
+  font-size: 1.35rem;
+  line-height: 1;
+}
+.math-proof > summary:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: -4px;
+}
+@media (max-width: 640px) {
+  .math-proof > summary {
+    padding: 15px;
+  }
+  .proof-content {
+    padding: 15px;
+  }
+}
+
 
 
 /* Resultados académicos y referencias cruzadas */
@@ -45,3 +119,57 @@
   max-width: 100%;
   height: auto;
 }
+
+
+/* Controles de demostraciones */
+
+.proof-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin: 22px 0 28px;
+}
+
+.proof-controls[hidden] {
+  display: none;
+}
+
+.proof-control-button {
+  padding: 10px 16px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--panel);
+  color: var(--text);
+  font: inherit;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.proof-control-button:hover:not(:disabled) {
+  border-color: var(--accent);
+  background: var(--surface, #25282e);
+}
+
+.proof-control-button:disabled {
+  opacity: 0.4;
+  cursor: default;
+}
+
+.proof-control-button:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+@media (max-width: 640px) {
+  .proof-controls {
+    flex-direction: column;
+  }
+
+  .proof-control-button {
+    width: 100%;
+  }
+}
+

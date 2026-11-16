@@ -1,4 +1,9 @@
 ---
 layout: default
 ---
-<article class="article"><a class="back-link" href="{{ '/blog/' | relative_url }}">← Volver al blog</a><p class="eyebrow">Publicación · <time datetime="{{ page.date | date: '%Y-%m-%d' }}">{{ page.date | date: '%d/%m/%Y' }}</time></p><h1>{{ page.title | escape }}</h1>{% if page.description %}<p class="lead">{{ page.description }}</p>{% endif %}<div class="prose">{{ content }}</div></article>
+<article class="article">
+<a class="back-link" href="{{ '/blog/' | relative_url }}">← Volver al blog</a>
+<p class="eyebrow">Publicación · <time datetime="{{ page.date | date: '%Y-%m-%d'}}">{{ page.date | date: '%d/%m/%Y' }}</time></p>
+<h1>{{ page.title | escape }}</h1>
+{% if page.description %}<p class="lead">{{ page.description }}</p>{% endif %}
+<div class="prose">{{ content }}</div></article>

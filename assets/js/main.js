@@ -340,3 +340,67 @@ if (search) {
     }
   });
 })();
+
+
+/* Controles globales de demostraciones */
+
+(() => {
+  const paper = document.querySelector(
+    "[data-numbered-paper]"
+  );
+
+  const controls = document.querySelector(
+    "[data-proof-controls]"
+  );
+
+  if (!paper || !controls) return;
+
+  const proofs = [
+    ...paper.querySelectorAll("details.math-proof")
+  ];
+
+  // No mostrar botones si no hay demostraciones.
+  if (proofs.length === 0) return;
+
+  controls.hidden = false;
+
+  const showButton = controls.querySelector(
+    '[data-proof-action="show"]'
+  );
+
+  const hideButton = controls.querySelector(
+    '[data-proof-action="hide"]'
+  );
+
+  function updateButtons() {
+    const allOpen = proofs.every(proof => proof.open);
+    const allClosed = proofs.every(proof => !proof.open);
+
+    showButton.disabled = allOpen;
+    hideButton.disabled = allClosed;
+  }
+
+  showButton.addEventListener("click", () => {
+    proofs.forEach(proof => {
+      proof.open = true;
+    });
+
+    updateButtons();
+  });
+
+  hideButton.addEventListener("click", () => {
+    proofs.forEach(proof => {
+      proof.open = false;
+    });
+
+    updateButtons();
+  });
+
+  // Actualizar controles al abrir una prueba individual.
+  proofs.forEach(proof => {
+    proof.addEventListener("toggle", updateButtons);
+  });
+
+  updateButtons();
+})();
+

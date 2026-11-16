@@ -18,13 +18,100 @@
   <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
   
   
+  <link rel="stylesheet" href="https://tikzjax.com/v1/fonts.css">
+  <script defer src="https://tikzjax.com/v1/tikzjax.js"></script>
+  
 </head>
 <body>
   <header class="site-header"><div class="container header-inner"><a class="brand" href="/">Luis Turcio<span class="accent">.</span></a><button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Abrir menú">☰</button><nav id="site-nav" class="site-nav" aria-label="Navegación principal"><a href="/">Inicio</a><a href="/proyectos/">Proyectos</a><a href="/blog/">Blog</a><a href="/articulos/">Artículos</a><a href="/acerca/">Acerca de</a></nav></div></header>
-  <main id="contenido" class="container main-content"><article class="article"><a class="back-link" href="/blog/">← Volver al blog</a><p class="eyebrow">Publicación · <time datetime="2026-11-15">15/11/2026</time></p><h1>Lógica de proposiciones</h1><p class="lead">Veremos lo básico sobre .</p><div class="prose"><h2 id="introducción">Introducción</h2>
-<p>(\alpha\land\beta) bla $\beta\land\alpha$.</p>
+  <main id="contenido" class="container main-content"><article class="article">
+<a class="back-link" href="/blog/">← Volver al blog</a>
+<p class="eyebrow">Publicación · <time datetime="2026-11-15">15/11/2026</time></p>
+<h1>Lógica de proposiciones</h1>
+<p class="lead">Veremos lo básico sobre .</p>
+<div class="prose"><h2 id="introducción">Introducción</h2>
+
+<p>En la antigua Grecia los filósofos solían reunirse para discutir. En un intento
+por lograr argumentos que no puedan ser refutados se dieron cuenta que la forma
+de los enunciados y cómo se manipulan es bastante importante. Ahora, nosotros
+queremos dar enunciados (con contenido matemático) y argumentar por qué son
+válidos. Esta argumentación debe asegurar que nuestras afirmaciones no puedan
+ser refutadas. Por lo tanto, seguiremos el camino de los griegos para
+identificar y manipular la forma de los enunciados y poder argumentar su validez
+de manera correcta.</p>
+
+<p>Aunque hay una definición formal de qué es una fórmula proposicional, aquí no
+lo veremos con ese rigor. Sólo veremos una forma intuitiva de saber cuando un
+enunciado es una proposición.</p>
+
+<p>Un enunciado es una <em>proposición</em> si se puede decidir de manera efectiva si es
+verdadero o falso. Cuando hayamos decidido si es verdadera o falsa diremos que
+hemos dado su <em>valor de verdad</em>.</p>
+
+<div class="math-statement" data-statement="ejemplo" id="ej-prop">
+  <div class="statement-heading"><strong class="statement-label">Ejemplo <span class="statement-number" aria-label="Número"></span></strong><span class="statement-title">(Ejemplos de
+proposiciones)</span></div>
+  <div class="statement-body">
+<p>“Hoy es lunes” sí es una proposición porque sí se puede asignar un valor de
+verdad a dicho enunciado. Los lunes será verdadero y cualquier otro día será
+falso.</p>
+
+<p>“$1+1=1$” también es una proposición. Hay muchas estructuras, como los números
+reales, donde es falsa, pero también hay estructuras donde es verdadera.</p>
+
+<p>“Este enunciado es falso” no es una proposición. Si fuera verdadero entonces lo
+que afirma es verdad, es decir, es falso. Si fuera falso, entonces lo que afirma
+es una falsedad, por tanto es verdadero. Con esto, no hay una forma efectiva de
+asignarle un valor de verdad.</p>
+</div>
+</div>
+
+<p>Podemos pensar que proposiciones como las del ejemplo son “proposiciones
+básicas”, lo siguiente que queremos hacer es combinar estas proposiciones en
+otras más complejas.</p>
 
 <h2 id="conectivos-lógicos">Conectivos lógicos</h2>
+
+<p>Empezamos esta sección dando un poco de notación. Las proposiciones serán
+denotadas con letras mayúsculas $P$, $Q$, $R$, etc. o con letras griegas
+$\alpha$, $\beta$, $\gamma$, etc. Lo ideal es no combinar las dos notaciones.</p>
+
+<p>Consideremos dos proposiciones $P$ y $Q$. Dado que son proposiciones entonces
+podemos dar un valor de verdad a cada una. Con esto podemos pensar en un nuevo
+enunciado, “$P$ y $Q$”. No es difícil imaginar que este nuevo enunciado es
+verdadero exactamente cuando las dos proposiciones son verdaderas. Esto es, hay
+un procedimiento efectivo para determinar cuando el nuevo enunciado es
+verdadero. En otras palabras, es una proposición llamada <em>conjunción</em> y denotada
+$P\land Q$. Por ejemplo, la proposición “hoy es lunes y está soleado” es
+verdadera siempre que sea lunes y esté soleado. Es falsa en cualquier otra
+situación, que no sea lunes o a pesar de ser lunes, que no esté soleado.</p>
+
+<p>De la misma forma que en el párrafo anterior podemos formar la <em>disyunción</em> de dos
+proposiciones, que denotaremos $P\lor Q$. En este caso basta con que una de las
+dos proposiciones sea verdadera para que la disyunción sea verdadera. Por
+ejemplo, para que la proposición “hoy es lunes o martes” sea verdadera basta con
+que sea lunes. De la misma forma es suficiente que sea martes para que la misma
+proposición sea verdadera. Además, es falsa el resto de días de la semana.</p>
+
+<p>Otra proposición que se puede formar dada una proposición $P$ es la <em>negación</em>
+$\neg P$. Ésta sera verdadera exactamente cuando $P$ sea falsa. La negación de
+“hoy es lunes” es “hoy no es lunes”. Además, se puede notar que la negación es
+verdadera cualquier día que no sea lunes, algo así como el complemento del lunes
+en la semana.</p>
+
+<p>Dadas dos proposiciones $P$ y $Q$, la <em>implicación</em> o <em>condicional</em> se denota
+$P\to Q$. En esta situación $P$ es el <em>antecedente</em> y $Q$ es el <em>consecuente</em> de
+la implicación. Debemos entender a la implicación como un procedimiento que haga
+que $Q$ sea verdadera cada vez que $P$ sea verdadera, “la verdad de $P$ implica
+la verdad de $Q$”. Para que este procedimiento “se rompa” necesitamos que $P$ sea
+verdadera y que $Q$ sea falsa. En otras palabras, la implicación es falsa
+exactamente cuando $P$ es verdadera y $Q$ es falsa. Es verdadera en el resto de
+posibilidades.</p>
+
+<p>Finalmente, el <em>bicondicional</em> de dos proposiciones se denota 
+$P\leftrightarrow Q$. Esta proposición es una abreviatura de 
+$(P\to Q)\land(Q\to P)$, de donde se puede deducir que es verdadera exactamente
+cuando las proposiciones $P$ y $Q$ tienen el mismo valor de verdad.</p>
 
 <h2 id="tablas-de-verdad">Tablas de verdad</h2>
 
@@ -32,6 +119,21 @@
 
 <h2 id="argumentos-válidos">Argumentos válidos</h2>
 </div></article></main>
+  
+  <script>
+    document.querySelectorAll('script[type="text/tikz"]')
+      .forEach(script => {
+        if (script.parentElement.classList.contains('tikz-white')) {
+          return;
+        }
+
+        const wrapper = document.createElement('div');
+        wrapper.className = 'tikz-white';
+
+        script.parentNode.insertBefore(wrapper, script);
+        wrapper.appendChild(script);
+      });
+  </script>
   
   <footer class="site-footer"><div class="container footer-inner"><span>© 2026 Luis Turcio</span><span>Hecho con Jekyll y GitHub Pages</span></div></footer>
   <script src="/assets/js/main.js" defer></script>

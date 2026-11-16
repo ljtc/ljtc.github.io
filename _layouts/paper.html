@@ -12,5 +12,24 @@ layout: default
     {% if page.keywords %}<div class="tags">{% for keyword in page.keywords %}<span class="tag">{{ keyword | escape }}</span>{% endfor %}</div>{% endif %}
   </header>
   <div class="prose paper-content" data-numbered-paper
-       data-bib-url="{{ page.bibliography | default: '/assets/bibliografia.bib' | relative_url }}" data-citation-style="{{ page.citation_style | default: site.citation_style | default: 'numeric' | escape }}">{{ content }}</div>
+  data-bib-url="{{ page.bibliography | default: '/assets/bibliografia.bib' |
+  relative_url }}"
+  data-citation-style="{{ page.citation_style | default:
+  site.citation_style | default: 'numeric' | escape }}">
+  <div class="proof-controls"
+     data-proof-controls
+     hidden>
+  <button type="button"
+          class="proof-control-button"
+          data-proof-action="show">
+    Mostrar todas las demostraciones
+  </button>
+
+  <button type="button"
+          class="proof-control-button"
+          data-proof-action="hide">
+    Ocultar todas las demostraciones
+  </button>
+</div>
+  {{ content }}</div>
 </article>

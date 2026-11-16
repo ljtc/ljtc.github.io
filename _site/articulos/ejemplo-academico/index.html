@@ -35,7 +35,24 @@
     <div class="tags"><span class="tag">Álgebra</span><span class="tag">LaTeX</span><span class="tag">Jekyll</span></div>
   </header>
   <div class="prose paper-content" data-numbered-paper
-       data-bib-url="/assets/bibliografia.bib" data-citation-style="numeric"><h2 id="introducción">Introducción</h2>
+  data-bib-url="/assets/bibliografia.bib"
+  data-citation-style="numeric">
+  <div class="proof-controls"
+     data-proof-controls
+     hidden>
+  <button type="button"
+          class="proof-control-button"
+          data-proof-action="show">
+    Mostrar todas las demostraciones
+  </button>
+
+  <button type="button"
+          class="proof-control-button"
+          data-proof-action="hide">
+    Ocultar todas las demostraciones
+  </button>
+</div>
+  <h2 id="introducción">Introducción</h2>
 
 <p>Para una aplicación en otro artículo, véase el</p>
 
@@ -73,15 +90,34 @@
 </div>
 </div>
 
-<div class="math-proof"><div class="proof-heading">Demostración.</div><div class="proof-body">
-<p>Sean $a=2m$ y $b=2n$, con $m,n\in\mathbb Z$. Entonces</p>
+<details class="math-proof">
 
-<p>\begin{equation}
+  <summary class="proof-heading">
+    <span class="proof-title">
+      Demostración
+    </span>
+    <span class="proof-toggle" aria-hidden="true"></span>
+  </summary>
+
+  <div class="proof-content">
+    <div class="proof-body">
+      
+Sean $a=2m$ y $b=2n$, con $m,n\in\mathbb Z$. Entonces
+
+\begin{equation}
 a+b=2(m+n). \label{eq:suma-pares}
-\end{equation}</p>
+\end{equation}
 
-<p>Como $m+n\in\mathbb Z$, la suma es par.</p>
-</div><span class="qed" aria-label="Fin de la demostración">□</span></div>
+Como $m+n\in\mathbb Z$, la suma es par.
+
+    </div>
+
+    <span class="qed" aria-label="Fin de demostración">
+      □
+    </span>
+  </div>
+
+</details>
 
 <p>La ecuación (\eqref{eq:suma-pares}) justifica el resultado. También puedes consultar el <a class="statement-reference" href="#thm-suma" data-ref="thm-suma" data-ref-prefix="auto">Ver resultado</a> y la <a class="statement-reference" href="#def-par" data-ref="def-par" data-ref-prefix="auto">Ver resultado</a>.</p>
 

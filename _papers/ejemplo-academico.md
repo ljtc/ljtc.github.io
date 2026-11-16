@@ -9,8 +9,7 @@ tikz: true
 
 ## Introducción
 
-Para una aplicación en otro artículo, véase el
-{% include cross_ref.html paper="segunda-nota" id="thm-producto" %}.
+Para una aplicación en otro artículo, véase el {% include cross_ref.html paper="segunda-nota" id="thm-producto" %}.
 
 También podemos citar la
 {% include cross_ref.html paper="segunda-nota" id="sec-propiedades" %}.
