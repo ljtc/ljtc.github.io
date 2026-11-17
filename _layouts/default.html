@@ -10,11 +10,21 @@
   {% if page.math or page.tikz %}
   <script>
     window.MathJax = {
-      tex: { inlineMath: [['$', '$'], ['\\(', '\\)']], displayMath: [['\\[', '\\]']], processEscapes: true, tags: 'ams', packages: {'[+]': ['ams']} },
-      options: { skipHtmlTags: ['script','noscript','style','textarea','pre','code'] },
-      svg: { fontCache: 'global' }
+      tex: { 
+        inlineMath: [['$', '$'], ['\\(', '\\)']], 
+        displayMath: [['\\[', '\\]']], 
+        processEscapes: true, tags: 'ams', 
+        packages: {'[+]': ['ams']} 
+      },
+      options: { 
+        skipHtmlTags: ['script','noscript','style','textarea','pre','code'] 
+      },
+      svg: { 
+        fontCache: 'global' 
+      }
     };
   </script>
+  {% include math-macros.html %}
   <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
   {% endif %}
   {% if page.tikz %}

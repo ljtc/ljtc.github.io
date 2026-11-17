@@ -10,11 +10,43 @@
   
   <script>
     window.MathJax = {
-      tex: { inlineMath: [['$', '$'], ['\\(', '\\)']], displayMath: [['\\[', '\\]']], processEscapes: true, tags: 'ams', packages: {'[+]': ['ams']} },
-      options: { skipHtmlTags: ['script','noscript','style','textarea','pre','code'] },
-      svg: { fontCache: 'global' }
+      tex: { 
+        inlineMath: [['$', '$'], ['\\(', '\\)']], 
+        displayMath: [['\\[', '\\]']], 
+        processEscapes: true, tags: 'ams', 
+        packages: {'[+]': ['ams']} 
+      },
+      options: { 
+        skipHtmlTags: ['script','noscript','style','textarea','pre','code'] 
+      },
+      svg: { 
+        fontCache: 'global' 
+      }
     };
   </script>
+  
+<script>
+window.MathJax = window.MathJax || {};
+
+window.MathJax.tex = window.MathJax.tex || {};
+
+window.MathJax.tex.macros = {
+  RR: "\\mathbb{R}",
+  NN: "\\mathbb{N}",
+  ZZ: "\\mathbb{Z}",
+  QQ: "\\mathbb{Q}",
+  CC: "\\mathbb{C}",
+  prop : "\\mathrm{Prop}",
+  liff : "\\leftrightarrow",
+
+  abs: ["\\left|#1\\right|", 1],
+  norma: ["\\left\\lVert#1\\right\\rVert", 1],
+  conjunto: ["\\left\\{#1\\right\\}", 1],
+
+  id: "\\operatorname{id}"
+};
+</script>
+
   <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
   
   

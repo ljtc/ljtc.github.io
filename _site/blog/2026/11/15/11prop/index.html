@@ -4,17 +4,49 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#101114">
-  <meta name="description" content="Veremos lo básico sobre .">
+  <meta name="description" content="Veremos lo básico sobre proposiciones y su comportamiento.">
   <title>Lógica de proposiciones · Luis Turcio</title>
   <link rel="stylesheet" href="/assets/css/style.css">
   
   <script>
     window.MathJax = {
-      tex: { inlineMath: [['$', '$'], ['\\(', '\\)']], displayMath: [['\\[', '\\]']], processEscapes: true, tags: 'ams', packages: {'[+]': ['ams']} },
-      options: { skipHtmlTags: ['script','noscript','style','textarea','pre','code'] },
-      svg: { fontCache: 'global' }
+      tex: { 
+        inlineMath: [['$', '$'], ['\\(', '\\)']], 
+        displayMath: [['\\[', '\\]']], 
+        processEscapes: true, tags: 'ams', 
+        packages: {'[+]': ['ams']} 
+      },
+      options: { 
+        skipHtmlTags: ['script','noscript','style','textarea','pre','code'] 
+      },
+      svg: { 
+        fontCache: 'global' 
+      }
     };
   </script>
+  
+<script>
+window.MathJax = window.MathJax || {};
+
+window.MathJax.tex = window.MathJax.tex || {};
+
+window.MathJax.tex.macros = {
+  RR: "\\mathbb{R}",
+  NN: "\\mathbb{N}",
+  ZZ: "\\mathbb{Z}",
+  QQ: "\\mathbb{Q}",
+  CC: "\\mathbb{C}",
+  prop : "\\mathrm{Prop}",
+  liff : "\\leftrightarrow",
+
+  abs: ["\\left|#1\\right|", 1],
+  norma: ["\\left\\lVert#1\\right\\rVert", 1],
+  conjunto: ["\\left\\{#1\\right\\}", 1],
+
+  id: "\\operatorname{id}"
+};
+</script>
+
   <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
   
   
@@ -28,7 +60,7 @@
 <a class="back-link" href="/blog/">← Volver al blog</a>
 <p class="eyebrow">Publicación · <time datetime="2026-11-15">15/11/2026</time></p>
 <h1>Lógica de proposiciones</h1>
-<p class="lead">Veremos lo básico sobre .</p>
+<p class="lead">Veremos lo básico sobre proposiciones y su comportamiento.</p>
 
 
 <nav class="toc" data-toc hidden aria-label="Índice de contenidos">
@@ -57,9 +89,14 @@ de manera correcta.</p>
 lo veremos con ese rigor. Sólo veremos una forma intuitiva de saber cuando un
 enunciado es una proposición.</p>
 
-<p>Un enunciado es una <em>proposición</em> si se puede decidir de manera efectiva si es
-verdadero o falso. Cuando hayamos decidido si es verdadera o falsa diremos que
-hemos dado su <em>valor de verdad</em>.</p>
+<div class="math-statement" data-statement="definicion" id="def-prop">
+  <div class="statement-heading"><strong class="statement-label">Definicion <span class="statement-number" aria-label="Número"></span></strong></div>
+  <div class="statement-body">
+<p>Un enunciado es una <em>proposición</em>, también llamada <em>fórmula proposicional</em>, si se puede
+decidir de manera efectiva si es verdadero o falso. Cuando hayamos decidido si
+es verdadera o falsa diremos que hemos dado su <em>valor de verdad</em>.</p>
+</div>
+</div>
 
 <div class="math-statement" data-statement="ejemplo" id="ej-prop">
   <div class="statement-heading"><strong class="statement-label">Ejemplo <span class="statement-number" aria-label="Número"></span></strong><span class="statement-title">(Ejemplos de
@@ -80,14 +117,20 @@ asignarle un valor de verdad.</p>
 </div>
 
 <p>Podemos pensar que proposiciones como las del ejemplo son “proposiciones
-básicas”, lo siguiente que queremos hacer es combinar estas proposiciones en
-otras más complejas.</p>
+básicas”. Este tipo de proposiciones serán llamadas <em>letras proposicionales</em>. Lo
+siguiente que queremos hacer es combinar estas proposiciones en otras más
+complejas.</p>
+
+<p>El conjunto de proposiciones será denotado $\prop$. Así, la notación $P\in\prop$
+significa que $P$ es una proposición.</p>
 
 <h2 id="conectivos-lógicos">Conectivos lógicos</h2>
 
 <p>Empezamos esta sección dando un poco de notación. Las proposiciones serán
 denotadas con letras mayúsculas $P$, $Q$, $R$, etc. o con letras griegas
-$\alpha$, $\beta$, $\gamma$, etc. Lo ideal es no combinar las dos notaciones.</p>
+$\alpha$, $\beta$, $\gamma$, etc. Lo ideal es no combinar las dos notaciones.
+Cuando haga falta una distinción real usaremos las letras latinas para las
+letras proposicionales y las griegas para las fórmulas proposiciones.</p>
 
 <p>Consideremos dos proposiciones $P$ y $Q$. Dado que son proposiciones entonces
 podemos dar un valor de verdad a cada una. Con esto podemos pensar en un nuevo
@@ -127,6 +170,95 @@ $(P\to Q)\land(Q\to P)$, de donde se puede deducir que es verdadera exactamente
 cuando las proposiciones $P$ y $Q$ tienen el mismo valor de verdad.</p>
 
 <h2 id="tablas-de-verdad">Tablas de verdad</h2>
+
+<p>Como la forma intuitiva de definición que tenemos de proposición pide que haya
+un procedimiento efectivo para decidir cuando un enunciado es verdadero o falso,
+entonces las proposiciones que se construyen con conectivos también deben tener
+tal procedimiento.</p>
+
+<p>Hay varios procedimientos efectivos que sirven para decidir la veracidad de una
+proposición compuesta con conectivos. En estas notas sólo veremos las tablas de
+verdad. Estas tablas reflejan de manera fiel lo que se comentó en la sección de
+conectivos lógicos. La construcción de ellas considera todas las posibles
+combinaciones de verdadero y falso que se pueden hacer con las letras
+proposicionales que constituyen a la fórmula proposicional.</p>
+
+<table class="truth-table">
+  <thead>
+    <tr>
+      <th>$P$</th>
+      <th>$Q$</th>
+      <th>$P \land Q$</th>
+      <th>$P \lor Q$</th>
+      <th>$P \to Q$</th>
+      <th>$P \leftrightarrow Q$</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>$1$</td><td>$1$</td><td>$1$</td><td>$1$</td><td>$1$</td><td>$1$</td></tr>
+    <tr><td>$1$</td><td>$0$</td><td>$0$</td><td>$1$</td><td>$0$</td><td>$0$</td></tr>
+    <tr><td>$0$</td><td>$1$</td><td>$0$</td><td>$1$</td><td>$1$</td><td>$0$</td></tr>
+    <tr><td>$0$</td><td>$0$</td><td>$0$</td><td>$0$</td><td>$1$</td><td>$1$</td></tr>
+  </tbody>
+</table>
+
+<p>Hacemos la tabla de verdad de la negación porque no requiere tantos renglones</p>
+
+<table class="truth-table">
+  <thead>
+    <tr><th>$P$</th><th>$\neg P$</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>$1$</td><td>$0$</td></tr>
+    <tr><td>$0$</td><td>$1$</td></tr>
+  </tbody>
+</table>
+
+<p>Con estas reglas, las tablas de verdad son procedimiento efectivo para determinar
+el valor de verdad, en cualquier posible situación, de un enunciado construido
+mediante proposiciones y conectivos lógicos.</p>
+
+<p>Otra forma de pensar a las tablas de verdad es mediante funciones. Esto es, cada
+renglón es una función $v\colon\prop\to{0,1}$ que satisface</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td>$v(P\land Q)=\min{v(P),v(Q)}$</td>
+      <td>$v(P\lor Q)=\max{v(P),v(Q)}$</td>
+    </tr>
+    <tr>
+      <td>$v(\neg P) = 1-v(P)$</td>
+      <td>$v(P\to Q)=\max{1-v(P),v(Q)}$</td>
+    </tr>
+    <tr>
+      <td>$v(P\liff Q)=\min{v(P\to Q),v(Q\to P)}$</td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<p><br /></p>
+
+<p>Por ejemplo, si $v(P)=1$ y $v(Q)=1$, entonces $\min{v(P),v(Q)}=1$, es decir,
+$v(P\land Q)=1$. Así, cada renglón es una especificación de los valores de las
+proposiciones $P$ y $Q$. Una vez que sabemos esos valores podemos determinar el
+valor de la proposición que tiene un conectivo siguiendo las reglas de $v$.</p>
+
+<p>Notemos que con las tablas de verdad (o las funciones de evaluación
+$v\colon\prop\to{0,1}$ ) podemos distinguir tres tipos de proposición.</p>
+
+<div class="math-statement" data-statement="definicion" id="def-taut">
+  <div class="statement-heading"><strong class="statement-label">Definicion <span class="statement-number" aria-label="Número"></span></strong></div>
+  <div class="statement-body">
+<p>Sea $\alpha$ una fórmula proposicional. Diremos que $\alpha$ es</p>
+<ol>
+  <li>tautología si su tabla de verdad sólo tiene $1$,</li>
+  <li>contradicción si su tabla de verdad sólo tiene $0$,</li>
+  <li>contingente si no es ninguna de las anteriores.</li>
+</ol>
+</div>
+</div>
 
 <h2 id="implicación-y-equivalencia-lógica">Implicación y equivalencia lógica</h2>
 
