@@ -41,7 +41,7 @@ window.MathJax.tex.macros = {
 
   abs: ["\\left|#1\\right|", 1],
   norma: ["\\left\\lVert#1\\right\\rVert", 1],
-  conjunto: ["\\left\\{#1\\right\\}", 1],
+  set: ["\\left\\{#1\\right\\}", 1],
 
   id: "\\operatorname{id}"
 };
@@ -94,7 +94,7 @@ enunciado es una proposición.</p>
   <div class="statement-body">
 <p>Un enunciado es una <em>proposición</em>, también llamada <em>fórmula proposicional</em>, si se puede
 decidir de manera efectiva si es verdadero o falso. Cuando hayamos decidido si
-es verdadera o falsa diremos que hemos dado su <em>valor de verdad</em>.</p>
+es verdadero o falso diremos que hemos dado su <em>valor de verdad</em>.</p>
 </div>
 </div>
 
@@ -113,6 +113,9 @@ reales, donde es falsa, pero también hay estructuras donde es verdadera.</p>
 que afirma es verdad, es decir, es falso. Si fuera falso, entonces lo que afirma
 es una falsedad, por tanto es verdadero. Con esto, no hay una forma efectiva de
 asignarle un valor de verdad.</p>
+
+<p>“$57$” no es una proposición ya que el número $57$ no puede ser ni verdadero ni
+falso por sí mismo.</p>
 </div>
 </div>
 
@@ -140,7 +143,7 @@ un procedimiento efectivo para determinar cuando el nuevo enunciado es
 verdadero. En otras palabras, es una proposición llamada <em>conjunción</em> y denotada
 $P\land Q$. Por ejemplo, la proposición “hoy es lunes y está soleado” es
 verdadera siempre que sea lunes y esté soleado. Es falsa en cualquier otra
-situación, que no sea lunes o a pesar de ser lunes, que no esté soleado.</p>
+situación, que no sea lunes o, a pesar de ser lunes, que no esté soleado.</p>
 
 <p>De la misma forma que en el párrafo anterior podemos formar la <em>disyunción</em> de dos
 proposiciones, que denotaremos $P\lor Q$. En este caso basta con que una de las
@@ -202,7 +205,7 @@ proposicionales que constituyen a la fórmula proposicional.</p>
   </tbody>
 </table>
 
-<p>Hacemos la tabla de verdad de la negación porque no requiere tantos renglones</p>
+<p>Separamos la tabla de verdad de la negación porque no requiere tantos renglones</p>
 
 <table class="truth-table">
   <thead>
@@ -224,43 +227,107 @@ renglón es una función $v\colon\prop\to{0,1}$ que satisface</p>
 <table>
   <tbody>
     <tr>
-      <td>$v(P\land Q)=\min{v(P),v(Q)}$</td>
-      <td>$v(P\lor Q)=\max{v(P),v(Q)}$</td>
+      <td>$v(P\land Q)=\min\set{v(P),v(Q)}$</td>
+      <td>$v(P\lor Q)=\max\set{v(P),v(Q)}$</td>
     </tr>
     <tr>
       <td>$v(\neg P) = 1-v(P)$</td>
-      <td>$v(P\to Q)=\max{1-v(P),v(Q)}$</td>
+      <td>$v(P\to Q)=\max\set{1-v(P),v(Q)}$</td>
     </tr>
     <tr>
-      <td>$v(P\liff Q)=\min{v(P\to Q),v(Q\to P)}$</td>
+      <td>$v(P\liff Q)=\min\set{v(P\to Q),v(Q\to P)}$</td>
       <td> </td>
     </tr>
   </tbody>
 </table>
 
-<p><br /></p>
-
-<p>Por ejemplo, si $v(P)=1$ y $v(Q)=1$, entonces $\min{v(P),v(Q)}=1$, es decir,
+<p><br />
+Por ejemplo, si $v(P)=1$ y $v(Q)=1$, entonces $\min\set{v(P),v(Q)}=1$, es decir,
 $v(P\land Q)=1$. Así, cada renglón es una especificación de los valores de las
 proposiciones $P$ y $Q$. Una vez que sabemos esos valores podemos determinar el
 valor de la proposición que tiene un conectivo siguiendo las reglas de $v$.</p>
 
 <p>Notemos que con las tablas de verdad (o las funciones de evaluación
-$v\colon\prop\to{0,1}$ ) podemos distinguir tres tipos de proposición.</p>
+$v\colon\prop\to \set{0,1}$) podemos distinguir tres tipos de proposición.</p>
 
 <div class="math-statement" data-statement="definicion" id="def-taut">
   <div class="statement-heading"><strong class="statement-label">Definicion <span class="statement-number" aria-label="Número"></span></strong></div>
   <div class="statement-body">
 <p>Sea $\alpha$ una fórmula proposicional. Diremos que $\alpha$ es</p>
 <ol>
-  <li>tautología si su tabla de verdad sólo tiene $1$,</li>
-  <li>contradicción si su tabla de verdad sólo tiene $0$,</li>
-  <li>contingente si no es ninguna de las anteriores.</li>
+  <li><em>tautología</em> si su tabla de verdad sólo tiene $1$,</li>
+  <li><em>contradicción</em> si su tabla de verdad sólo tiene $0$,</li>
+  <li><em>contingente</em> si no es ninguna de las anteriores.</li>
 </ol>
 </div>
 </div>
 
+<p>En términos de funciones diríamos que una fórmula proposicional $\alpha$ es una
+tautología si $v(\alpha)=1$, para toda $v\colon\prop\to\set{0,1}$. Análogamente,
+$\alpha$ es contradicción si para cualquier $v\colon\prop\to\set{0,1}$ se
+satisface $v(\alpha)=0$.</p>
+
 <h2 id="implicación-y-equivalencia-lógica">Implicación y equivalencia lógica</h2>
+
+<p>Además de poder distinguir tres tipos de fórmula proposicional a partir de su
+tabla de verdad, también podemos hacer una observación sobre las tablas de
+distintas fórmulas. Por ejemplo, en la tabla que hicimos con los distintos
+conectivos se puede observar que cada vez que haya un $1$ en un renglón de
+$P\land Q$ también hay un $1$ en el renglón correspondiente de $P\lor Q$.</p>
+
+<p>En términos de funciones el comportamiento descrito en el párrafo anterior es
+que para cualquier $v\colon\prop\to\set{0,1}$ se satisface 
+$v(P\land Q)\leq v(P\lor Q)$. En general, tenemos la siguiente definición.</p>
+
+<div class="math-statement" data-statement="definicion" id="def-imp">
+  <div class="statement-heading"><strong class="statement-label">Definicion <span class="statement-number" aria-label="Número"></span></strong></div>
+  <div class="statement-body">
+<p>Sean $\alpha$ y $\beta$ dos fórmulas proposicionales. Diremos que $\alpha$
+<em>implica lógicamente</em> a $\beta$ si para cualquier $v\colon\prop\to\set{0,1}$ se
+satisface $v(\alpha)\leq v(\beta)$.</p>
+</div>
+</div>
+
+<p>Definimos implicación lógica en términos de funciones pues es una forma más
+fácil y precisa de escribir. Para tener una forma de la definición que sea
+precisa pero con tablas de verdad necesitamos observar el comportamiento de la
+tabla de verdad de la implicación.</p>
+
+<p>Por ejemplo, en términos de funciones el primer renglón dice que si
+$v(P)=v(Q)=1$, entonces $v(P\to Q)=1$. En este sentido, el único caso en el que
+$v(P\to Q)=0$ es cuando $v(P)=1$ y $v(Q)=0$.</p>
+
+<div class="math-statement" data-statement="proposicion" id="prop-imp">
+  <div class="statement-heading"><strong class="statement-label">Proposicion <span class="statement-number" aria-label="Número"></span></strong></div>
+  <div class="statement-body">
+<p>Sean $P$ y $Q$ dos proposiciones. Sucede que $v(P\to Q)=1$ si y sólo si
+$v(P)\leq v(Q)$.</p>
+</div>
+</div>
+
+<details class="math-proof">
+
+  <summary class="proof-heading">
+    <span class="proof-title">
+      Demostración
+    </span>
+    <span class="proof-toggle" aria-hidden="true"></span>
+  </summary>
+
+  <div class="proof-content">
+    <div class="proof-body">
+      
+El resultado se sigue de los comentarios anteriores y de observar el
+comportamiento de la tabla de verdad de la implicación.
+
+    </div>
+
+    <span class="qed" aria-label="Fin de demostración">
+      □
+    </span>
+  </div>
+
+</details>
 
 <h2 id="argumentos-válidos">Argumentos válidos</h2>
 
