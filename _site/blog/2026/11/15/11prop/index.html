@@ -55,9 +55,9 @@ window.MathJax.tex.macros = {
   
 </head>
 <body>
-  <header class="site-header"><div class="container header-inner"><a class="brand" href="/">Luis Turcio<span class="accent">.</span></a><button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Abrir menú">☰</button><nav id="site-nav" class="site-nav" aria-label="Navegación principal"><a href="/">Inicio</a><a href="/proyectos/">Proyectos</a><a href="/blog/">Blog</a><a href="/articulos/">Artículos</a><a href="/acerca/">Acerca de</a></nav></div></header>
+  <header class="site-header"><div class="container header-inner"><a class="brand" href="/">Luis Turcio<span class="accent">.</span></a><button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Abrir menú">☰</button><nav id="site-nav" class="site-nav" aria-label="Navegación principal"><a href="/">Inicio</a><a href="/proyectos/">Proyectos</a><a href="/blog/">Notas</a><a href="/articulos/">Artículos</a><a href="/acerca/">Acerca de</a></nav></div></header>
   <main id="contenido" class="container main-content"><article class="article">
-<a class="back-link" href="/blog/">← Volver al blog</a>
+<a class="back-link" href="/blog/">← Volver a las notas</a>
 <p class="eyebrow">Publicación · <time datetime="2026-11-15">15/11/2026</time></p>
 <h1>Lógica de proposiciones</h1>
 <p class="lead">Veremos lo básico sobre proposiciones y su comportamiento.</p>
@@ -267,6 +267,72 @@ tautología si $v(\alpha)=1$, para toda $v\colon\prop\to\set{0,1}$. Análogament
 $\alpha$ es contradicción si para cualquier $v\colon\prop\to\set{0,1}$ se
 satisface $v(\alpha)=0$.</p>
 
+<p>Podemos ver qué sucede si conectamos tautologías con conectivos.</p>
+
+<div class="math-statement" data-statement="proposicion" id="prop-tauts">
+  <div class="statement-heading"><strong class="statement-label">Proposicion <span class="statement-number" aria-label="Número"></span></strong></div>
+  <div class="statement-body">
+<p>Si $\alpha$ y $\beta$ son tautologías, entonces $\alpha\land\beta$,
+$\alpha\lor\beta$, $\alpha\to\beta$ y $\alpha\liff\beta$ son tautologías.</p>
+</div>
+</div>
+
+<details class="math-proof">
+
+  <summary class="proof-heading">
+    <span class="proof-title">
+      Demostración
+    </span>
+    <span class="proof-toggle" aria-hidden="true"></span>
+  </summary>
+
+  <div class="proof-content">
+    <div class="proof-body">
+      
+Las afirmaciones se siguen de observar que en la tabla de verdad de cada uno de
+los conectivos listados en el enunciado tienen un $1$ cada vez que las
+proposiciones usadas tienen $1$.
+
+    </div>
+
+    <span class="qed" aria-label="Fin de demostración">
+      □
+    </span>
+  </div>
+
+</details>
+
+<div class="math-statement" data-statement="proposicion" id="prop-negtaut">
+  <div class="statement-heading"><strong class="statement-label">Proposicion <span class="statement-number" aria-label="Número"></span></strong></div>
+  <div class="statement-body">
+<p>Si $\alpha$ es una tautología, entonces $\neg\alpha$ es una contradicción.</p>
+</div>
+</div>
+
+<details class="math-proof">
+
+  <summary class="proof-heading">
+    <span class="proof-title">
+      Demostración
+    </span>
+    <span class="proof-toggle" aria-hidden="true"></span>
+  </summary>
+
+  <div class="proof-content">
+    <div class="proof-body">
+      
+De nuevo, el resultado se sigue de observar que en la tabla de verdad de la
+negación sucede que si $P$ tiene un $1$, entonces $\neg P$ tiene un $0$.
+
+    </div>
+
+    <span class="qed" aria-label="Fin de demostración">
+      □
+    </span>
+  </div>
+
+</details>
+
 <h2 id="implicación-y-equivalencia-lógica">Implicación y equivalencia lógica</h2>
 
 <p>Además de poder distinguir tres tipos de fórmula proposicional a partir de su
@@ -284,7 +350,8 @@ $v(P\land Q)\leq v(P\lor Q)$. En general, tenemos la siguiente definición.</p>
   <div class="statement-body">
 <p>Sean $\alpha$ y $\beta$ dos fórmulas proposicionales. Diremos que $\alpha$
 <em>implica lógicamente</em> a $\beta$ si para cualquier $v\colon\prop\to\set{0,1}$ se
-satisface $v(\alpha)\leq v(\beta)$.</p>
+satisface $v(\alpha)\leq v(\beta)$. En esta situación escribimos
+$\alpha\vDash\beta$.</p>
 </div>
 </div>
 
@@ -328,6 +395,66 @@ comportamiento de la tabla de verdad de la implicación.
   </div>
 
 </details>
+
+<p>Ahora podemos mostrar la forma de implicación lógica que puede ser resuelta
+mediante una tabla de verdad. La demostración debe usar la forma con funciones
+de evaluación de todos los conceptos involucrados. En particular necesitamos
+usar $v(P\to Q)=\max\set{1-v(P), v(Q)}$.</p>
+
+<div class="math-statement" data-statement="proposicion" id="prop-impimp">
+  <div class="statement-heading"><strong class="statement-label">Proposicion <span class="statement-number" aria-label="Número"></span></strong></div>
+  <div class="statement-body">
+<p>Sean $\alpha$ y $\beta$ dos fórmulas proposicionales. Sucede que
+$\alpha\vDash\beta$ si y sólo si $\alpha\to\beta$ es una tautología.</p>
+</div>
+</div>
+
+<details class="math-proof">
+
+  <summary class="proof-heading">
+    <span class="proof-title">
+      Demostración
+    </span>
+    <span class="proof-toggle" aria-hidden="true"></span>
+  </summary>
+
+  <div class="proof-content">
+    <div class="proof-body">
+      
+Primero supongamos que $\alpha\vDash\beta$, es decir, que para cualquier
+$v\colon\prop\to\set{0,1}$ se satisface $v(\alpha)\leq v(\beta)$. Si
+$v(\alpha)=0$ entonces $1-v(\alpha)=1$ por lo que $v(\alpha\to\beta)=1$. Si
+ahora suponemos que $v(\alpha)=1$, entonces por hipótesis tenemos 
+$1=v(\alpha)\leq v(\beta)$, es decir, $v(\beta)=1$. Con lo cual se sigue
+$v(\alpha\to\beta)=1$.
+
+    </div>
+
+    <span class="qed" aria-label="Fin de demostración">
+      □
+    </span>
+  </div>
+
+</details>
+
+<p>Con la proposición anterior podemos verificar si una fórmula implica lógicamente
+a otra haciendo una tabla de verdad.</p>
+
+<p>Si seguimos el discurso en términos de funciones de evaluación, entonces es
+posible pensar que haya dos fórmulas $\alpha$ y $\beta$ tales que
+$v(\alpha)=v(\beta)$ para cualquier $v\colon\prop\to\set{0,1}$. Con lo anterior
+tendríamos que cada una de estas fórmulas implica lógicamente a la otra. Esto,
+como veremos más adelante es uno de los objetivos principales de lo que
+queremos.</p>
+
+<div class="math-statement" data-statement="definicion" id="def-eq">
+  <div class="statement-heading"><strong class="statement-label">Definicion <span class="statement-number" aria-label="Número"></span></strong></div>
+  <div class="statement-body">
+<p>Sean $\alpha$ y $\beta$ dos fórmulas proposicionales. Diremos que $\alpha$ y
+$\beta$ son lógicamente equivalentes si para cualquier
+$v\colon\prop\to\set{0,1}$ se satisface $v(\alpha)=v(\beta)$</p>
+</div>
+</div>
 
 <h2 id="argumentos-válidos">Argumentos válidos</h2>
 
