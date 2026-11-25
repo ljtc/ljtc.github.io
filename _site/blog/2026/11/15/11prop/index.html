@@ -302,6 +302,39 @@ proposiciones usadas tienen $1$.
 
 </details>
 
+<div class="math-statement" data-statement="proposicion" id="prop-tauts">
+  <div class="statement-heading"><strong class="statement-label">Proposicion <span class="statement-number" aria-label="Número"></span></strong></div>
+  <div class="statement-body">
+<p>Si $\alpha\land\beta$ es una tautología entonces $\alpha$ y $\beta$ son tautologías.</p>
+</div>
+</div>
+
+<details class="math-proof">
+
+  <summary class="proof-heading">
+    <span class="proof-title">
+      Demostración
+    </span>
+    <span class="proof-toggle" aria-hidden="true"></span>
+  </summary>
+
+  <div class="proof-content">
+    <div class="proof-body">
+      
+Como $\alpha\land\beta$ es tautología, entonces todos los renglones de su tabla
+de verdad tienen $1$. Luego, la disyunción es verdadera cuando los dos disyuntos
+son verdaderos, por lo que en la tabla de verdad de $\alpha$ y en la de $\beta$
+sólo aparecen $1$.
+
+    </div>
+
+    <span class="qed" aria-label="Fin de demostración">
+      □
+    </span>
+  </div>
+
+</details>
+
 <div class="math-statement" data-statement="proposicion" id="prop-negtaut">
   <div class="statement-heading"><strong class="statement-label">Proposicion <span class="statement-number" aria-label="Número"></span></strong></div>
   <div class="statement-body">
@@ -456,7 +489,264 @@ $v\colon\prop\to\set{0,1}$ se satisface $v(\alpha)=v(\beta)$</p>
 </div>
 </div>
 
+<p>De nuevo, esta noción tiene un equivalente con tablas de verdad.</p>
+
+<div class="math-statement" data-statement="corolario">
+  <div class="statement-heading"><strong class="statement-label">Corolario <span class="statement-number" aria-label="Número"></span></strong></div>
+  <div class="statement-body">
+<p>Sean $\alpha$ y $\beta$ dos fórmulas proposicionales. Sucede que $\alpha$ es
+lógicamente equivalente a $\beta$ si y sólo si $\alpha\liff\beta$ es una
+tautología.</p>
+</div>
+</div>
+
+<details class="math-proof">
+
+  <summary class="proof-heading">
+    <span class="proof-title">
+      Demostración
+    </span>
+    <span class="proof-toggle" aria-hidden="true"></span>
+  </summary>
+
+  <div class="proof-content">
+    <div class="proof-body">
+      
+La igualdad $v(\alpha)=v(\beta)$ es equivalente a las dos desigualdades
+$v(\alpha)\leq v(\beta)$ y $v(\beta)\leq v(\alpha)$. Por la proposición
+anterior, esto último es equivalente a que $\alpha\to\beta$ y $\beta\to\alpha$
+sean tautologías. Por lo que habíamos hecho al final de la sección de tablas de
+verdad, esto último equivale a que $(\alpha\to\beta)\land(\beta\to\alpha)$ sea
+una tautología, es decir, a que $\alpha\liff\beta$ sea una tautología.
+
+    </div>
+
+    <span class="qed" aria-label="Fin de demostración">
+      □
+    </span>
+  </div>
+
+</details>
+
+<p>Con este corolario y la proposición anterior tenemos métodos relativamente
+sencillos para saber si una fórmula implica lógicamente a otra, si son
+equivalentes o ninguna de las anteriores.</p>
+
 <h2 id="argumentos-válidos">Argumentos válidos</h2>
+
+<p>En esta sección daremos forma a lo que mencionamos en la introducción.</p>
+
+<div class="math-statement" data-statement="definicion">
+  <div class="statement-heading"><strong class="statement-label">Definicion <span class="statement-number" aria-label="Número"></span></strong></div>
+  <div class="statement-body">
+<p>Un argumento es una sucesión de fórmulas proposicionales
+$\alpha_1,\ldots,\alpha_n,\beta$. En esta situación diremos que las formulas
+$\alpha_1,\ldots,\alpha_n$ son la hipótesis (o premisas) del argumento y $\beta$
+es la conclusión.</p>
+
+<p>Además, diremos que el argumento es válido si $\alpha_1\land\dots\land\alpha_n$
+implica lógicamente a $\beta$.</p>
+</div>
+</div>
+
+<p>Otra notación para los argumentos es</p>
+
+\[\begin{array}{c}
+\alpha_1,\ldots,\alpha_n\\
+\hline
+\beta
+\end{array}\]
+
+<p>Cuando se da un resultado en matemáticas, lo que se intenta es que sea un
+argumento válido. Esto , que la verdad de las hipótesis implique la verdad de
+la conclusión.</p>
+
+<p>En cada área se tendrán formas de pasar de las premisas a la conclusión para
+asegurar que al final se tenga un argumento válido. Por el momento sólo diremos
+que, por ejemplo, los argumentos con números no son iguales a los argumentos con
+conjuntos.</p>
+
+<p>En lógica de proposiciones una forma de obtener conclusiones válidas es con
+<em>modus ponendo ponens</em>, o sólo <em>modus ponens</em>. Si lo escribimos como un argumento
+se ve</p>
+
+\[\begin{array}{c}
+\alpha,\alpha\to\beta\\
+\hline
+\beta
+\end{array}\]
+
+<p>Notemos que tiene la propiedad deseada. En términos de funciones de evaluación
+es el siguiente resultado.</p>
+
+<div class="math-statement" data-statement="proposicion">
+  <div class="statement-heading"><strong class="statement-label">Proposicion <span class="statement-number" aria-label="Número"></span></strong></div>
+  <div class="statement-body">
+<p>Sea $v\colon\prop\to\set{0,1}$. Si $v(\alpha)=1$ y $v(\alpha\to\beta)=1$,
+entonces $v(\beta)=1$.</p>
+</div>
+</div>
+
+<details class="math-proof">
+
+  <summary class="proof-heading">
+    <span class="proof-title">
+      Demostración
+    </span>
+    <span class="proof-toggle" aria-hidden="true"></span>
+  </summary>
+
+  <div class="proof-content">
+    <div class="proof-body">
+      
+Por una de las hipótesis tenemos
+
+$$
+1=v(\alpha\to\beta)=\max\set{1-v(\alpha),v(\beta)}.
+$$
+
+Luego, como también tenemos que $v(\alpha)=1$ entonces la ecuación anterior se
+transforma en la siguiente
+
+$$
+1=\max\set{0,v(\beta)}.
+$$
+
+De donde podemos concluir $v(\beta)=1$, como queríamos.
+
+    </div>
+
+    <span class="qed" aria-label="Fin de demostración">
+      □
+    </span>
+  </div>
+
+</details>
+
+<p>El enunciado de la proposición, dicho con otras palabras, dice que si $\alpha$ y
+$\alpha\to\beta$ son verdaderas, entonces $\beta$ es verdadera. Es decir, 
+<em>modus ponens</em> es un argumento válido</p>
+
+<h2 id="lista-de-equivalencias-e-implicaciones-lógicas">Lista de equivalencias e implicaciones lógicas</h2>
+
+<p>Para terminar daremos una lista de algunas equivalencias e implicaciones
+lógicas. Más adelante haremos uso de esta lista para tener métodos de
+demostración o como argumentos para alguna demostración.</p>
+
+<h3 id="equivalencias-estructurales">Equivalencias estructurales</h3>
+
+<p>Las siguientes equivalencias darán estructura de álgebra a las proposiciones (de
+manera más precisa, a un cociente).</p>
+
+<h4 id="conmutatividad">Conmutatividad</h4>
+
+<p>La conjunción y la disyunción son conmutativas, es decir,</p>
+
+\[\alpha\land\beta\equiv\beta\land\alpha,
+\qquad
+\alpha\lor\beta\equiv\beta\lor\alpha.\]
+
+<h4 id="asociatividad">Asociatividad</h4>
+
+<p>La conjunción y la disyunción son asociativas,</p>
+
+\[(\alpha\land\beta)\land\gamma\equiv\alpha\land(\beta\land\gamma),
+\qquad
+(\alpha\lor\beta)\lor\gamma\equiv\alpha\lor(\beta\lor\gamma).\]
+
+<h4 id="distributividad">Distributividad</h4>
+
+<p>La conjunción distribuye a la disyunción,</p>
+
+\[\alpha\land(\beta\lor\gamma)\equiv(\alpha\land\beta)\lor(\alpha\land\gamma).\]
+
+<p>También se satisface que la disyunción distribuye a la conjunción</p>
+
+\[\alpha\lor(\beta\land\gamma)\equiv(\alpha\lor\beta)\land(\alpha\lor\gamma).\]
+
+<h4 id="idempotencia">Idempotencia</h4>
+
+<p>Tanto la conjunción como la disyunción son idempotentes, es decir,</p>
+
+\[\alpha\land\alpha\equiv\alpha,
+\qquad
+\alpha\lor\alpha\equiv\alpha.\]
+
+<h4 id="absorción">Absorción</h4>
+
+<p>Esta ley hace que una fórmula proposicional absorba a otra,</p>
+
+\[\alpha\land(\beta\lor\alpha)\equiv\alpha,
+\qquad
+\alpha\lor(\beta\land\alpha)\equiv\alpha.\]
+
+<h4 id="tercero-excluido">Tercero excluido</h4>
+
+<p>El tercero excluido es diferente a las anteriores en dos sentidos. El primero es
+que no es (en principio) una equivalencia, sino que afirma que una fórmula es
+una tautología. La otra diferencia es que impone condiciones mucho más fuertes
+sobre el tipo de lógica que estamos usando.</p>
+
+\[\alpha\lor\neg\alpha\quad\text{es una tautología}.\]
+
+<p>Si consideramos las proposiciones del principio, “hoy es lunes” y “hoy no es
+lunes”, entonces el tercero excluido dice que con la afirmación y la negación se
+agotan todos los días de la semana. ¿Puedes encontrar un ejemplo donde una
+afirmación y su negación no agoten todo el contexto en el que están?</p>
+
+<h4 id="leyes-de-de-morgan">Leyes de De Morgan</h4>
+
+<p>Con estas leyes sabremos qué se obtiene al negar una conjunción o una
+disyunción.</p>
+
+\[\neg(\alpha\land\beta)\equiv(\neg\alpha\lor\neg\beta),
+\qquad
+\neg(\alpha\lor\beta)\equiv(\neg\alpha\land\neg\beta),\]
+
+<h4 id="un-par-de-consecuencias">Un par de consecuencias</h4>
+
+<p>Las siguientes equivalencias se podrían demostrar usando las anteriores. Sin
+embargo, como es importante tener presente cómo se niegan todos los conectivos,
+entonces las escribimos explícitamente.</p>
+
+\[\neg(\alpha\to\beta)\equiv(\alpha\land\neg\beta),
+\qquad
+\neg\neg\alpha\equiv\alpha.\]
+
+<h3 id="métodos-de-demostración">Métodos de demostración</h3>
+
+<p>Hay algunas equivalencias lógicas que se usan como métodos de demostración, o
+bien, nos dices como demostrar enunciados dada su forma lógica. 
+En lo que sigue trataremos de dar formas para demostrar $\alpha\to\beta$ para
+algunas $\alpha$ y $\beta$ especiales. Por lo tanto,
+debemos entender a $\alpha\to\beta$ como desde $\alpha$ podemos demostrar
+$\beta$. Esta interpretación es válida por un teorema lógico llamado 
+<em>teorema de la deducción</em>.</p>
+
+<h4 id="contradicción">Contradicción</h4>
+
+<p>Una forma de demostración muy usada es la demostración por contradicción. Este
+dice que para demostrar $\alpha$ hay que suponer que sucede $\neg\alpha$ y
+mostrar que desde ella podemos obtener una contradicción, por ejemplo
+$\beta\land\neg\beta$. El resultado de hacer lo anterior es que sucede $\alpha$.</p>
+
+\[\big((\neg\alpha\to\beta)\land(\neg\alpha\to\neg\beta)\big)\to\alpha\]
+
+<h4 id="contrapuesta">Contrapuesta</h4>
+
+<p>En muchas ocasiones este método se confunde con contradicción. Como veremos, su
+forma lógica es muy diferente, por lo que un ejercicio será distinguir en que
+demostraciones, que nos presentan por contradicción, en realidad se usó la
+contrapuesta.</p>
+
+<p>Otro nombre para este método demostración es <em>modus tollendo tollens</em> que en
+español significa el modo que al negar niega. Esto es,</p>
+
+\[(\alpha\to\beta)\equiv(\neg\beta\to\neg\alpha).\]
+
+<p>El significado es que cuando uno quiere demostrar que $\alpha\to\beta$ una
+posibilidad es suponer $\neg\beta$ y demostrar $\neg\alpha$.</p>
+
 
   
 
