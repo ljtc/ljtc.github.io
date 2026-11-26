@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#101114">
-  <meta name="description" content="Veremos lo básico sobre proposiciones y su comportamiento.">
+  <meta name="description" content="Veremos lo básico sobre proposiciones y su comportamiento">
   <title>Lógica de proposiciones · Luis Turcio</title>
   <link rel="stylesheet" href="/assets/css/style.css">
   
@@ -60,7 +60,7 @@ window.MathJax.tex.macros = {
 <a class="back-link" href="/blog/">← Volver a las notas</a>
 <p class="eyebrow">Publicación · <time datetime="2026-11-15">15/11/2026</time></p>
 <h1>Lógica de proposiciones</h1>
-<p class="lead">Veremos lo básico sobre proposiciones y su comportamiento.</p>
+<p class="lead">Veremos lo básico sobre proposiciones y su comportamiento</p>
 
 
 <nav class="toc" data-toc hidden aria-label="Índice de contenidos">
@@ -716,7 +716,7 @@ entonces las escribimos explícitamente.</p>
 <h3 id="métodos-de-demostración">Métodos de demostración</h3>
 
 <p>Hay algunas equivalencias lógicas que se usan como métodos de demostración, o
-bien, nos dices como demostrar enunciados dada su forma lógica. 
+bien, nos dicen como demostrar enunciados dada su forma lógica. 
 En lo que sigue trataremos de dar formas para demostrar $\alpha\to\beta$ para
 algunas $\alpha$ y $\beta$ especiales. Por lo tanto,
 debemos entender a $\alpha\to\beta$ como desde $\alpha$ podemos demostrar
@@ -726,11 +726,11 @@ $\beta$. Esta interpretación es válida por un teorema lógico llamado
 <h4 id="contradicción">Contradicción</h4>
 
 <p>Una forma de demostración muy usada es la demostración por contradicción. Este
-dice que para demostrar $\alpha$ hay que suponer que sucede $\neg\alpha$ y
+método dice que para demostrar $\alpha$ hay que suponer que sucede $\neg\alpha$ y
 mostrar que desde ella podemos obtener una contradicción, por ejemplo
-$\beta\land\neg\beta$. El resultado de hacer lo anterior es que sucede $\alpha$.</p>
+$\beta\land\neg\beta$. El resultado de hacer lo anterior es que sucede $\alpha$,</p>
 
-\[\big((\neg\alpha\to\beta)\land(\neg\alpha\to\neg\beta)\big)\to\alpha\]
+\[\big((\neg\alpha\to\beta)\land(\neg\alpha\to\neg\beta)\big)\to\alpha.\]
 
 <h4 id="contrapuesta">Contrapuesta</h4>
 
@@ -747,6 +747,73 @@ español significa el modo que al negar niega. Esto es,</p>
 <p>El significado es que cuando uno quiere demostrar que $\alpha\to\beta$ una
 posibilidad es suponer $\neg\beta$ y demostrar $\neg\alpha$.</p>
 
+<h4 id="demostración-de-una-implicación">Demostración de una implicación</h4>
+
+<p>Hemos estado ejercitando este tipo de demostración, ahora lo representaremos.
+Estaremos usando la siguiente equivalencia,</p>
+
+\[\big(\alpha\to(\beta\to\gamma)\big)\equiv\big((\alpha\land\beta)\to\gamma\big).\]
+
+<p>Lo que significa es que si queremos demostrar $\beta\to\gamma$, a partir de
+$\alpha$, lo que podemos hacer es suponer también $\beta$ y demostrar, desde las
+dos suposiciones, $\gamma$.</p>
+
+<h4 id="demostración-de-una-negación">Demostración de una negación</h4>
+
+<p>Una forma válida para demostrar $\alpha\to\neg\beta$, válida incluso en lógicas
+que no son tan fuertes como la que estamos estudiando, es suponer que sucede
+$\alpha\land\beta$ y llegar a una contradicción. Es importante notar que es
+diferente a una demostración por contradicción, ya que contradicción
+sólo es válida en lógica clásica.</p>
+
+<p>En realidad este tipo de demostración es una forma de definir a la negación en
+términos de la implicación. Para hacer esto necesitamos una fórmula que sepamos
+que es una contradicción, digamos $\text{False}$. Así, la equivalencia es</p>
+
+\[\neg\beta\equiv(\beta\to\text{False}),\]
+
+<p>es decir, la negación de $\beta$ es equivalente a que desde $\beta$ podemos
+demostrar una contradicción, o bien, desde $\beta$ llegamos a algo absurdo.</p>
+
+<h4 id="demostración-de-una-conjunción">Demostración de una conjunción</h4>
+
+<p>Cuando suponemos $\alpha$ y queremos demostrar $\beta\land\gamma$ es como si
+quisiéramos ver que $\beta\land\gamma$ es verdadera. Si observamos su tabla de
+verdad esto sucede cuando ambas son verdaderas. En otras palabras, tenemos que
+demostrar tanto $\beta$ como $\gamma$. En una equivalencia es,</p>
+
+\[\big(\alpha\to(\beta\land\gamma)\big)\equiv
+\big((\alpha\to\beta)\land(\alpha\to\gamma)\big).\]
+
+<p>Recalcando, la demostración de una conjunción consta de dos demostraciones, una
+por cada conyunto.</p>
+
+<h4 id="demostración-de-una-disyunción">Demostración de una disyunción</h4>
+
+<p>Una forma de demostrar $\alpha\to(\beta\lor\gamma)$ es suponer $\alpha$ y
+demostrar que sucede $\beta$, o bien, $\gamma$. Sin embargo es posible que no
+suceda siempre una de las dos. Por ejemplo, si tomamos un natural $n$ no siempre
+sucede que es par, tampoco sucede siempre que es impar, pero sí sucede que es
+par o impar. Para demostrar disyunciones en muchos casos usaremos la siguiente
+equivalencia</p>
+
+\[\big(\alpha\to(\beta\lor\gamma)\big)\equiv\big((\alpha\land\neg\beta)\to\gamma\big).\]
+
+<p>En otras palabras, si suponemos $\alpha$ y queremos demostrar $\beta\lor\gamma$
+podemos suponer, adicionalmente, que sucede $\neg\beta$ y demostrar $\gamma$.</p>
+
+<h4 id="demostración-por-casos">Demostración por casos</h4>
+
+<p>En el método anterior teníamos una disyunción después de la implicación. Ahora
+veamos qué pasa cuando está antes. Esto es, cuando tenemos algo de la forma
+$(\alpha\lor\beta)\to\gamma$. Para ello usaremos la siguiente equivalencia</p>
+
+\[\big((\alpha\lor\beta)\to\gamma\big)\equiv
+\big((\alpha\to\gamma)\land(\beta\to\gamma)\big).\]
+
+<p>Para demostrar $\gamma$ por casos se debe demostrar que en cada caso se
+puede concluir $\gamma$. Este tipo de demostración tendrá una demostración por
+cada caso.</p>
 
   
 
